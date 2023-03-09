@@ -3,3 +3,10 @@ p {
     background-color: yellow;
 } 
 */
+
+#container{
+    display: flex;
+    
+    
+    flex-direction: column;
+}
