@@ -1,5 +1,15 @@
-/* 
-p {
-    background-color: yellow;
-} 
-*/
+#aboutUs-body{
+    background-color: #2E151A; 
+}
+
+
+.row-title{
+    color:aliceblue;
+    text-align: center;
+    background-color: #efb817;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+}
+
