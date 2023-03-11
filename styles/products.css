@@ -3,3 +3,41 @@ p {
     background-color: yellow;
 } 
 */
+
+.card-title, .lightYellowText{
+    color: #fcbf6b;
+}
+
+.productCard {
+    background-color: #241014;
+    border-color: azure;
+    
+}
+
+.btnVerMas {
+    background-color: white;
+    border-color: transparent;
+    color: black;
+
+}
+
+.btnVerMas:hover {
+    background-color: black;
+    border-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+
+.btnBuyNow {
+    background-color: #2e151a;
+    border-color: transparent;
+    color: #fcbf6b;
+
+}
+
+.btnBuyNow:hover {
+    background-color: #efb815;
+    border-color: transparent;
+    color: #241014;
+    transition: 0.7s;
+}
