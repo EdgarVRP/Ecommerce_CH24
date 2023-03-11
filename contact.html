@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    
+
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -15,7 +16,10 @@
 
     <!-- Estilos CSS contact -->
     <link rel="stylesheet" href="styles/contact.css">
-
+    <!--  Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <!-- Iconos bootstrap -->
     <!-- Example: <i class="bi-alarm"></i> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -24,41 +28,66 @@
 <body>
 
     <div id="navabar"></div>
-    
-    <form id="container" >
-    <div class="form-row mt-5"> 
-        <div class="col-md-4 mb-3">
-            <label for="Nombre">Nombre</label>
-            <input type="tex" class="form-control">
-        </div>
-    </div>
-        <div class="form-row">
-        <div class="col-md-4 mb-3">
-            <label for="Apellido">Apellido</label>
-            <input type="tex" class="form-control">
-        </div>
-        </div>
-        <div class="form-row">
-        <div class="col-md-4 mb-3">
-            <label for="Email">Email</label>
-            <input type="email" class="form-control">
-        </div>
-        </div>
-        <div class="form-row">
-        <div class="col-md-4 mb-3">
-            <label for="Tel">Telefono</label>
-            <input type="number" class="form-control">
-        </div>
-        </div>
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-            <label for="coment">Comentarios</label>
-            <input type="text"class="form-control">
-        </div>
+
+
+
+    <div class="container">
         
+        <br>
+        <h2 class="linea"><span id="fonts">Contactanos</span></h2>
+        <div class="row">
+            <div class="col-6 ">
+                <div class="form-row mt-3">
+                    <div class="mb-3">
+
+                        <p id="fonts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur at totam
+                            earum alias
+                            aperiam iure </p>
+                        <img src="./assets/img/coffee-gbf8c19527_1280.jpg" alt="" id="img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6" id="row-left">
+                <form id="container">
+                    <div class="form-row mt-1">
+                        <div class="mb-3">
+                            <!-- Aqui empiezan los inputs-->
+                            <label for="Nombre" id="fonts">Nombre</label>
+                            <input type="text" class="form-control" id="input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="mb-3">
+                            <label for="Apellido" id="fonts">Apellido</label>
+                            <input type="text" class="form-control" id="input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="mb-3">
+                            <label for="Email" id="fonts">Email</label>
+                            <input type="email" class="form-control" id="input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="mb-3">
+                            <label for="Tel" id="fonts">Telefono</label>
+                            <input type="tel" maxlength="10" class="form-control" id="input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="mb-3">
+                            <label for="text" id="fonts">Comentarios</label>
+                            <textarea class="form-control" id="input" style="height: 100px"></textarea>
+                        </div>
+                    </div>
+                    <!-- aqui termina los inputs y empieza el boton -->
+                    <button type="button" class="btn btn-primary" id="button">Enviar</button>
+            </div>
+        </div>
     </div>
     
-</form>
+    </form>
+    <br>
 
     <div id="footer"></div>
 
@@ -73,4 +102,5 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
