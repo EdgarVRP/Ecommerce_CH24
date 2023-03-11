@@ -15,13 +15,31 @@
 	font-family: "Comic Sans MS", "Comic Sans";
 
 	/* debug */
-	/* 
-	border: solid blue !important;
+	
+	/* border: solid blue !important;
 	color: rgb(255, 0, 0) !important;
 	border-width: 1px !important; 
-	*/
+	background-color: white !important; */
+	
 
 }
+/********************** BODY **********************/
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    flex: 1;
+}
+
+
+
 
 /********************** NAVBAR **********************/
 .nav-link {

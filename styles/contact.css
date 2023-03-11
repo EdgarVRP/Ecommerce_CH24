@@ -1,63 +1,67 @@
-body{
-background-color: #2E151A;
-}
-#container{
-    color: #FCBF6B;
- 
+body {
+    background-color: #2E151A;
 }
 
-#fonts{
+/* En esta pagina todo sera de esta fuente y color */
+#contact {
     font-family: 'Ubuntu', sans-serif;
     color: #FCBF6B;
 }
-#row-left{
-    
-    padding-left: 20px;
-    
+
+/* Estilos de toda clase container sera flex y column */
+#container {
+    display: flex;
+    flex-direction: column;
 }
 
-#input{
+/* Estilo de alertas de formulario de informacion incorrecta */
+.warning {
+    text-align: center;
+    color: red !important;
+    visibility: show;
+}
+
+
+.input {
     border-radius: 10px;
     background-color: #FCBF6B;
-    font-family: 'Ubuntu', sans-serif;
-  
-   
 }
 
-#button{
+#button {
     border-radius: 10px;
-    margin-left: 450px;
-    font-family: 'Ubuntu', sans-serif;
+    align-self: end;
     background-color: #EFB817;
     color: white;
 }
 
-.linea{
-    margin-top: 30px;
-    
+.linea {
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
 }
 
-h2.linea {
-  position: relative;
-  z-index: 1;
-}
 h2.linea:before {
-  border-top: 2px solid #EFB817;
-  content: "";
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  width: 95%;
-  z-index: -1;
+    border-top: 2px solid #EFB817;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    z-index: -1;
 }
+
 h2.linea span {
-
-  background: #2E151A;
-  padding: 0 15px;
+    background: #2E151A;
+    padding: 0 15px;
 }
 
-#img{
-    padding: 30px;
+#img {
     border-radius: 50px;
+    display: flex;
 }
 
+@media (max-width: 400px) {
+    #img {
+        display: none;
+    }
+}
