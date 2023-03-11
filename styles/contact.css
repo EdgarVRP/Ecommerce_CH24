@@ -18,13 +18,17 @@ body {
 .warning {
     text-align: center;
     color: red !important;
-    visibility: show;
+    visibility: hidden;
 }
 
 
 .input {
     border-radius: 10px;
     background-color: #FCBF6B;
+}
+
+.input:focus {
+    background: #585858;
 }
 
 #button {
