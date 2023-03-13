@@ -38,8 +38,15 @@ body {
     width: 125px;
     border-radius: 10px;
     align-self: end;
-    background-color: var(--secondary);
-    color: white;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+}
+#button:hover{
+    background-color: #efb815;
+    border-color: transparent;
+    color: #241014;
+    transition: 0.7s;
 }
 
 /* Estilos de linea en el titulo de contactanos */
