@@ -47,7 +47,7 @@ article {
 
 /********************** NAVBAR **********************/
 .navbar {
-	background-color: var(--primary);
+	background-color: var(--white);
 }
 
 .nav-link {
