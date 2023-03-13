@@ -1,63 +1,77 @@
-body{
-background-color: #2E151A;
-}
-#container{
-    color: #FCBF6B;
- 
+body {
+    background-color: #2E151A;
 }
 
-#fonts{
+/* En esta pagina todo sera de esta fuente y color */
+#contact * {
     font-family: 'Ubuntu', sans-serif;
     color: #FCBF6B;
 }
-#row-left{
-    
-    padding-left: 20px;
-    
+
+/* Estilos de form-contact*/
+#form-contact {
+    display: flex;
+    flex-direction: column;
 }
 
-#input{
-    border-radius: 10px;
-    background-color: #FCBF6B;
-    font-family: 'Ubuntu', sans-serif;
-  
-   
+/* Estilo de alertas de formulario de informacion incorrecta */
+.warning {
+    text-align: center;
+    color: #ca240e !important;
+    visibility: hidden;
 }
 
-#button{
+/* Revisar el uso de important */
+.input {
     border-radius: 10px;
-    margin-left: 450px;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #EFB817;
+    background-color: var(--secondary2) !important;
+    color: var(--black) !important;
+}
+
+/* Color de los input de form cuando se pasa sobre ellos */
+.input:focus {
+    background: #9e9e9e93;
+}
+
+/* Estilos de botons de enviar */
+#button {
+    width: 125px;
+    border-radius: 10px;
+    align-self: end;
+    background-color: var(--secondary);
     color: white;
 }
 
-.linea{
-    margin-top: 30px;
-    
+/* Estilos de linea en el titulo de contactanos */
+.linea {
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
 }
 
-h2.linea {
-  position: relative;
-  z-index: 1;
-}
 h2.linea:before {
-  border-top: 2px solid #EFB817;
-  content: "";
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  width: 95%;
-  z-index: -1;
+    border-top: 2px solid var(--secondary2);
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    z-index: -1;
 }
+
 h2.linea span {
-
-  background: #2E151A;
-  padding: 0 15px;
+    background: #2E151A;
+    padding: 0 15px;
 }
 
-#img{
-    padding: 30px;
-    border-radius: 50px;
+#img {
+    border-radius: 32px;
+    min-width: 90%;
+    margin-bottom: 32px;
 }
 
+@media (max-width: 400px) {
+    #img {
+        display: none;
+    }
+}

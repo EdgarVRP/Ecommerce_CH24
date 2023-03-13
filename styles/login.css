@@ -3,3 +3,115 @@ p {
     background-color: yellow;
 } 
 */
+
+:root {
+  --cafeOs:#241014;
+  --cafeCl:#2E151A;
+  --amaOs:#EFB817;
+  --amaCl:#FCBF6B;
+  --blanco:#FFFFFF;
+  --negro:#000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width:100%;
+  height:690px;
+  background-image: url('../assets/img/cafe_reflejo.gif');
+}
+
+
+.right-form{
+  width: 100%;
+  height: 100%;
+  float: left;
+  background:#fcc06bb6;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.right-form form{
+  height: 100%;
+  width: 40%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.right-form h2{
+  font-size: 2em;
+  color:var(--cafeCl);
+  font-family: 'Ubuntu', sans-serif;
+  margin:20px 0;
+  font-weight:bold;
+}
+
+
+.right-form form > input{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.2em;
+  border-radius: 15px;
+}
+
+.right-form label{
+  width:100%;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+  font-family: 'Ubuntu', sans-serif;
+  color:var(--cafeOs);
+  border-color: var(--cafeOs);
+}
+
+.check{
+  width: 100%;
+  margin: 20px 0;
+  font-size: 15px;
+} 
+
+/* .right-form input[type="submit"]{
+} */
+.boton:hover{
+  background-color:var(--cafeCl);
+  color:var(--blanco);
+}
+
+
+.boton:active{
+  background-color:var(--amaOs);
+  color:var(--blanco);
+}
+
+
+.right-form a{
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  color:var(--cafeOs);
+  font-size: 20px;
+  padding: 10px;
+}
+
+.right-form a:hover{
+  color:var(--amaOs);
+  border-radius: 7px;
+  border-color: #EFB817;
+  background-color:var(--blanco);
+}
+
+.right-form a:active{
+  background-color:var(--amaOs);
+  color:var(--blanco);
+}
