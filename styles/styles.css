@@ -4,52 +4,76 @@
 }
 
 :root {
-	--primary: #ffffff;
-	--secondary: #ffffff;
 	/* --icons: #ffffff; */
 	/* --letter: #d81818; */
+	--primary:#241014;
+    --primary2:#2E151A;
+    --secondary:#EFB817;
+    --secondary2:#FCBF6B; /*letters*/
+    --white:#FFFFFF;
+    --black:#000000;
 }
 
 /* Aplicar estilo a todo elemento */
 * {
-	font-family: "Comic Sans MS", "Comic Sans";
+	/* font-family: "Comic Sans MS", "Comic Sans"; */
+    /* font-family: 'Ubuntu', sans-serif; */
+	font-family: 'Playfair Display', ;
+	font-weight: bold;
 
 	/* debug */
 	
-	/* border: solid blue !important;
+	/* border: solid rgb(43, 255, 0) !important;
 	color: rgb(255, 0, 0) !important;
 	border-width: 1px !important; 
 	background-color: white !important; */
-	
-
 }
+
 /********************** BODY **********************/
 body {
+	/* Altura minima de toda la pantalla para que el footer este hasta abajo */
     min-height: 100vh;
     margin: 0;
-}
-
-body {
-    display: flex;
+	display: flex;
     flex-direction: column;
+	background-color: var(--primary2);
 }
 
+/* Dummy div entre navbar y footter que se expande parue el */
 article {
     flex: 1;
 }
 
 
-
-
 /********************** NAVBAR **********************/
+.navbar {
+	background-color: var(--primary);
+}
+
 .nav-link {
-	color: var(--letter);
+	color: var(--secondary2);
+}
+
+.nav-link:hover {
+	color: var(--white);
+}
+
+.navbar-brand{
+	color: var(--white);
+}
+
+.navbar-brand:hover {
+	color: #c5c5c5;
 }
 
 .nav-icon {
-	color: var(--icons);
+	color: var(--secondary2);
 	font-size: 32px;
 	margin-bottom: 16px;
+}
+
+.nav-icon:hover {
+	color: var(--white);
 }
 
 
@@ -94,7 +118,7 @@ article {
 
 .footer-text {
 	/* Color de texto */
-	color: var(--letter);
+	color: var(--secondary2);
 
 	/* Sepracion entre el texto y los logos */
 	margin-right: 20px;
@@ -106,10 +130,14 @@ article {
 
 /* Iconos con link en el footer */
 .footer a {
-	color: var(--icons);
+	color: var(--secondary2);
 	font-size: 32px;
 	margin: 5px;
 	margin-bottom: 16px;
+}
+
+.footer a:hover {
+	color: var(--white);
 }
 
 .navbar-brand {

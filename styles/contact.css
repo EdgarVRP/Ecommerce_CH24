@@ -3,13 +3,13 @@ body {
 }
 
 /* En esta pagina todo sera de esta fuente y color */
-#contact {
+#contact * {
     font-family: 'Ubuntu', sans-serif;
     color: #FCBF6B;
 }
 
-/* Estilos de toda clase container sera flex y column */
-#container {
+/* Estilos de form-contact*/
+#form-contact {
     display: flex;
     flex-direction: column;
 }
@@ -17,27 +17,32 @@ body {
 /* Estilo de alertas de formulario de informacion incorrecta */
 .warning {
     text-align: center;
-    color: red !important;
+    color: #ca240e !important;
     visibility: hidden;
 }
 
-
+/* Revisar el uso de important */
 .input {
     border-radius: 10px;
-    background-color: #FCBF6B;
+    background-color: var(--secondary2) !important;
+    color: var(--black) !important;
 }
 
+/* Color de los input de form cuando se pasa sobre ellos */
 .input:focus {
-    background: #585858;
+    background: #9e9e9e93;
 }
 
+/* Estilos de botons de enviar */
 #button {
+    width: 125px;
     border-radius: 10px;
     align-self: end;
-    background-color: #EFB817;
+    background-color: var(--secondary);
     color: white;
 }
 
+/* Estilos de linea en el titulo de contactanos */
 .linea {
     margin-top: 10px;
     position: relative;
@@ -45,7 +50,7 @@ body {
 }
 
 h2.linea:before {
-    border-top: 2px solid #EFB817;
+    border-top: 2px solid var(--secondary2);
     content: "";
     margin: 0 auto;
     position: absolute;
@@ -60,8 +65,9 @@ h2.linea span {
 }
 
 #img {
-    border-radius: 50px;
-    display: flex;
+    border-radius: 32px;
+    min-width: 90%;
+    margin-bottom: 32px;
 }
 
 @media (max-width: 400px) {
