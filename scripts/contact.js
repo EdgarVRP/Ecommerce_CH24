@@ -35,10 +35,10 @@ buttonSend.addEventListener("click", send);
 function send(e) {
   //Si todo los formularios estan correctos enviar email
   if (
-    checkName(e) ||
-    checkLast(e) ||
-    checkEmail(e) ||
-    checkPhone(e) ||
+    checkName(e) &&
+    checkLast(e) &&
+    checkEmail(e) &&
+    checkPhone(e) &&
     checkComments(e)
   ){
     form.submit()
