@@ -12,12 +12,12 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
 
   <div class="collapse navbar-collapse" id="pages">
     <ul class="navbar-nav ms-auto">
-      <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" href="contact.html">Contactanos</a></li>
-      <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
-      <li class="nav-item"><a class="nav-link" href="signin.html">Blog</a></li>
-      <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+      <li class="nav-item"><a class="nav-link" href="./">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="./contact.html">Contactanos</a></li>
+      <li class="nav-item"><a class="nav-link" href="./about.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
+      <li class="nav-item"><a class="nav-link" href="./signin.html">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="./login.html">Ingresar</a></li>
     </ul>
   </div>
   <a class="nav-icon" href="/"><i class="bi bi-cart2"></i></a>
@@ -33,9 +33,9 @@ footer.innerHTML = `<footer class="footer">
 
   <div class="footer-logos">
     <!-- Los iconos se puede agregar con etiquetas embed, img, svg pero como fuente es mas flexible -->
-    <a href="/"><i class="icon bi bi-whatsapp"></i></a>
-    <a href="/"><i class="icon bi bi-instagram"></i></a>
-    <a href="/"><i class="icon bi bi-facebook"></i></a>
+    <a href="./"><i class="icon bi bi-whatsapp"></i></a>
+    <a href="./"><i class="icon bi bi-instagram"></i></a>
+    <a href="./"><i class="icon bi bi-facebook"></i></a>
   </div>
 </div>
 </footer>`;
