@@ -5,7 +5,7 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="./index.html">
+  <a class="navbar-brand" href="./">
     <img src="assets/img/logo_white.png" alt="Logo" width="36">
     <p>Cafe Alfonso</p>
   </a>
@@ -20,7 +20,7 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
       <li class="nav-item"><a class="nav-link" href="./login.html">Ingresar</a></li>
     </ul>
   </div>
-  <a class="nav-icon" href="/"><i class="bi bi-cart2"></i></a>
+  <a class="nav-icon" href="./"><i class="bi bi-cart2"></i></a>
 </div>
 </nav>`;
 
