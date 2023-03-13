@@ -41,7 +41,7 @@ function send(e) {
     checkPhone(e) ||
     checkComments(e)
   ){
-    // form.submit()
+    form.submit()
   }
 }
 
