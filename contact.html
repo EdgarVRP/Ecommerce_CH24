@@ -27,7 +27,7 @@
 
 <body>
 
-    <div id="navabar"></div>
+    <div id="navbar"></div>
 
     <!-- Contenedor contact -->
     <div id="contact" class="container">
@@ -40,28 +40,22 @@
 
             <!-- Derecha Imagen y texto derecha -->
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="form-row mt-3">
-                    <div class="mb-3">
+                <!-- Texto -->
+                <p id="fonts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur at totam
+                    earum alias aperiam iure </p>
 
-                        <!-- Texto -->
-                        <p id="fonts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur at totam
-                            earum alias aperiam iure </p>
-
-                        <!-- Imagen -->
-                        <img class="img-fluid" src="./assets/img/coffee-gbf8c19527_1280.jpg" alt="" id="img">
-                    </div>
-                </div>
+                <!-- Imagen -->
+                <img class="img-fluid" src="/assets/img/contact_coffee_img.jpg" alt="" id="img">
             </div>
 
             <!-- Izquierda Formularios y boton -->
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="container">
-
+            <div class="col-lg-6 col-md-6 col-sm-12 align-right">
+                <form id="form-contact" action="https://formspree.io/f/mrgvllpe" method="POST">
                     <!-- Formulario nombre -->
                     <div class="form-row mt-1">
                         <div class="mb-2">
                             <label for="input-name">Nombre</label>
-                            <input type="text" class="input form-control" id="input-name">
+                            <input name="name" type="text" class="input form-control" id="input-name">
                             <p class="warning" id="warning-name">Falta algo</p>
                         </div>
                     </div>
@@ -70,7 +64,7 @@
                     <div class="form-row">
                         <div class="mb-2">
                             <label for="last">Apellido</label>
-                            <input type="text" class="input form-control" id="input-last">
+                            <input name="last" type="text" class="input form-control" id="input-last">
                             <p class="warning" id="warning-last">Falta algo</p>
                         </div>
                     </div>
@@ -79,7 +73,7 @@
                     <div class="form-row">
                         <div class="mb-2">
                             <label for="input-email">Email</label>
-                            <input type="email" class="input form-control" id="input-email">
+                            <input name="email" type="email" class="input form-control" id="input-email">
                             <p class="warning" id="warning-email">Falta algo</p>
                         </div>
                     </div>
@@ -88,7 +82,7 @@
                     <div class="form-row">
                         <div class="mb-2">
                             <label for="input-phone">Telefono</label>
-                            <input type="tel" maxlength="10" class="input form-control" id="input-phone">
+                            <input name="phone" type="tel" maxlength="10" class="input form-control" id="input-phone">
                             <p class="warning" id="warning-phone">Falta algo</p>
                         </div>
                     </div>
@@ -97,13 +91,15 @@
                     <div class="form-row">
                         <div class="mb-2">
                             <label for="input-comments">Comentarios</label>
-                            <textarea id="input-comments" class="input form-control" style="height: 100px"></textarea>
+                            <textarea name="comments" id="input-comments" class="input form-control"
+                                style="height: 100px"></textarea>
                             <p class="warning" id="warning-comments">Falta algo</p>
                         </div>
                     </div>
 
-                    <!-- Boton de enviar info -->
+                    <!-- Boton de enviar info del form por default seria type="submit"-->
                     <button type="button" class="btn btn-primary" id="button">Enviar</button>
+                </form>
             </div>
         </div>
     </div>
