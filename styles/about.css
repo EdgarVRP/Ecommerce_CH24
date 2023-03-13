@@ -1,8 +1,8 @@
-#aboutUs-body{
+body{
     background-color: #2E151A; 
 }
 
-
+/*Estilo del titulo*/
 .row-title{
     color:aliceblue;
     text-align: center;
