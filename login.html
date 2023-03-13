@@ -30,15 +30,15 @@
 
     <!-- Formulario Log In -->
   
-    <section class="left-form">
-    </section>
+<!--     <section class="left-form">
+    </section> -->
 
-    <section class="right-form">
+    <section class="right-form col-md-8 col-xl-6 col-sm-12">
         <form action="">
             <h2>Login</h2>
             <br><br>
             <label for="email">e-mail</label>
-            <input type="email" name="email" id="email" pattern=".+@+com" size="20" required>
+            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" size="20" required>
             
             <label for="password">contraseña</label>
             <input type="password" name="password" id="password">
@@ -49,10 +49,13 @@
             </div>
 
             <input type="submit" value="Ingresar" class="boton">
+            <br>
+            <a href="./signin.html">Crear cuenta</a>
+            <br>
+            <a href="">Recuperar Contraseña</a>
 
         </form>
     </section>
-
 
 
     <!-- Footer -->
