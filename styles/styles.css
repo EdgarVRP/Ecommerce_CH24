@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Cambiar o ocultar color del borde por defecto */
 .border {
 	border-color: red !important;
@@ -164,9 +163,4 @@ article {
 	.navbar-brand p {
 		display: none;
 	}
-=======
-p {
-    font-size: 200px;
-    color: #000000;
->>>>>>> main
 }
