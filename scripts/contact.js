@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // alert('Contact')
 
 //Get inputs, warnings y boton
@@ -130,3 +131,6 @@ function checkComments(e) {
   }
   return false;
 }
+=======
+// alert('Contact')
+>>>>>>> main
