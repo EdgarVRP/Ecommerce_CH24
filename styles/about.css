@@ -24,11 +24,6 @@ img {
     padding: 10px;
 }
 
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
 .card {
     /* Centrar cartas adentro de su div*/
     margin: 10px auto;
@@ -38,24 +33,21 @@ img {
     /* margin-top: 20px; */
 }
 
-.card-title {
-    /* Centrar texto */
-    text-align: center;
-}
-
-
+/* div class links */
 .links {
     position: absolute;
     width: 200px;
     left: 50%;
     margin-left: -100px;
     top: 100%;
-    /* Los que mide */
+    /* Margen de lo que mide verticalmente*/
     margin-top: -50px;
     /* border-radius: 80px; */
 }
 
+/* Span que es hijo de class links (texto links)*/
 .links span {
+    /* tamano span */
     width: 200px;
     /* posicion texto en vertical */
     line-height: 40px;
@@ -66,7 +58,9 @@ img {
     /* Centra texto */
     left: 50%;
     margin-left: -100px;
+    /* mostrar texto */
     opacity: 1;
+    /* Animacion hover */
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
     /* Color texto */
@@ -75,16 +69,55 @@ img {
 
 }
 
+/* Normalmente estan ocultos los iconos haciendo su tamano 0 */
 .links nav {
     font-size: 0;
 }
 
+/* Borde rendondeado primer link github rojo*/
+.links a:nth-child(1) {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    margin-left: 0;
+}
+
+/* Borde rendondeado tercer link link verde*/
+.links a:nth-child(3) {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-left: 0;
+}
+
+/* Hover primer link cambia a rojo */
+.links a:nth-child(1):hover {
+    background-color: #ea4335;
+}
+
+/* Hover primer link cambia a negro */
+.links a:nth-child(2):hover {
+    background-color: #050608;
+}
+
+/* Hover primer link cambia a verde */
+.links a:nth-child(3):hover {
+    background-color: #39b300;
+}
+
+
+/* Opacity entre 0 y 1, vuelve invisible el texto links */
+.links:hover span,
+.links.hover span {
+    opacity: 0;
+}
+
+/* a normal */
 .links a {
     line-height: 40px;
     width: 40px;
     text-align: center;
     display: inline-block;
-    background: linear-gradient(180deg, #fcbf6c, #fcbf6c);
+    background: #fcbf6c;
+    /* background: linear-gradient(180deg, #fcbf6c, #fcbf6c); */
     color: #ffffff;
     opacity: 1;
     transition: all 0.2s ease-in-out;
@@ -92,36 +125,7 @@ img {
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.links a:nth-child(1) {
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-    margin-left: 0;
-}
-
-.links a:nth-child(3) {
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    margin-left: 0;
-}
-
-.links a:nth-child(1):hover {
-    background-color: #ea4335;
-}
-
-.links a:nth-child(2):hover {
-    background-color: #050608;
-}
-
-.links a:nth-child(3):hover {
-    background-color: #39b300;
-}
-
-
-.links:hover span,
-.links.hover span {
-    opacity: 0;
-}
-
+/* a hover */
 .links:hover a {
     margin: 0 10px;
     color: #413838;
@@ -132,6 +136,7 @@ img {
     backdrop-filter: blur(2px);
 }
 
+/* Cambia los iconos de a color hover blaco para hacer constraste */
 .links:hover a:hover {
-    color: #fff;
+    color: #ffffff;
 }

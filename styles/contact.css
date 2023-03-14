@@ -5,7 +5,15 @@ body {
 /* En esta pagina todo sera de esta fuente y color */
 #contact * {
     font-family: 'Ubuntu', sans-serif;
-    color: #FCBF6B;
+    color: var(--secondary2);
+}
+
+/* Autocompletado color background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--secondary2) inset !important;
 }
 
 /* Estilos de form-contact*/
