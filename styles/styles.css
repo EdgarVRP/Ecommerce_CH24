@@ -4,10 +4,10 @@
 }
 
 :root {
-	--primary:#241014;
-    --primary2:#2E151A;
+	--primary:#2a1e1e;
+    --primary2:#412c30;
     --secondary:#EFB817;
-    --secondary2:#FCBF6B;
+    --secondary2:#fff0e5;
     --white:#FFFFFF;
     --black:#000000;
 }
@@ -57,7 +57,7 @@ article {
 }
 
 .navbar-brand{
-	color: var(--white);
+	color: var(--secondary2);
 }
 
 .navbar-brand:hover {
