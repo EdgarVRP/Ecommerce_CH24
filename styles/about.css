@@ -1,15 +1,137 @@
-body{
-    background-color: #2E151A; 
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
+body {
+    background-color: #2E151A;
+    font-family: "Roboto";
+    text-align: center;
+    font-size: 12px;
+}
+
+img {
+    border-radius: 10px;
 }
 
 /*Estilo del titulo*/
-.row-title{
-    color:aliceblue;
+.row-title {
+    color: white;
     text-align: center;
-    background-color: #efb817;
-    border-radius: 5px;
-/*  margin-left: 150px;
+    background-color: #fcbf6c;
+    border-radius: 20px;
+    /*  margin-left: 150px;
     margin-right: 150px; */
     margin-top: 20px;
+    font-size: 12px;
+    padding: 10px;
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    /* Centrar cartas adentro de su div*/
+    margin: 10px auto;
+    padding: 10px;
+    width: 18rem;
+    height: 32rem;
+    /* margin-top: 20px; */
+}
+
+.card-title {
+    /* Centrar texto */
+    text-align: center;
+}
+
+
+.links {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    top: 100%;
+    /* Los que mide */
+    margin-top: -50px;
+    /* border-radius: 80px; */
+}
+
+.links span {
+    width: 200px;
+    /* posicion texto en vertical */
+    line-height: 40px;
+    display: inline-block;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    position: absolute;
+    /* Centra texto */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    /* Color texto */
+    color: #2e1519;
+    font-size: 18px;
+
+}
+
+.links nav {
+    font-size: 0;
+}
+
+.links a {
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+    background: linear-gradient(180deg, #fcbf6c, #fcbf6c);
+    color: #ffffff;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    margin: 0 0px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.links a:nth-child(1) {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    margin-left: 0;
+}
+
+.links a:nth-child(3) {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-left: 0;
+}
+
+.links a:nth-child(1):hover {
+    background-color: #ea4335;
+}
+
+.links a:nth-child(2):hover {
+    background-color: #050608;
+}
+
+.links a:nth-child(3):hover {
+    background-color: #39b300;
+}
+
+
+.links:hover span,
+.links.hover span {
+    opacity: 0;
+}
+
+.links:hover a {
+    margin: 0 10px;
+    color: #413838;
+    font-size: 28px;
+    border-radius: 50%;
+    background: #ffffff15;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.links:hover a:hover {
+    color: #fff;
+}
