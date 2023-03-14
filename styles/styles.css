@@ -4,12 +4,10 @@
 }
 
 :root {
-	/* --icons: #ffffff; */
-	/* --letter: #d81818; */
 	--primary:#241014;
     --primary2:#2E151A;
     --secondary:#EFB817;
-    --secondary2:#FCBF6B; /*letters*/
+    --secondary2:#FCBF6B;
     --white:#FFFFFF;
     --black:#000000;
 }
