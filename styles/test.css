@@ -1,0 +1,111 @@
+/* Convertido de un scss */
+
+/* contendor general de todo el fab */
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+
+/* se expanda a toda la pantalla vertical para mantener el float button abierto */
+.fab-container:hover {
+    height: 100%;
+}
+
+/* mueve los iconos en zindex -1 para mostrarlos */
+.fab-container:hover .sub-button:nth-child(2) {
+    transform: translateY(-80px);
+}
+.fab-container:hover .sub-button:nth-child(3) {
+    transform: translateY(-140px);
+}
+.fab-container:hover .sub-button:nth-child(4) {
+    transform: translateY(-200px);
+}
+.fab-container:hover .sub-button:nth-child(5) {
+    transform: translateY(-260px);
+}
+.fab-container:hover .sub-button:nth-child(6) {
+    transform: translateY(-320px);
+}
+
+/* estilos boton principal */
+.fab-container .fab {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    background-color: #4ba2ff;
+    border-radius: 50%;
+    /* siempre por delante */
+    z-index: 2;
+}
+
+/* que sera ::before? */
+/* para que sirve inherit? me imagino que hereda el color de fondo?*/
+/* diferencias entre absolute y relative */
+/* esto es como un quadrante para hacer el diseño  */
+.fab-container .fab::before {
+    content: " ";
+    /* 3 linea magicas que mueven el cuadrate a donde sea */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    background-color: inherit;
+    /* que estilo eee */
+    border-radius: 0 0 10px 0;
+    z-index: -1;
+}
+
+/* estilos de botons principal */
+.fab-container .fab .fab-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* icono princial estilos */
+.fab-container .fab .fab-content .material-icons {
+    color: rgb(255, 255, 255);
+    font-size: 48px;
+}
+
+/* estilos de los botones ocultos */
+.fab-container .sub-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ni idea porque estan chuecos pero esta 2 lineas los arregla */
+    bottom: 10px;
+    right: 10px; /*incesario porque default es auto al parecer*/
+    height: 50px;
+    width: 50px;
+    background-color: #4ba2ff;
+    border-radius: 50%;
+    /* magica linea para las animaciones */
+    transition: all 0.3s ease;
+}
+
+/* cuando se encuentra sobre los ocultos el cursor cambia a pointer */
+.fab-container .sub-button:hover {
+    cursor: pointer;
+}
+
+/* iconos ocultos que se expanden blancos */
+.fab-container .sub-button .material-icons {
+    /* color con rgb */
+    color: rgb(255, 255, 255);
+    /* curiosamente los iconos aparecen un poco arriba con esto se arregla */
+    padding-top: 6px;
+}

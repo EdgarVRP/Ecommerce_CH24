@@ -1,3 +1,23 @@
+// cambiar un variable de color global
+
+// document.documentElement.style.setProperty('--primary', '#ff0000');
+
+document.head.innerHTML += `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`;
+
+document.body.innerHTML += `<div class="fab-container">
+<div class="fab shadow">
+  <div class="fab-content">
+    <span class="material-icons">settings</span>
+  </div>
+</div>
+<div id="dark-mode" class="sub-button shadow">
+  <span class="material-icons">dark_mode</span>
+</div>
+<div id="light-mode" class="sub-button shadow">
+  <span class="material-icons">sunny</span>
+</div>
+</div>`;
+
 const navbar = document.getElementById("navbar");
 navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
 <div class="container-fluid">
@@ -6,7 +26,7 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
   </button>
 
   <a class="navbar-brand" href="./">
-    <img src="assets/img/logo_white.png" alt="Logo" width="36">
+    <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
     <p>Cafe Alfonso</p>
   </a>
 
@@ -39,3 +59,26 @@ footer.innerHTML = `<footer class="footer">
   </div>
 </div>
 </footer>`;
+
+var ligthMode = document.getElementById("light-mode");
+ligthMode.onclick = function () {
+  document.documentElement.style.setProperty("--primary", "#ececec"); //navbar
+  document.documentElement.style.setProperty("--primary2", "#f6f6f6"); //background
+  document.documentElement.style.setProperty("--secondary", "#ff0000");
+  document.documentElement.style.setProperty("--secondary2", "#121215"); //letra
+  document.documentElement.style.setProperty("--white", "#cccccc");
+  document.documentElement.style.setProperty("--black", "#cccccc");
+  document.getElementById("logo-navbar").src = "assets/img/logo_black.png";
+};
+
+var darkMode = document.getElementById("dark-mode");
+darkMode.onclick = function () {
+  document.documentElement.style.setProperty("--primary", "#2a1e1e");
+  document.documentElement.style.setProperty("--primary2", "#412c30");
+  document.documentElement.style.setProperty("--secondary", "#EFB817");
+  document.documentElement.style.setProperty("--secondary2", "#fff0e5");
+  document.documentElement.style.setProperty("--white", "#FFFFFF");
+  document.documentElement.style.setProperty("--black", "#000000");
+  document.getElementById("logo-navbar").src = "assets/img/logo_white.png";
+
+};

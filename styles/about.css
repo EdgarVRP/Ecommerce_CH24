@@ -13,15 +13,15 @@ img {
 
 /*Estilo del titulo*/
 .row-title {
-    color: white;
     text-align: center;
-    background-color: #fcbf6c;
+    background-color: var(--primary);;
     border-radius: 20px;
     /*  margin-left: 150px;
     margin-right: 150px; */
     margin-top: 20px;
     font-size: 12px;
     padding: 10px;
+    color: var(--secondary2);
 }
 
 .card {
