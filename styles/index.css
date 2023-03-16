@@ -1,8 +1,8 @@
-/* 
-p {
-    background-color: yellow;
-} 
-*/
+/* Cambiar color y tamano de texto a toda clase div adentro de body se puede quitar body la verdad*/
+body .div {
+    color: var(--white);
+    font-size: 32px;
+}
 
 img {
     max-width: 30;
