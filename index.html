@@ -25,8 +25,12 @@
 <body>
     <div id="navbar"></div>
 
-    <div id="welcome" class="div border">Bievenidos</div>
+    <!-- Div de bienvenida -->
+    <div id="welcome" class="div border">
+        <h1>Bienvenidos a Cafe Alfonso</h1>
+    </div>
 
+    <!-- Div del video -->
     <div id="video-container" class="div border">
         <video id="video" autoplay muted loop class="">
             <source src="assets/video/index.mp4" type="video/mp4">
@@ -36,11 +40,40 @@
         </div>
     </div>
 
+    <!-- Div carrusel -->
+    <div id="carousel" class="div border">
+        <!-- bootstrap -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Mision -->
+              <div class="carousel-item active">
+                <h1>Mision</h1>
+                <p>Acompañar a nuestros clientes cuando sea y donde sea con un delicioso café que les brinde felicidad y satisfacción.</p>
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <!-- Vision -->
+              <div class="carousel-item">
+                <h1>Vision</h1>
+                <p>Impulsar para 2024 la comercialización del café producido en México a nivel Nacional e Internacional, fomentando la cultura cafetalera mexicana.</p>
+                <img src="..." class="d-block w-100" alt="...">
+                <!-- Valores -->
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div><!-- fin carrusel -->
 
-    <div id="carousel" class="div border">Carrusel</div>
-
-    <div id="comments" class="div border">Comentarios</div>
-
+    <!-- Curiosidades del cafe -->
     <div id="info" class="div border">Info</div>
 
     <p>Test</p>
