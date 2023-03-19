@@ -1,0 +1,126 @@
+/* 
+p {
+    background-color: yellow;
+} 
+
+
+/* /* variable de colores */
+/*   
+	--primary:#2a1e1e;      cafe
+  --primary2:#412c30;     cafe
+  --secondary:#EFB817;    amarillo
+  --secondary2:#fff0e5;   crema
+  --white:#FFFFFF;        blanco
+  --black:#000000;        negro
+  */
+
+/* 
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+} */
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.central-div {
+    display: flex;
+    height: 100hv;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+	max-width: 800px;
+	width: 100%;
+	text-align: center;
+    background-color: var(--secondary2);
+/*     padding: 25px 30px;
+ */ border-radius: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.central-div .title-r{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    padding: 15px;
+}
+
+
+.img-gra{
+    width: 20%;
+}
+
+
+.central-div form .user{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+}
+
+
+form .user .inp-info{
+    margin-bottom: 25px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .inp-info span.name-inp{
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--primary);
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.name-inp{
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 20px;
+}
+
+
+.user .inp-info input{
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--primary);
+    border-radius: 10px;
+    font-size: 16px;
+    background-color:rgba(245, 240, 234, 0.98);
+    text-align: center;
+}
+
+
+/* .user .inp-info input:{
+
+} */
+
+
+@media (max-width: 768px) {
+	.central-div {
+		max-width: 75%;
+	}
+}
+
+@media (max-width: 480px) {
+	.central-div {
+		max-width: 100%;
+	}
+}
+
+
+
