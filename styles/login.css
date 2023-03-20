@@ -111,7 +111,7 @@
 } */
 .buttoni{
   width:60%;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
   margin: 10px 0;
   font-family: 'Ubuntu', sans-serif;
@@ -143,13 +143,15 @@
   text-align: center;
   font-size: 20px;
   padding: 10px;
+  border-radius: 10px;
+
 }
 
 .right-form a:hover{
   color:var(--secondary2);
-  border-radius: 7px;
   border-color: var(--secondary2);
   background-color:var(--primary);
+  transition: 0.7s;
 }
 
 .right-form a:active{

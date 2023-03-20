@@ -26,57 +26,57 @@
     <div id="navbar"></div>
 
     <div class="central-div">
+        <img src="./assets/img/cafe-back.png" alt="" class="img-gra">
         <div class="title-r">Registro</div>
-        <img src="./assets/img/granos3.png" alt="" class="img-gra">
         <div class="cont">
             <form action="#">
             <div class="user">
                 <div class="inp-info">
-                    <span class="name-inp">Nombre</span>
-                    <input type="text" maxlength="15" required>
+                    <span class="name-inp"><b>Nombre</b></span>
+                    <input type="text" pattern="[A-Za-z]{4,12}" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Apellidos</span>
-                    <input type="text" required>
+                    <span class="name-inp"><b>Apellidos</b></span>
+                    <input type="text" pattern="[A-Za-z]{4,22}" required>
                 </div>
-                <div class="inp-info">
-                    <span class="name-inp">E-mail</span>
+                     <div class="inp-info">
+                    <span class="name-inp"><b>E-mail</b></span>
                     <input type="email" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Contraseña</span>
+                    <span class="name-inp"><b>Contraseña</b></span>
                     <input type="password" minlength="6" maxlength="16" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Telefono</span>
-                    <input type="tel" maxlength="10" required>
+                    <span class="name-inp"><b>Telefono</b></span>
+                    <input type="tel" maxlength="10"  pattern="[0-9]{10}" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Fecha de Nacimiento</span>
-                    <input type="date" required>
+                    <span class="name-inp"><b>Fecha de Nacimiento</b></span>
+                    <input type="date" min="1923-01-01" max="2010-12-31" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Direccion</span>
-                    <input type="text" required>
+                    <span class="name-inp"><b>Direccion</b></span>
+                    <input type="text" maxlength="30" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Colonia</span>
-                    <input type="text" required>
+                    <span class="name-inp"><b>Colonia</b></span>
+                    <input type="text" pattern="[A-Za-z]{3,15}" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Municipio</span>
-                    <input type="text" required>
+                    <span class="name-inp"><b>Municipio</b></span>
+                    <input type="text" pattern="[A-Za-z]{3,15}" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Estado</span>
-                    <input type="text" required>
+                    <span class="name-inp"><b>Estado</b></span>
+                    <input type="text" pattern="[A-Za-z]{3,15}" required>
                 </div>
                 <div class="inp-info">
-                    <span class="name-inp">Codigo Postal</span>
-                    <input type="number" maxlength="5" required>
-                </div>
+                    <span class="name-inp"><b>Codigo Postal</b></span>
+                    <input type="number" pattern="[0-9]{5}"  min="1" max="99999" maxlength="5" required>
+                </div> 
                 <div class="inp-info">
-                    <input type="submit" value="Registar" >
+                    <input type="submit" value="Registrar" class="btn">
                 </div>
             </div>
             </form>
