@@ -1,0 +1,99 @@
+.product {
+    margin: 16px;
+    background-color: var(--secondary2);
+    border-radius: 16px;
+}
+
+#amount{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: var(--primary); /* Green */
+    border: 2px solid var(--secondary);
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    font-size: 18px;
+    width: 36px;
+    border-radius: 12px;
+}
+
+#price p {
+    font-size: 24px;
+    margin: 8px;
+    text-align: center;
+}
+
+#amount p {
+    font-size: 24px;
+    margin: 8px;
+    text-align: center;
+}
+
+#price{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#details{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#info{
+    display: flex;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    height: 2px;
+    color: var(--secondary2);
+    background-color: var(--secondary2);
+}
+
+#total {
+    justify-self: end;
+    text-align: end;
+    margin: 32px;
+    font-size: 32px;
+    margin-right: 150px;
+}
+
+.img-product {
+    margin: 8px;
+    border-radius: 16px;
+    width: 30%;
+}
+
+/* Estilo de alertas de formulario de informacion incorrecta */
+.warning {
+    text-align: center;
+    color: #ca240e !important;
+    visibility: hidden;
+}
+
+/* Revisar el uso de important */
+.input {
+    border-radius: 10px;
+    background-color: var(--secondary2) !important;
+    color: var(--black) !important;
+}
+
+#bottom * {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--secondary2);
+}
