@@ -40,7 +40,7 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
       <li class="nav-item"><a class="nav-link" href="./login.html">Ingresar</a></li>
     </ul>
   </div>
-  <a class="nav-icon" href="./"><i class="bi bi-cart2"></i></a>
+  <a class="nav-icon" href="./cart.html"><i class="bi bi-cart2"></i></a>
 </div>
 </nav>`;
 
