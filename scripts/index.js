@@ -3,7 +3,7 @@ let values = "Cafe Alfonso";
 let remove = true;
 
 
-const data = [" Nataly", " Alex", " Carlos", " Santiago", " Baudelio", " Alfonso"]
+const data = [" Nataly", " Alex", " Carlos", " Santiago", " Baudelio", " Edgar", " Alfonso"]
 let iname = 0;
 let ichar = 0;
 
