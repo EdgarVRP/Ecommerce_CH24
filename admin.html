@@ -72,6 +72,7 @@
                   <th scope="col">Preparación</th>
                   <th scope="col">Variedad</th>
                   <th scope="col">Nota</th>
+                  <th scope="col">Puntuación</th>
                   <th scope="col">Precio tostado</th>
                   <th scope="col">Editar</th>
                   <th scope="col">Eliminar</th>
@@ -151,13 +152,23 @@
                     placeholder="Humedad del producto"
                     required
                   />
+                  <label for="procesoProducto"
+                    >Proceso del producto</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="procesoProducto"
+                    placeholder="Proceso del producto"
+                    required
+                  />
                   <label for="preparacionProducto"
                     >Preparación del producto</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="preparaciónProducto"
+                    id="preparacionProducto"
                     placeholder="Preparación del producto"
                     required
                   />
@@ -180,7 +191,7 @@
                     >Puntuación del producto</label
                   >
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="puntuacionProducto"
                     placeholder="Precio del producto"
@@ -190,7 +201,7 @@
                     >Precio del producto tostado</label
                   >
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="precioProducto"
                     placeholder="Precio del producto"
@@ -230,7 +241,7 @@
       <!-- Modal EditarProducto-->
       <div class="modal" tabindex="-1" role="dialog" id="modalEditarProducto">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+          <div class="modal-content navbar">
             <div class="modal-header">
               <h5 class="modal-title">Editando un producto</h5>
               <button
@@ -243,6 +254,7 @@
             <div class="modal-body">
               <form id="formularioNuevoProducto" method="get">
                 <div class="form-group">
+                  <label id="idProducto" hidden></label>
                   <label for="nombreProducto">Nombre del producto</label>
                   <input
                     type="text"
@@ -283,13 +295,21 @@
                     placeholder="Humedad del producto"
                     required
                   />
+                  <label for="procesoProducto">Proceso del producto</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editprocesoProducto"
+                    placeholder="Proceso del producto"
+                    required
+                  />
                   <label for="preparacionProducto"
                     >Preparación del producto</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="editpreparaciónProducto"
+                    id="editpreparacionProducto"
                     placeholder="Preparación del producto"
                     required
                   />
@@ -312,7 +332,7 @@
                     >Puntuación del producto</label
                   >
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="editpuntuacionProducto"
                     placeholder="Precio del producto"
@@ -322,7 +342,7 @@
                     >Precio del producto tostado</label
                   >
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="editprecioProducto"
                     placeholder="Precio del producto"
@@ -349,9 +369,9 @@
                     type="submit"
                     class="btn btn-primary"
                     data-dismiss="modal"
-                    id="btnCrearProducto"
+                    id="btnModificarProducto"
                   >
-                    Crear Producto
+                    Modificar Producto
                   </button>
                 </div>
               </form>
@@ -368,7 +388,7 @@
     <script src="./scripts/admin.js"></script>
 
     <!-- Script para todos los archivos -->
-    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/scripts2.js"></script>
 
     <!-- Script Bootstrap 5.3 -->
     <script

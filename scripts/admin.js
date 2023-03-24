@@ -24,6 +24,9 @@ localStorage.setItem("id", 1);
 let id = localStorage.getItem("id");
 //timmer de .5 segundos para que se ejecute la peticion get
 let productosLocalStorage = [];
+
+//MOSTRAR PRODUCTOS
+
 setTimeout(function () {
   //Vaciando datos de JSON a local storage
   //console.log(productos);
@@ -52,81 +55,163 @@ setTimeout(function () {
     fila.insertCell(7).innerHTML = producto.preparacion;
     fila.insertCell(8).innerHTML = producto.variedad;
     fila.insertCell(9).innerHTML = producto.nota;
-    fila.insertCell(10).innerHTML = producto.precioTostado;
+    fila.insertCell(10).innerHTML = producto.puntuacion;
+    fila.insertCell(11).innerHTML = producto.precioTostado;
     //botones
     let btnEditar = document.createElement("button");
-    btnEditar.setAttribute("class", "btnEditarProducto");
+    btnEditar.setAttribute("class", "btn btn-warning btnEditarProducto");
     btnEditar.setAttribute("type", "button");
-    btnEditar.setAttribute("data-toggle", "modal");
-    btnEditar.setAttribute("data-target", "#modalEditarProducto");
+    btnEditar.setAttribute("data-bs-toggle", "modal");
+    btnEditar.setAttribute("data-bs-target", "#modalEditarProducto");
     btnEditar.innerHTML = "Editar";
-    fila.insertCell(11).appendChild(btnEditar);
+    fila.insertCell(12).appendChild(btnEditar);
     let btnEliminar = document.createElement("button");
-    btnEliminar.setAttribute("class", "btnEliminarProducto");
+    btnEliminar.setAttribute("class", "btn btn-danger btnEliminarProducto");
     btnEliminar.setAttribute("type", "button");
     btnEliminar.innerHTML = "Eliminar";
-    fila.insertCell(12).appendChild(btnEliminar);
+    fila.insertCell(13).appendChild(btnEliminar);
   });
 }, 500);
 
-/*
-//evento para editar producto
+//add even listener
+const on = (element, event, selector, handler) => {
+  element.addEventListener(event, (e) => {
+    if (e.target.closest(selector)) {
+      handler(e);
+    }
+  });
+};
+
+//Modal editar producto
 on(document, "click", ".btnEditarProducto", (e) => {
   console.log("Se presiono el boton editar");
-  //obteniendo el id de la fila
-  let idProducto = e.target.parentNode.parentNode.id;
-  //console.log(idProducto);
-  //Vaciando datos de la tabla en el modal
-  //elemento abuelo de la celda
-  let nombreProducto = e.target.parentNode.parentNode.childNodes[0].innerHTML;
-  let descripcionProducto = e.target.parentNode.parentNode.childNodes[2].innerHTML;
-  let precioProducto = e.target.parentNode.parentNode.childNodes[3].innerHTML;
-  let CategoriaProducto = e.target.parentNode.parentNode.childNodes[4].innerHTML;
-  let lugarVentaProducto = e.target.parentNode.parentNode.childNodes[5].innerHTML;
-  document.getElementById("editarNombreProducto").value = nombreProducto;
-  document.getElementById("editarDescripcionProducto").value = descripcionProducto;
-  document.getElementById("editarPrecioProducto").value = precioProducto;
-  document.getElementById("editarCategoriaProducto").value = CategoriaProducto;
-  document.getElementById("editarLugarVentaProducto").value = lugarVentaProducto;
-
+  //obteniendo datos de la tabla
+  document.getElementById("idProducto").value =
+    e.target.parentNode.parentNode.id;
+  console.log(e.target.parentNode.parentNode.id);
+  document.getElementById("editnombreProducto").value =
+    e.target.parentNode.parentNode.childNodes[0].innerHTML;
+  document.getElementById("editregionProducto").value =
+    e.target.parentNode.parentNode.childNodes[2].innerHTML;
+  document.getElementById("editcosechaProducto").value =
+    e.target.parentNode.parentNode.childNodes[3].innerHTML;
+  document.getElementById("editalturaProducto").value =
+    e.target.parentNode.parentNode.childNodes[4].innerHTML;
+  document.getElementById("edithumedadProducto").value =
+    e.target.parentNode.parentNode.childNodes[5].innerHTML;
+  document.getElementById("editprocesoProducto").value =
+    e.target.parentNode.parentNode.childNodes[6].innerHTML;
+  document.getElementById("editpreparacionProducto").value =
+    e.target.parentNode.parentNode.childNodes[7].innerHTML;
+  document.getElementById("editvariedadProducto").value =
+    e.target.parentNode.parentNode.childNodes[8].innerHTML;
+  document.getElementById("editnotaProducto").value =
+    e.target.parentNode.parentNode.childNodes[9].innerHTML;
+  document.getElementById("editpuntuacionProducto").value =
+    e.target.parentNode.parentNode.childNodes[10].innerHTML;
+  document.getElementById("editprecioProducto").value =
+    e.target.parentNode.parentNode.childNodes[11].innerHTML;
 });
 
-//evento para añadir producto
-const btnCrearProducto = document.getElementById("btnCrearProducto");
-on(document, "click", "#btnCrearProducto", (e) => {
-  //e.preventDefault();
-  console.log("Se presiono el boton crear producto");
-  //obteniendo el id de la fila
-  let nombreProducto = document.getElementById("nombreProducto").value;
-  let descripcionProducto = document.getElementById("descripcionProducto").value;
-  let precioProducto = document.getElementById("precioProducto").value;
-  let CategoriaProducto = document.getElementById("CategoriaProducto").value;
-  let lugarVentaProducto = document.getElementById("lugarVentaProducto").value;
-  let imagenProducto = document.getElementById("imagenProducto").value;
-  //Guardando imagen en el local storage
-  console.log(nombreProducto);
-  console.log(descripcionProducto);
-  console.log(precioProducto);
-  console.log(CategoriaProducto);
-  console.log(lugarVentaProducto);
-  console.log(imagenProducto);
-  //añadiendo producto al local storage
-  let producto = {
-    idProducto: 0,
-    nombre: nombreProducto,
-    descripcion: descripcionProducto,
-    precio: precioProducto,
-    categoria: CategoriaProducto,
-    lugarVenta: lugarVentaProducto,
-    rutaImagen: imagenProducto,
-    ventasCompletas: 0,
-    compradores: [],
-    venta: []
-  };
-  console.log(producto);
-  productosLocalStorage.push(producto);
-  console.log(productosLocalStorage);
+//EDITAR PRODUCTO
+
+//Boton Modal editar producto
+on(document, "click", "#btnModificarProducto", (e) => {
+  //Obteniendo id de la fila seleccionada
+  let idProducto = document.getElementById("idProducto").value;
+  console.log(idProducto);
+  //obteniendo datos del modal
+  let nombreProducto = document.getElementById("editnombreProducto").value;
+  let regionProducto = document.getElementById("editregionProducto").value;
+  let cosechaProducto = document.getElementById("editcosechaProducto").value;
+  let alturaProducto = document.getElementById("editalturaProducto").value;
+  let humedadProducto = document.getElementById("edithumedadProducto").value;
+  let procesoProducto = document.getElementById("editprocesoProducto").value;
+  let preparacionProducto = document.getElementById(
+    "editpreparacionProducto"
+  ).value;
+  let variedadProducto = document.getElementById("editvariedadProducto").value;
+  let notaProducto = document.getElementById("editnotaProducto").value;
+  let puntuacionProducto = document.getElementById(
+    "editpuntuacionProducto"
+  ).value;
+  let precioProducto = document.getElementById("editprecioProducto").value;
+  //obteniendo datos de local storage
+  let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
+  //buscando el producto a editar
+  let producto = productosLocalStorage.find(
+    (producto) => producto.id == idProducto
+  );
+  //editando producto
+  producto.nombre = nombreProducto;
+  producto.region = regionProducto;
+  producto.cosecha = cosechaProducto;
+  producto.altura = alturaProducto;
+  producto.humedad = humedadProducto;
+  producto.proceso = procesoProducto;
+  producto.preparacion = preparacionProducto;
+  producto.variedad = variedadProducto;
+  producto.nota = notaProducto;
+  producto.puntuacion = puntuacionProducto;
+  producto.precioTostado = precioProducto;
+  //actualizando local storage
   localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
 });
 
-*/
+//ELIMINAR PRODUCTO
+//Boton eliminar producto
+on(document, "click", ".btnEliminarProducto", (e) => {
+  //obteniendo id de la fila seleccionada
+  let idProducto = e.target.parentNode.parentNode.id;
+  //obteniendo datos de local storage
+  let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
+  //buscando el producto a eliminar
+  let producto = productosLocalStorage.find(
+    (producto) => producto.id == idProducto
+  );
+  //eliminando producto
+  productosLocalStorage.splice(productosLocalStorage.indexOf(producto), 1);
+  //actualizando local storage
+  localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+  //eliminando fila
+  e.target.parentNode.parentNode.remove();
+});
+
+//CREAR PRODUCTO
+//Boton crear producto
+on(document, "click", "#btnCrearProducto", (e) => {
+  //obteniendo datos del modal
+  let nombreProducto = document.getElementById("nombreProducto").value;
+  let regionProducto = document.getElementById("regionProducto").value;
+  let cosechaProducto = document.getElementById("cosechaProducto").value;
+  let alturaProducto = document.getElementById("alturaProducto").value;
+  let humedadProducto = document.getElementById("humedadProducto").value;
+  let procesoProducto = document.getElementById("procesoProducto").value;
+  let preparacionProducto = document.getElementById("preparacionProducto")
+    .value;
+  let variedadProducto = document.getElementById("variedadProducto").value;
+  let notaProducto = document.getElementById("notaProducto").value;
+  let puntuacionProducto = document.getElementById("puntuacionProducto").value;
+  let precioProducto = document.getElementById("precioProducto").value;
+  //obteniendo datos de local storage
+  let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
+  //creando producto
+  let producto = {
+    id: productosLocalStorage.length + 1,
+    nombre: nombreProducto,
+    region: regionProducto,
+    cosecha: cosechaProducto,
+    altura: alturaProducto,
+    humedad: humedadProducto,
+    proceso: procesoProducto,
+    preparacion: preparacionProducto,
+    variedad: variedadProducto,
+    nota: notaProducto,
+    puntuacion: puntuacionProducto,
+    precioTostado: precioProducto,
+  };
+  console.log(producto);
+  //agregando producto a local storage
+  productosLocalStorage.push(producto);
+  localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+});
