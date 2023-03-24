@@ -39,3 +39,13 @@ img {
 #video-container {
     position: relative;
 }
+
+/* estilos tarjetas carrusel */
+
+.card-title {
+    color: #EFB817;
+}
+
+.card-text {
+    color: black;
+}

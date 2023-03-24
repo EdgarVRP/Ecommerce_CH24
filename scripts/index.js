@@ -1,4 +1,3 @@
-
 let values = "Cafe Alfonso";
 let remove = true;
 
