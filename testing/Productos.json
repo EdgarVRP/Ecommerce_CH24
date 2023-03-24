@@ -1,38 +1,47 @@
 [
-    {
-       "region":"Corzo Zona Frailesca, Chiapas",
-       "Cosecha":"Enero - Marzo",
-       "Altura":"1300 - 1500 MSNM",
-       "Humedad":11,
-       "Proceso":"Lavado",
-       "Preparación":"Europea",
-       "Variedad":"Pacamara",
-       "Nota":"Manzana verde, chocolate, pasa, acidez citrica, dulzor miel ",
-       "Puntuación ":84,
-       "Precio tostado":300
-    },
-    {
-       "region":"Yajalon, Chiapas",
-       "Cosecha":"Marzo - Abril",
-       "Altura":"1600-1800 MSNM",
-       "Humedad":10,
-       "Proceso":"Lavado",
-       "Preparación":"Europea hasta 5 defectos segunda criba ",
-       "Variedad":"Bourbon",
-       "Nota":"Melon seco, durazno, chocolate, canela, acidez cítrica",
-       "Puntuación ":85.42,
-       "Precio tostado":340
-    },
-    {
-       "region":"Montecristo, Chiapas",
-       "Cosecha":"Marzo - Abril",
-       "Altura":"1550 - 1800 MSNM",
-       "Humedad":0,
-       "Proceso":"Lavado",
-       "Preparación":"Europea",
-       "Variedad":"Maragogye",
-       "Nota":"Chocolate negro, licor dulce, uva blanca, acidez citrica",
-       "Puntuación ":0,
-       "Precio tostado":175
-    }
- ]
+   {
+      "id":1,
+      "nombre":"Producto 1",
+      "region":"Corzo Zona Frailesca, Chiapas",
+      "cosecha":"Enero - Marzo",
+      "altura":"1300 - 1500 MSNM",
+      "humedad":11,
+      "proceso":"Lavado",
+      "preparacion":"Europea",
+      "variedad":"Pacamara",
+      "nota":"Manzana verde, chocolate, pasa, acidez citrica, dulzor miel ",
+      "puntuacion ":84,
+      "precioTostado":300,
+      "rutaImagen":"./public/img/products/producto1.png"
+   },
+   {
+      "id":2,
+      "nombre":"Producto 2",
+      "region":"Yajalon, Chiapas",
+      "cosecha":"Marzo - Abril",
+      "altura":"1600-1800 MSNM",
+      "humedad":10,
+      "proceso":"Lavado",
+      "preparacion":"Europea hasta 5 defectos segunda criba ",
+      "variedad":"Bourbon",
+      "nota":"Melon seco, durazno, chocolate, canela, acidez cítrica",
+      "puntuacion ":85.42,
+      "precioTostado":340,
+      "rutaImagen":"./public/img/products/producto2.png"
+   },
+   {
+      "id":3,
+      "nombre":"Producto 3",
+      "region":"Montecristo, Chiapas",
+      "cosecha":"Marzo - Abril",
+      "altura":"1550 - 1800 MSNM",
+      "humedad":0,
+      "proceso":"Lavado",
+      "preparacion":"Europea",
+      "variedad":"Maragogye",
+      "nota":"Chocolate negro, licor dulce, uva blanca, acidez citrica",
+      "puntuacion ":0,
+      "precioTostado":175,
+      "rutaImagen":"./public/img/products/producto3.png"
+   }
+]
