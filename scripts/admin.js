@@ -1,1 +1,1 @@
-// alert('Admin')
+//Pagina de administrador de productos a vender

@@ -1,0 +1,38 @@
+[
+    {
+       "region":"Corzo Zona Frailesca, Chiapas",
+       "Cosecha":"Enero - Marzo",
+       "Altura":"1300 - 1500 MSNM",
+       "Humedad":11,
+       "Proceso":"Lavado",
+       "Preparación":"Europea",
+       "Variedad":"Pacamara",
+       "Nota":"Manzana verde, chocolate, pasa, acidez citrica, dulzor miel ",
+       "Puntuación ":84,
+       "Precio tostado":300
+    },
+    {
+       "region":"Yajalon, Chiapas",
+       "Cosecha":"Marzo - Abril",
+       "Altura":"1600-1800 MSNM",
+       "Humedad":10,
+       "Proceso":"Lavado",
+       "Preparación":"Europea hasta 5 defectos segunda criba ",
+       "Variedad":"Bourbon",
+       "Nota":"Melon seco, durazno, chocolate, canela, acidez cítrica",
+       "Puntuación ":85.42,
+       "Precio tostado":340
+    },
+    {
+       "region":"Montecristo, Chiapas",
+       "Cosecha":"Marzo - Abril",
+       "Altura":"1550 - 1800 MSNM",
+       "Humedad":0,
+       "Proceso":"Lavado",
+       "Preparación":"Europea",
+       "Variedad":"Maragogye",
+       "Nota":"Chocolate negro, licor dulce, uva blanca, acidez citrica",
+       "Puntuación ":0,
+       "Precio tostado":175
+    }
+ ]
