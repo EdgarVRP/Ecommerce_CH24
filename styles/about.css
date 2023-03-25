@@ -24,6 +24,12 @@ img {
     color: var(--secondary2);
 }
 
+/* logo del equipo  */
+#logo-cid{
+    height: 250px;
+    width: 450px;
+}
+
 .card {
     /* Centrar cartas adentro de su div*/
     margin: 10px auto;
