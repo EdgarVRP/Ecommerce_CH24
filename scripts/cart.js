@@ -5,92 +5,66 @@
 // document.getElementsByClassName("container")[0].innerHTML += component;
 // document.getElementsByClassName("container")[0].innerHTML += component;
 // document.getElementsByClassName("container")[0].innerHTML += component;
-
-let json_products = [
-	{
-		id: 0,
-		name: "Cafe Azul",
-		price: 250.0,
-		description: "Manzana verde, chocolate, pasa, acidez citrica, dulzor miel ",
-	},
-	{
-		id: 1,
-		name: "Cafe Verde",
-		price: 150.0,
-		description: "El mejor cafe",
-	},
-	{
-		id: 2,
-		name: "Cafe Naranja",
-		price: 80.5,
-		description: "El mejor cafe",
-	},
-	{
-		id: 3,
-		name: "Cafe Rojo",
-		price: 120.5,
-		description: "El mejor cafe",
-	},
-];
-
 const arrGrind = ["No", "Bajo", "Medio", "Alto"];
 const arrRoast = ["No", "Bajo", "Medio", "Alto"];
 
-let json_cart = [
-	{
-		id: 1,
-		grind: 0,
-		roast: 0,
-		count: 1,
-	},
-	{
-		id: 2,
-		grind: 0,
-		roast: 0,
-		count: 2,
-	},
-    {
-		id: 2,
-		grind: 2,
-		roast: 0,
-		count: 2,
-	},
-    {
-		id: 1,
-		grind: 0,
-		roast: 1,
-		count: 4,
-	},
-];
+let DATA_PRODUCTS = [];
+let DATA_CART = [];
 
-update();
+getProducts();
 
-function update() {
-	let products = document.getElementById("products");
-	products.innerHTML = "";
-    let total = 0;
+function getProducts() {
+	fetch("./testing/products.json")
+		.then((response) => response.json())
+		.then((data) => {
+			DATA_PRODUCTS = data;
+			localStorage.setItem("DATA_PRODUCTS", JSON.stringify(DATA_PRODUCTS));
+			getCart();
+		})
+		.catch(function (error) {
+			console.error("Error al realizar la petición:", error);
+		});
+}
 
-	for (let i = 0; i < json_cart.length; i++) {
-		const id = json_cart[i].id;
-        const subtotal = json_products[id].price * json_cart[i].count;
-        const grind = arrGrind[json_cart[i].grind]
-        const roast = arrRoast[json_cart[i].roast]
-		products.innerHTML += `<div class="product">
+function getCart() {
+	DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
+	// console.log(DATA_CART);
+
+	if (DATA_CART == null) {
+		//Carrito vacio mostrar mensaje
+	} else {
+		updateCart();
+	}
+}
+
+function updateCart() {
+	updateNavCart();
+	let $products = document.getElementById("products");
+	$products.innerHTML = "";
+	let total = 0;
+
+	for (let i = 0; i < DATA_CART.length; i++) {
+		let PRODUCT = DATA_PRODUCTS.find((product) => product.id == DATA_CART[i].id);
+
+		const subtotal = PRODUCT.precioTostado * DATA_CART[i].count;
+		const grind = arrGrind[DATA_CART[i].grind];
+		const roast = arrRoast[DATA_CART[i].roast];
+		$products.innerHTML += `<div class="product">
     <div class="row">
 
     <div id="info" class="col-12 col-md-6">
-        <img id="" class="img-product" src="assets/img/128x128.png" alt="">
+        <img id="" class="img-product" src="${PRODUCT.rutaImagen}" alt="">
         <div>
-        <p>${json_products[id].name}</p>
+        <p>${PRODUCT.nombre}</p>
         <p>Molido: ${grind}</p>
         <p>Tostado: ${roast}</p>
         </div>
     </div>
 
     <div id="amount" class="col-4 col-md-3">
-        <button class="button" onclick="plus(${i})" style="width: 36px">+</button>
-        <p>${json_cart[i].count}</p>
-        <button class="button" onclick="minus(${i})" style="width: 36px">-</button>
+        <button class="button" onclick="subCount(${i})" style="width: 36px">-</button>
+        <p>${DATA_CART[i].count}</p>
+        <button class="button" onclick="addCount(${i})" style="width: 36px">+</button>
     </div>
 
     <div id="buttons" class="col-8 col-md-3">
@@ -109,54 +83,51 @@ function update() {
 
     </div>
     </div>`;
-    total += subtotal;
+		total += subtotal;
 	}
+
 	let totalP = document.getElementById("total");
-    totalP.innerHTML = "Total: $" + Number(total).toFixed(2);
-
-
+	totalP.innerHTML = "Total: $" + Number(total).toFixed(2);
 }
 
-function plus(id) {
-	json_cart[id].count = json_cart[id].count + 1;
-	update();
+function addCount(i) {
+	DATA_CART[i].count++;
+	localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+	updateCart();
 }
 
-function minus(id) {
-    if (json_cart[id].count == 1){
-        return;
-    }
-	json_cart[id].count = json_cart[id].count - 1;
-	update();
+function subCount(i) {
+	if (DATA_CART[i].count == 1) {
+		return;
+	}
+	DATA_CART[i].count--;
+	localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+	updateCart();
 }
 
-function updateModal(num){
-	const id = json_cart[num].id;
-	const name = json_products[id].name
+function updateModal(i) {
+	let PRODUCT = DATA_PRODUCTS.find((product) => product.id == DATA_CART[i].id);
 
-	const count = json_cart[num].count
+	console.log(PRODUCT);
 
-	console.log(document.getElementById("btnradio1"))
-
-	document.getElementById("modal-title").innerHTML = name
-	document.getElementById("modal-count").innerHTML = count
+	document.getElementById("modal-img").src = PRODUCT.rutaImagen;
+	document.getElementById("modal-title").innerHTML = PRODUCT.nombre;
+	document.getElementById("modal-count").innerHTML = DATA_CART[i].count;
 	// alert(id)
 }
 
-$(document).ready(function(){
-
-$("#radio-roast input").on("click", function() {
-	alert("hih");
-  });
+$(document).ready(function () {
+	$("#radio-roast input").on("click", function () {
+		alert("hih");
+	});
 });
 
-
-  $(document).ready(function(){
-	$("input").click(function(){
-		console.log(this.id)
-	//   $("p").hide();
+$(document).ready(function () {
+	$("input").click(function () {
+		console.log(this.id);
+		//   $("p").hide();
 	});
-  });
+});
 
 //   $(document).ready(function(){
 // 	$("input").click(function(){
