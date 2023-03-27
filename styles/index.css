@@ -50,7 +50,9 @@ img {
     color: black;
 }
 
+/* para centrar el contenido de las tarjetas info */
 .centrar {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
