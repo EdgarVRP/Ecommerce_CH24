@@ -49,3 +49,8 @@ img {
 .card-text {
     color: black;
 }
+
+.centrar {
+    display: flex;
+    justify-content: center;
+}
