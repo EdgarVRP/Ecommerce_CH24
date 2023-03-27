@@ -1,67 +1,87 @@
-// alert('Products')// alert('Products')
-
 const container = document.getElementById("products-container");
 
-// Eliminar las cartar internas del container que tiene los productos
+// Eliminar las cartas internas del container que tiene los productos
 container.innerHTML = "";
 
-const nameProduct = "Alex";
-const priceProduct = "99";
-const notesProduct = "Buena variedad de cafe";
-const urlProduct =
-  "https://varieties.worldcoffeeresearch.org/content/5-varieties/0-pacamara/pacamara_1.jpg";
+let DATA_PRODUCTS = [];
+let DATA_CART = [];
 
-  
-const json_data = [
-    {
-        "id": 1,
-        "title": "Pacamara ",
-        "price": 300.00,
-        "description": "Manzana verde, chocolate, pasa, acidez citrica, dulzor miel ",
-        "image": "https://varieties.worldcoffeeresearch.org/content/5-varieties/0-pacamara/pacamara_1.jpg"
-    },
-    {
-        "id": 1,
-        "title": "Cafe rojo",
-        "price": 109.95,
-        "description": "El mejor cafe",
-        "image": "https://varieties.worldcoffeeresearch.org/content/5-varieties/0-pacamara/pacamara_1.jpg"
+getProducts();
 
-    },
-    {
-        "id": 1,
-        "title": "Cafe rojo",
-        "price": 109.95,
-        "description": "El mejor cafe",
-        "image": "https://varieties.worldcoffeeresearch.org/content/5-varieties/0-pacamara/pacamara_1.jpg"
+function getProducts() {
+	fetch("./testing/products.json")
+		.then((response) => response.json())
+		.then((data) => {
+			DATA_PRODUCTS = data;
+			localStorage.setItem("DATA_PRODUCTS", JSON.stringify(DATA_PRODUCTS));
+			showProducts();
+		})
+		.catch(function (error) {
+			console.error("Error al realizar la petición:", error);
+		});
+}
 
-    },
-    {
-        "id": 1,
-        "title": "Cafe rojo",
-        "price": 109.95,
-        "description": "El mejor cafe",
-        "image": "https://varieties.worldcoffeeresearch.org/content/5-varieties/0-pacamara/pacamara_1.jpg"
-    },
-]
+function addProduct(id) {
+    // localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+    DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
+    // console.log(DATA_CART);
+
+    if (DATA_CART == null){
+        DATA_CART = []
+    }
+
+    // Producto a agregar con caracteristicas default
+	let product = {
+		id: id,
+		grind: 0,
+		roast: 0,
+		count: 1,
+	};
+	DATA_CART.push(product);
+
+	// Guardar informacion en localStorage
+	localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+
+	// Actualizar el contador del carrito
+	updateNavCart();
+}
 
 
-
-fetch("https://fakestoreapi.com/products")
-  .then((api_data) => {
-    return api_data.json();
-  })
-  .then((json_data_dummy) => {
-
-    for (let i = 0; i < parseInt(json_data.length); i++) {
-        const productCard = `<div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+function showProducts() {
+	for (let i = 0; i < DATA_PRODUCTS.length; i++) {
+		const productCard = `<div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
           <div class="card productCard">
-              <img src="${json_data[i].image}"
+              <img src="${DATA_PRODUCTS[i].rutaImagen}"
+              class="card-img-top" alt="" />
+              <div class="card-body">
+                  <div class="text-center mt-1">
+                      <h4 class="card-title">${DATA_PRODUCTS[i].region}</h4>
+                      <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].precioTostado}</h6>
+                  </div>
+      
+                  <div class="d-flex flex-row">
+                      <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" data-mdb-ripple-color="dark">
+                      Ver más
+                      </button>
+                      <button type="button" class="btn btn-danger flex-fill ms-1 btnBuyNow" onclick="addProduct(${DATA_PRODUCTS[i].id})">Comprar ahora</button>
+                  </div>
+              </div>
+          </div>
+          </div>`;
+		container.innerHTML += productCard;
+	}
+}
+
+
+/*
+`<div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+          <div class="card productCard">
+              <img src="${products[i].rutaImagen}"
               class="card-img-top" alt="ImagenVariedadPacamara" />
               <div class="card-body">
                   <div class="text-center mt-1">
-                      <h4 class="card-title">${json_data[i].title}</h4>
-                      <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${json_data[i].price}</h6>
+                      <h4 class="card-title">${products[i].region}</h4>
+                      <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${products[i].precioTostado}</h6>
                   </div>
       
                   <div class="text-center">
@@ -86,7 +106,7 @@ fetch("https://fakestoreapi.com/products")
                                                   
                       <div class="p-3 mx-n3 mb-4" style="background-color: #2e151a; border-radius: 15px;">
                           <h5 class="h5 mb-0 lightYellowText">Notas: </h5>
-                          <span class="h6 mb-0 lightYellowText">${json_data[i].description}</span>
+                          <span class="h6 mb-0 lightYellowText">${products[i].nota}</span>
                       </div>
                       
                   </div>
@@ -100,20 +120,4 @@ fetch("https://fakestoreapi.com/products")
               </div>
           </div>
           </div>`;
-        container.innerHTML += productCard;
-      }
-
-
-    //   for (let i = 0; i < json_data.length; i++) {
-    //     add_item(json_data[i]);
-    //   }
-  });
-
- 
-
-
-// container.innerHTML += productCard;
-// container.innerHTML += productCard;
-// container.innerHTML += productCard;
-// container.innerHTML += productCard;
-// container.innerHTML += productCard;
+*/

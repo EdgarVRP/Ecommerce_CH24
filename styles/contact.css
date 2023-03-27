@@ -1,11 +1,29 @@
 body {
-    background-color: #2E151A;
+    background-color: var(--primary2);
 }
 
 /* En esta pagina todo sera de esta fuente y color */
 #contact * {
     font-family: 'Ubuntu', sans-serif;
-    color: #FCBF6B;
+    color: var(--secondary2);
+}
+
+/* Autocompletado color background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--secondary2) inset !important;
+}
+
+.background {
+    /* position: absolute;
+    width: 80%;
+    height: 80%;
+    margin: 300 300 100 100;
+    background-color: red;
+    z-index: -1;
+    border-radius: 50px; */
 }
 
 /* Estilos de form-contact*/
@@ -45,7 +63,7 @@ body {
 #button:hover{
     background-color: #efb815;
     border-color: transparent;
-    color: #241014;
+    color: var(--primary2);
     transition: 0.7s;
 }
 
@@ -67,7 +85,7 @@ h2.linea:before {
 }
 
 h2.linea span {
-    background: #2E151A;
+    background: var(--primary2);
     padding: 0 15px;
 }
 

@@ -11,6 +11,7 @@ p {
 .productCard {
     background-color: #241014;
     border-color: azure;
+    margin: 16px;
     
 }
 

@@ -30,22 +30,26 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a class="navbar-brand" href="./">
-        <img src="assets/img/logo_white.png" alt="Logo" width="36">
+      <a class="navbar-brand" href="./admin.html">
+        <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
         <p>Cafe Alfonso</p>
       </a>
 
       <div class="collapse navbar-collapse" id="pages">
         <ul class="navbar-nav ms-auto">
+          <li id="nav-admin" class="nav-item"><a class="nav-link" href="./admin.html">Admin</a></li>
           <li class="nav-item"><a class="nav-link" href="./">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="./contact.html">Contactanos</a></li>
           <li class="nav-item"><a class="nav-link" href="./about.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
           <li class="nav-item"><a class="nav-link" href="./signin.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="./login.html">Ingresar</a></li>
+          <li class="nav-item"><a id="nav-user" class="nav-link" href="./login.html">Ingresar</a></li>
         </ul>
       </div>
-      <a class="nav-icon" href="./"><i class="bi bi-cart2"></i></a>
+      <div id="nav-cart-container">
+        <a id="nav-cart" class="nav-icon" href="./cart.html"><i class="bi bi-cart2"></i></a>
+        <p id="nav-cart-count">3</p>
+      </div>
     </div>
   </nav>
 
@@ -56,14 +60,14 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-text">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, soluta.</p>
+        <p>Copyright © 2023 <a href="https://github.com/CoffeeInDevs" target="_blank">CoffeeInDevs</a> Derechos reservados</p>
       </div>
 
       <div class="footer-logos">
         <!-- Los iconos se puede agregar con etiquetas embed, img, svg pero como fuente es mas flexible -->
-        <a href="./"><i class="icon bi bi-whatsapp"></i></a>
-        <a href="./"><i class="icon bi bi-instagram"></i></a>
-        <a href="./"><i class="icon bi bi-facebook"></i></a>
+        <a href="https://wa.me/5555555555" target="_blank"><i class="icon bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/cafe_alfonso_" target="_blank"><i class="icon bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/people/Caf%C3%A9-Alfonso/100070573881417/" target="_blank"><i class="icon bi bi-facebook"></i></a>
       </div>
     </div>
   </footer>

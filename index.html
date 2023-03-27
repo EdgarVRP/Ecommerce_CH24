@@ -25,27 +25,175 @@
 <body>
     <div id="navbar"></div>
 
-    <p>Home</p>
-    <a href="about.html">about</a>
-    <a href="contact.html">contact</a>
-    <a href="index.html">index</a>
-    <a href="login.html">login</a>
-    <a href="products.html">products</a>
-    <a href="signin.html">signin</a>
+    <!-- Div de bienvenida -->
+    <div id="welcome" class="div border">
+        <h1>Bienvenides querides consumidores !!</h1>
+    </div>
 
-    <article></article>
+    <!-- Div del video -->
+    <div id="video-container" class="div border">
+        <video id="video" autoplay muted loop class="">
+            <source src="assets/video/index.mp4" type="video/mp4">
+        </video>
+        <div id="text-video">
+            <p id="text-p">Cafe Alfonso</p>
+        </div>
+    </div>
+
+    <!-- Div carrusel -->
+    <div id="carousel" class="div border pt-3">
+        <!-- bootstrap -->
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Mision -->
+              <div class="carousel-item active">
+                <!-- tarjeta mision -->
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Mision</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta mision -->
+
+              <!-- Vision -->
+              <div class="carousel-item">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Vision</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta vision -->
+
+              <!-- Valores -->
+              <div class="carousel-item">
+                <!-- tarjeta valores -->
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Valores</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta valores -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div><!-- fin carrusel -->
+
+    <!-- Curiosidades del cafe -->
+    <div id="info" class="div border">
+      <h1>Curiosidades del cafe</h1>
+    </div>
+
+    <!-- div de las tarjetas info -->
+    <div class="tarjetas-info m-3">
+      <div class="row justify-content-center mt-3">
+        <!-- tarjeta uno -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div><!-- fin tarjeta  -->
+
+        <!-- tarjeta 2 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 2 -->
+
+        <!-- tarjeta 3 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 3 -->
+
+        <!-- tarjeta 4 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 4 -->
+
+        <!-- tarjeta 5 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 5 -->
+
+        <!-- tarjeta 6 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 6 -->
+      </div>
+    </div>
+
     <div id="footer"></div>
-
-
-    <!-- Script de index -->
-    <script src="scripts/index.js"></script>
 
     <!-- Script para todos los archivos -->
     <script src="scripts/scripts.js"></script>
+
+    <!-- Script de index -->
+    <script src="scripts/index.js"></script>
 
     <!-- Script Bootstrap 5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
