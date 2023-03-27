@@ -10,8 +10,8 @@ function animation(){
     const textVideo = document.getElementById("text-p");
 
     if (remove){
-        values = values.substring(0, values.length - 1);
-        if (values.length < 5){
+        values = values.substring(0, values.length-1);
+        if (values.length < 12){
             remove = false;
         }
     } else {
