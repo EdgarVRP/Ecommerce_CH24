@@ -1,8 +1,8 @@
-let values = "Cafe Alfonso";
+let values = "Bienvenidos";
 let remove = true;
 
 
-const data = [" Nataly", " Alex", " Carlos", " Santiago", " Baudelio", " Edgar", " Alfonso"]
+const data = [" queridos", " consumidores"]
 let iname = 0;
 let ichar = 0;
 
