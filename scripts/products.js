@@ -49,6 +49,7 @@ function addProduct(id) {
 
 function showProducts() {
 	for (let i = 0; i < DATA_PRODUCTS.length; i++) {
+        
 		const productCard = `<div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
           <div class="card productCard">
               <img src="${DATA_PRODUCTS[i].rutaImagen}"
@@ -60,10 +61,8 @@ function showProducts() {
                   </div>
       
                   <div class="d-flex flex-row">
-                      <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" data-mdb-ripple-color="dark">
-                      Ver más
-                      </button>
-                      <button type="button" class="btn btn-danger flex-fill ms-1 btnBuyNow" onclick="addProduct(${DATA_PRODUCTS[i].id})">Comprar ahora</button>
+                    <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" onclick="updateModal(${i})" data-mdb-ripple-color="dark" data-bs-toggle="modal" data-bs-target="#modal-product" style="width: 150px;">Ver más</button>
+                    <button type="button" class="btn btn-danger flex-fill ms-1 btnBuyNow" onclick="addProduct(${DATA_PRODUCTS[i].id})">Comprar ahora</button>
                   </div>
               </div>
           </div>
@@ -72,6 +71,25 @@ function showProducts() {
 	}
 }
 
+/* 
+<button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" data-mdb-ripple-color="dark" data-bs-toggle="modal" data-bs-target="#modal-product" style="width: 150px;" onclick"updateModal()">Detalles</button>
+ */
+
+function updateModal(i) {
+	//document.getElementById("modal-img").src = PRODUCT.rutaImagen;
+	document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
+    console.log("hola");
+	//document.getElementById("modal-count").innerHTML = DATA_CART[i].count;
+	// alert(id)
+}
+
+
+
+
+  
+/* <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" data-mdb-ripple-color="dark" data-toggle="modal" data-target="#products-container" onclick="modalVerMas">
+                      Ver más
+                      </button> */
 
 /*
 `<div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
