@@ -26,74 +26,130 @@
     <div id="navbar"></div>
 
     <div class="central-div">
+        <!--  Imagen Granos de cafe   -->        
         <img src="./assets/img/cafe-back.png" alt="" class="img-gra">
+        <!--  Titulo Registro   -->        
         <div class="title-r">Registro</div>
+        <!--  Contenedor central  -->        
         <div class="cont">
-            <form action="#">
+            <form action="#" id="form" onsubmit="return validarForm()">
             <div class="user">
+
+                <!--  Seccion Nombre   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Nombre</b></span>
-                    <input type="text" pattern="[A-Za-z]{4,12}" required>
+<!--                     <input id="name" type="text" pattern="[A-Za-z]{4,12}" required>-->       
+                     <input id="name" type="text">
                 </div>
+
+                <!--  Seccion Apellidos   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Apellidos</b></span>
-                    <input type="text" pattern="[A-Za-z]{4,22}" required>
+<!--                     <input id="lana" type="text" pattern="[A-Za-z]{4,22}" required>
+ -->                <input id="lana" type="text">
                 </div>
-                     <div class="inp-info">
+
+                <!--  Seccion email   -->        
+                <div class="inp-info">
                     <span class="name-inp"><b>E-mail</b></span>
-                    <input type="email" required>
+<!--                     <input id="email" type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+ -->                <input id="email" type="email">
                 </div>
+
+                <!--   Seccion Contraseña    -->
                 <div class="inp-info">
                     <span class="name-inp"><b>Contraseña</b></span>
-                    <input type="password" minlength="6" maxlength="16" required>
+                    <input id="password" type="password">
                 </div>
+
+                <!--   Seccion telefono   -->
                 <div class="inp-info">
                     <span class="name-inp"><b>Telefono</b></span>
-                    <input type="tel" maxlength="10"  pattern="[0-9]{10}" required>
-                </div>
+                    <input id="tel" type="text" maxlength="10">
+                </div> 
+
+                <!--  Seccion Nacimiento   -->        
                 <div class="inp-info">
-                    <span class="name-inp"><b>Fecha de Nacimiento</b></span>
-                    <input type="date" min="1923-01-01" max="2010-12-31" required>
+                    <span class="name-inp"><b>Nacimiento</b></span>
+                    <input id="date" type="date" min="1923-01-01" max="2010-12-31">
                 </div>
+                
+                <!--  Seccion direccion   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Direccion</b></span>
-                    <input type="text" maxlength="30" required>
+                    <input id="addr" type="text">
                 </div>
+                
+                <!--  Seccion numero direccion -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Numero</b></span>
+                    <input id="numd" type="number" min="1" max="99999" >
+                </div>
+
+                <!--  Seccion colonia   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Colonia</b></span>
-                    <input type="text" pattern="[A-Za-z]{3,15}" required>
+                    <input id="colo" type="text" >
                 </div>
+                
+                <!--  Seccion municipio   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Municipio</b></span>
-                    <input type="text" pattern="[A-Za-z]{3,15}" required>
+                    <input id="muni" type="text">
                 </div>
+                
+                <!--  Seccion estado   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Estado</b></span>
-                    <input type="text" pattern="[A-Za-z]{3,15}" required>
+                    <input id="esta" type="text" >
                 </div>
+                
+                <!--  Seccion Codigo Postal   -->        
                 <div class="inp-info">
                     <span class="name-inp"><b>Codigo Postal</b></span>
-                    <input type="number" pattern="[0-9]{5}"  min="1" max="99999" maxlength="5" required>
+                    <input id="cp" type="number" pattern="[0-9]{5}"  min="1" max="99999">
                 </div> 
-                <div class="inp-info">
-                    <input type="submit" value="Registrar" class="btn">
+            </div>
+            <br>
+            <!--  Seccion Boton de Registro   -->        
+            <div class="inp-info">
+                <input type="submit" value="Registrar" class="btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            </div>
+
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button> -->
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="miModal">
+                    Llena el formulario para poder registrarte
+                    </div>
+                    <div class="modal-footer">
+            <!--           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
                 </div>
             </div>
+
             </form>
+            <hr>
         </div>
     </div>
-
-    
-
-
-
-
     
     <article></article>
     <div id="footer"></div>
 
     <!-- Script de signin -->
-    <script src="scripts/signup.js"></script>
+    <script src="./scripts/signup.js"></script>
 
     <!-- Script para todos los archivos -->
     <script src="scripts/scripts.js"></script>

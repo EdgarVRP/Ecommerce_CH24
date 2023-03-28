@@ -32,7 +32,7 @@
   width: 70%;
   height: 100%;
   float: left;
-  background:#fff0e59c;
+  background:#cdbba39a;
 
   display: flex;
   justify-content: center;
@@ -87,6 +87,7 @@
   color: #241014;
 }
 
+/* Formato de label */
 .right-form label{
   width:100%;
   font-size: 20px;
@@ -97,9 +98,13 @@
   text-align: center;
 }
 
+
+/* Formato imagen graanos cafe*/
 .granosCafe{
   width: 50%;
 }
+
+
 
 .check{
   width: 100%;
@@ -109,6 +114,8 @@
 
 /* .right-form input[type="submit"]{
 } */
+
+/* Formato de boton Iniciar sesion */
 .buttoni{
   width:60%;
   font-size: 15px;
@@ -122,20 +129,20 @@
   padding: 10px;
 }
 
-
+/* Formato de boton Iniciar sesion */
 .buttoni:hover{
   background-color:var(--secondary);
   color:var(--blanco);
   transition: 0.7s;
 }
 
-
+/* Formato de boton Iniciar sesion */
 .buttoni:active{
   background-color:var(--secondary2);
   color:var(--secondary);
 }
 
-
+/* Formato anchure Crear cuenta y Recuperar contraseña*/
 .right-form a{
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;

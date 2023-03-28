@@ -28,19 +28,19 @@
     
 
     <!-- Formulario Log In -->
-    <!-- Responsividad Grid de CSS -->
-    <!-- <div class="col-xl-7 col-md-9 col-sm-12"> -->
         <div class="right-form">
-            <form action="">
+            <form action="" onsubmit="miFuncion()">
                 <h2>Ingresar</h2>
                 <br>
                 <img src="./assets/img/Granos-de-Café.png" alt="granos de cafe" class="granosCafe">
                 <br>
+
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" size="20" required>
-                
+
                 <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" pattern="[a-zA-Z0-9_]\S{7,20}" required>
+ 
                 <br>
                 <button class="buttoni">Iniciar Sesion</button>
                 <br>
@@ -52,6 +52,8 @@
         </div>
 <!--     </div>
  -->
+
+ 
     <!-- Footer -->
     <article></article>
     <div id="footer"></div>
