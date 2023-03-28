@@ -34,7 +34,7 @@ h2{
     border: 3px solid rgb(148, 141, 141);
     border-radius: 10px;
     margin:50px;
-    height: 476px;
+    height: 500px;
 
 }
 #button {
@@ -50,5 +50,10 @@ h2{
     border-color: transparent;
     color: var(--primary2);
     transition: 0.7s;
+}
+
+.form-controlInput{
+    width: 180px;
+    border-radius: 5px;
 }
 
