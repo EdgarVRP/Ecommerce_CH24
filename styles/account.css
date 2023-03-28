@@ -1,0 +1,59 @@
+.list-group-flush{
+text-decoration: none;
+color: white;
+margin-left: 70px;
+margin-top: 20px;
+list-style: none;
+
+}
+
+#perfil{
+  margin-top: 100px;
+}
+
+#miCuenta{
+    color: white;
+    border: 3px solid rgb(148, 141, 141);
+    border-radius: 10px;
+    margin:50px;
+}
+
+#contenedor{
+    width: 100px;
+    height: 100px;
+    
+}
+
+h2{
+    color: white;
+    margin-left: 50px;
+}
+
+#misPedidos{
+    color: white;
+    border: 3px solid rgb(148, 141, 141);
+    border-radius: 10px;
+    margin:50px;
+    height: 500px;
+
+}
+#button {
+    
+    border-radius: 10px;
+    align-self: end;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+}
+#button:hover{
+    background-color: #efb815;
+    border-color: transparent;
+    color: var(--primary2);
+    transition: 0.7s;
+}
+
+.form-controlInput{
+    width: 180px;
+    border-radius: 5px;
+}
+
