@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+=======
+// alert('Log In')
+/*
+let $btn_login = document.querySelector("#btn-login");
+let $input_email = document.querySelector("#input-email");
+let $input_password = document.querySelector("#input-password");
+
+$btn_login.addEventListener("click", login);
+
+function login() {
+    if ($input_email.value == "admin" || $input_password.value == "admin"){
+        let DATA_USER = {
+            user: "ADMIN",
+        };
+        localStorage.setItem("DATA_USER", JSON.stringify(DATA_USER));
+        updateNavUser();
+        window.location.href = "./";
+    }
+}
+
+*/
+
+>>>>>>> 366f2ceb86cc00fb997768980af9bbcf1c2c4f2f
 
 function miFuncion(){
 
@@ -30,4 +54,7 @@ function miFuncion(){
     
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 366f2ceb86cc00fb997768980af9bbcf1c2c4f2f

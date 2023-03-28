@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "grind": 0,
+        "roast": 0,
+        "count": 1
+    },
+    {
+        "id": 2,
+        "grind": 0,
+        "roast": 0,
+        "count": 2
+    },
+    {
+        "id": 2,
+        "grind": 2,
+        "roast": 0,
+        "count": 2
+    },
+    {
+        "id": 1,
+        "grind": 0,
+        "roast": 1,
+        "count": 4
+    }
+]

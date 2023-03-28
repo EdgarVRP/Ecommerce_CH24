@@ -1,7 +1,7 @@
 /* Cambiar o ocultar color del borde por defecto */
-.border {
+/* .border {
 	border-color: red !important;
-}
+} */
 
 :root {
 	--primary:#2a1e1e;
@@ -74,6 +74,38 @@ article {
 	color: var(--white);
 }
 
+#nav-cart-container {
+    display: flex;
+    position: relative;
+    color: white;
+    /* bottom: 8px; */
+}
+
+/* Estilos del contador de productos en el carrito */
+#nav-cart-count {
+    /* Libre posicion en el div */
+    position: absolute;
+    /* Color de texto */
+    color: black;
+    /* Central texto horizontalmente en el circulo */
+    text-align: center;
+    /* Diametro del circulo */
+    height: 20px;
+    width: 20px;
+    /* Color de circulo */
+    background-color: yellow;
+    /* Cuadrado a circulo */
+    border-radius: 16px;
+    /* Centrar verticalmente texto en el circulo */
+    line-height: 19px;
+    /* Mover el indicador */
+    margin-top: 8px;
+    margin-left: 20px;
+    /* Tamaño de la fuente */
+    font-size: 16px;
+}
+
+
 
 /********************** FOOTER **********************/
 
@@ -106,12 +138,16 @@ article {
 }
 
 /* Aplica estilo al texto en el footter */
-.footer-text p {
+.footer-text p,
+.footer-text p a{
 	/* Centra horizontalmente el texto */
 	text-align: center;
 
 	/* Centra verticalmente el texto */
 	margin: auto;
+
+    font-size: 16px !important;
+
 }
 
 .footer-text {
@@ -198,6 +234,8 @@ article {
 .fab-container:hover .sub-button:nth-child(6) {
     transform: translateY(-320px);
 }
+
+/********************** FAB DARK-LIGHT MODE **********************/
 
 /* estilos boton principal */
 .fab-container .fab {
