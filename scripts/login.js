@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 // alert('Log In')
 /*
 let $btn_login = document.querySelector("#btn-login");
@@ -19,6 +21,7 @@ function login() {
 
 */
 
+>>>>>>> 366f2ceb86cc00fb997768980af9bbcf1c2c4f2f
 
 function miFuncion(){
 
@@ -51,3 +54,7 @@ function miFuncion(){
     
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 366f2ceb86cc00fb997768980af9bbcf1c2c4f2f
