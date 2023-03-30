@@ -5,11 +5,11 @@ p {
 */
 
 .card-title, .lightYellowText{
-    color: #fcbf6b;
+    color: var(--secondary2);
 }
 
 .productCard {
-    background-color: #241014;
+    background-color: var(--primary);
     border-color: azure;
     margin: 16px;
     
@@ -30,15 +30,15 @@ p {
 }
 
 .btnBuyNow {
-    background-color: #2e151a;
+    background-color: var(--primary2);
     border-color: transparent;
-    color: #fcbf6b;
+    color: var(--secondary2);
 
 }
 
 .btnBuyNow:hover {
-    background-color: #efb815;
+    background-color: var(--secondary);
     border-color: transparent;
-    color: #241014;
+    color: var(--primary);
     transition: 0.7s;
 }
