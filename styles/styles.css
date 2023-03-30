@@ -1,7 +1,7 @@
 /* Cambiar o ocultar color del borde por defecto */
-.border {
+/* .border {
 	border-color: red !important;
-}
+} */
 
 :root {
 	--primary:#2a1e1e;
