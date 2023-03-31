@@ -1,3 +1,20 @@
+#product-delete {
+    /* Color de texto */
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 16px;
+    line-height: 0px;
+    /* margin-top: 0px; */
+    /* margin-left: 0px; */
+    color: white;
+    left: 0px;
+    top: 0px;
+    margin: 8px;
+    font-size: 30px;
+    text-align: center;
+}
+
 .product {
     margin: 16px;
     background-color: var(--secondary2);
@@ -50,7 +67,7 @@
 
 #info{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #buttons {

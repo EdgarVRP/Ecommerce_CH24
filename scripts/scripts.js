@@ -28,7 +28,7 @@ document.body.innerHTML += `<div class="fab-container">
 </div>`;
 
 const navbar = document.getElementById("navbar");
-navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
+navbar.innerHTML = `<nav class="navbar fixed-top navbar-expand-md sticky-top">
 <div class="container-fluid">
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pages">
 	<span class="navbar-toggler-icon"></span>
@@ -46,7 +46,6 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-md sticky-top">
 	  <li class="nav-item"><a class="nav-link" href="./contact.html">Contactanos</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./about.html">Nosotros</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
-	  <li class="nav-item"><a class="nav-link" href="./signin.html">Blog</a></li>
 	  <li class="nav-item"><a id="nav-user" class="nav-link" href="./login.html">Ingresar</a></li>
 	</ul>
   </div>

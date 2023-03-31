@@ -85,6 +85,22 @@ function miFuncion(event){
     // Si los datos SI son acordes a los almacendos 
     // se direcciona a mi cuenta
     if(usuario==correoUser && contrasena == contrasenaUser){
+        let DATA_USER = {
+            user: "Alfonso",
+        };
+        localStorage.setItem("DATA_USER", JSON.stringify(DATA_USER));
+        updateNavUser();
+        // window.location.href = "./";
+        window.location.href = "./"
+    }
+
+    if(usuario=="admin@cafe.com" && contrasena == contrasenaUser){
+        let DATA_USER = {
+            user: "Admin",
+        };
+        localStorage.setItem("DATA_USER", JSON.stringify(DATA_USER));
+        updateNavUser();
+        // window.location.href = "./";
         window.location.href = "./account.html"
     }
   /*else if(){

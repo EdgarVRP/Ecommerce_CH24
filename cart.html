@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cart</title>
+  <title>Compra</title>
 
   <!-- Bootstrap 5.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,45 +30,99 @@
   <!-- Example: <span class="material-icons">phone</span> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <!-- jquery para manipular el dom de una manera mas facil -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
 
 </head>
 
 <body>
   <!-- div Navbar -->
-  <div id="navbar"></div>
+  <div id="navbar" class="sticky-top"></div>
 
   <div class="container">
 
     <div id="products">
+      <!-- <div class="product">
+        <div class="row">
+
+          <div id="info" class="col-12 col-md-6">
+            <button id="product-delete" class="button" onclick="deleteProduct()"><i class="bi bi-x"></i></button>
+
+            <img id="" class="img-product" src="public/img/products/product_1.png" alt="">
+            <div>
+              <p>${PRODUCT.nombre}</p>
+              <p>Molido: ${grind}</p>
+              <p>Tostado: ${roast}</p>
+            </div>
+          </div>
+
+          <div id="amount" class="col-4 col-md-3">
+            <button class="button" onclick="subCount()" style="width: 36px">-</button>
+            <p>${DATA_CART[i].count}</p>
+            <button class="button" onclick="addCount()" style="width: 36px">+</button>
+          </div>
+
+          <div id="buttons" class="col-8 col-md-3">
+            <div class="row">
+
+              <div id="price" class="col-6 col-md-12">
+                <p>$${subtotal}</p>
+              </div>
+
+              <div id="details" class="col-6 col-md-12">
+                <button class="button" data-bs-toggle="modal" data-bs-target="#modal-product"
+                  onclick="updateModal()" style="width: 150px;">Detalles</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div> -->
+
+
     </div>
 
     <hr>
 
-    <div id="bottom" class="container">
+    <!-- Mensaje de carrito vacio si no hay productos en el -->
+    <div id="message" style="display: flex; justify-content: center; color: white;">
+      <h2>Carrito vacio</h2>
+    </div>
+
+    <!-- Parte inferior de la pagina de carrito donde se encuentra la parte de pagar, iniciar sesion o pagar como invitado -->
+    <div id="bottom" class="container" style="visibility: hidden;">
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="form-row">
             <div class="mb-2">
-              <label for="street">Calle</label>
-              <input name="street" type="text" class="input form-control" id="input-last">
-              <p class="warning" id="warning-street">Falta algo</p>
+              <!-- <label for="street">Calle</label> -->
+              <!-- <input name="street" type="text" class="input form-control" id="input-last"> -->
+              <!-- <p class="warning" id="warning-street">Falta algo</p> -->
             </div>
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p id="total">Total: $234</p>
+          <p id="total"></p>
         </div>
       </div>
-    </div>
 
+      <div id="$btnsPay" class="d-flex justify-content-around">
+        <button id="$btnPayGuest" class="btn btn-primary">Pagar como invitado</button>
+        <button id="$btnPayUser" class="btn btn-primary">Pagar como usuario</button>
+      </div>
+
+      <div id="$btnPayTotal" class="d-flex justify-content-center">
+        <button id="$btnPay" class="btn btn-primary">Pagar</button>
+      </div>
+
+      <br>
+      <br>
+      <br>
+    </div>
   </div>
 
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-product">
-    Show
-  </button>
-
+  <!-- Modal para modificar productos que se modifica dependiendo del producto que se quiera modificar -->
   <div id="modal-product" class="modal fade" tabindex="-1" role="dialog">
     <!-- <div class="modal d-block" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true"> -->
 
@@ -81,6 +135,8 @@
           <div class="row">
             <div class="col-4">
               <img id="modal-img" src="" alt="" style="height: 128px; width: 128px;">
+              <button type="button" class="btn btn-primary">Eliminar</button>
+
             </div>
             <div class="col-8">
               <p>Descripcion:</p>
@@ -134,10 +190,20 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           <button type="button" class="btn btn-primary">Actualizar</button>
+
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Botones de ejemplo -->
+  <!-- <div class="container">
+    <button id="btn-pay" class="btn btn-warning">Pagar</button>
+    <button id="btn-empty-cart" class="btn btn-warning">Vaciar carrito</button>
+    <button id="btn-login" class="btn btn-warning">Iniciar sesion</button>
+    <button id="btn-guest" class="btn btn-warning">Invitado</button>
+    <button id="btn-show" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-product">Show</button>
+  </div> -->
 
   <!-- <div id="myModal" class="modal d-block" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
