@@ -37,7 +37,7 @@ list-style: none;
     
 
 } */
-#button {
+#buttonEditar, #buttonGuardar {
     
     border-radius: 10px;
     align-self: end;
@@ -45,13 +45,27 @@ list-style: none;
     border-color: white;
     color: #fcbf6b;
 }
-#button:hover{
+#buttonEditar:hover, #buttonGuardar:hover{
     background-color: #efb815;
     border-color: transparent;
     color: var(--primary2);
     transition: 0.7s;
 }
 
+#buttonEditar1, #buttonGuardar1 {
+    
+    border-radius: 10px;
+    align-self: end;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+}
+#buttonEditar1:hover, #buttonGuardar1:hover{
+    background-color: #efb815;
+    border-color: transparent;
+    color: var(--primary2);
+    transition: 0.7s;
+}
 
 
 h3{
