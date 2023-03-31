@@ -112,6 +112,8 @@ on(document, "click", ".btnEditarProducto", (e) => {
     e.target.parentNode.parentNode.childNodes[10].innerHTML;
   document.getElementById("editprecioProducto").value =
     e.target.parentNode.parentNode.childNodes[11].innerHTML;
+  document.getElementById("editinventarioProducto").value =
+    e.target.parentNode.parentNode.childNodes[12].innerHTML;
 });
 
 //EDITAR PRODUCTO
@@ -137,6 +139,9 @@ on(document, "click", "#btnModificarProducto", (e) => {
     "editpuntuacionProducto"
   ).value;
   let precioProducto = document.getElementById("editprecioProducto").value;
+  let inventarioProducto = document.getElementById(
+    "editinventarioProducto"
+  ).value;
   //obteniendo datos de local storage
   let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
   //buscando el producto a editar
@@ -155,6 +160,7 @@ on(document, "click", "#btnModificarProducto", (e) => {
   producto.nota = notaProducto;
   producto.puntuacion = puntuacionProducto;
   producto.precioTostado = precioProducto;
+  producto.inventario = inventarioProducto;
   //actualizando local storage
   localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
 });
@@ -181,38 +187,57 @@ on(document, "click", ".btnEliminarProducto", (e) => {
 //CREAR PRODUCTO
 //Boton crear producto
 on(document, "click", "#btnCrearProducto", (e) => {
-  //obteniendo datos del modal
-  let nombreProducto = document.getElementById("nombreProducto").value;
-  let regionProducto = document.getElementById("regionProducto").value;
-  let cosechaProducto = document.getElementById("cosechaProducto").value;
-  let alturaProducto = document.getElementById("alturaProducto").value;
-  let humedadProducto = document.getElementById("humedadProducto").value;
-  let procesoProducto = document.getElementById("procesoProducto").value;
-  let preparacionProducto = document.getElementById("preparacionProducto")
-    .value;
-  let variedadProducto = document.getElementById("variedadProducto").value;
-  let notaProducto = document.getElementById("notaProducto").value;
-  let puntuacionProducto = document.getElementById("puntuacionProducto").value;
-  let precioProducto = document.getElementById("precioProducto").value;
-  //obteniendo datos de local storage
-  let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
-  //creando producto
-  let producto = {
-    id: productosLocalStorage.length + 1,
-    nombre: nombreProducto,
-    region: regionProducto,
-    cosecha: cosechaProducto,
-    altura: alturaProducto,
-    humedad: humedadProducto,
-    proceso: procesoProducto,
-    preparacion: preparacionProducto,
-    variedad: variedadProducto,
-    nota: notaProducto,
-    puntuacion: puntuacionProducto,
-    precioTostado: precioProducto,
-  };
-  console.log(producto);
-  //agregando producto a local storage
-  productosLocalStorage.push(producto);
-  localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+  //Se comprueba que esten llenos los campos
+  if (
+    document.getElementById("nombreProducto").value == "" ||
+    document.getElementById("regionProducto").value == "" ||
+    document.getElementById("cosechaProducto").value == "" ||
+    document.getElementById("alturaProducto").value == "" ||
+    document.getElementById("humedadProducto").value == "" ||
+    document.getElementById("procesoProducto").value == "" ||
+    document.getElementById("preparacionProducto").value == "" ||
+    document.getElementById("variedadProducto").value == "" ||
+    document.getElementById("notaProducto").value == ""
+  ) {
+    //alert("Por favor llene todos los campos");
+  } else {
+    //obteniendo datos del modal
+    let nombreProducto = document.getElementById("nombreProducto").value;
+    let regionProducto = document.getElementById("regionProducto").value;
+    let cosechaProducto = document.getElementById("cosechaProducto").value;
+    let alturaProducto = document.getElementById("alturaProducto").value;
+    let humedadProducto = document.getElementById("humedadProducto").value;
+    let procesoProducto = document.getElementById("procesoProducto").value;
+    let preparacionProducto = document.getElementById(
+      "preparacionProducto"
+    ).value;
+    let variedadProducto = document.getElementById("variedadProducto").value;
+    let notaProducto = document.getElementById("notaProducto").value;
+    let puntuacionProducto =
+      document.getElementById("puntuacionProducto").value;
+    let precioProducto = document.getElementById("precioProducto").value;
+    let inventarioProducto = document.getElementById("inventarioProducto").value;
+    //obteniendo datos de local storage
+    let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
+    //creando producto
+    let producto = {
+      id: productosLocalStorage.length + 1,
+      nombre: nombreProducto,
+      region: regionProducto,
+      cosecha: cosechaProducto,
+      altura: alturaProducto,
+      humedad: humedadProducto,
+      proceso: procesoProducto,
+      preparacion: preparacionProducto,
+      variedad: variedadProducto,
+      nota: notaProducto,
+      puntuacion: puntuacionProducto,
+      precioTostado: precioProducto,
+      inventario: inventarioProducto
+    };
+    //console.log(producto);
+    //agregando producto a local storage
+    productosLocalStorage.push(producto);
+    localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+  }
 });
