@@ -36,6 +36,11 @@ img {
     z-index: 1;
 }
 
+/* Tamaño de la letra del video */
+#text-p{
+    font-size: 100px;
+}
+
 #video-container {
     position: relative;
 }
@@ -44,10 +49,13 @@ img {
 
 .card-title {
     color: #EFB817;
+    font-size: 5rem;
+
 }
 
 .card-text {
     color: black;
+    font-size: 2rem;
 }
 
 /* para centrar el contenido de las tarjetas info */
@@ -55,4 +63,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.tarjetas-info{
+
+    font-size: 16px; 
+}
+
+.card-text-info{
+    font-size: 16px;
 }

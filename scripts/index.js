@@ -2,7 +2,7 @@ let values = "Bienvenidos";
 let remove = true;
 
 
-const data = [" queridos", " consumidores"]
+const data = [" querido", " consumidor"]
 let iname = 0;
 let ichar = 0;
 
