@@ -1,22 +1,23 @@
-.list-group-flush{
+/* .list-group-flush{
 text-decoration: none;
 color: white;
 margin-left: 70px;
 margin-top: 20px;
 list-style: none;
 
-}
+} */
 
-#perfil{
+/* #perfil{
   margin-top: 100px;
-}
+} */
 
-#miCuenta{
+/* #miCuenta{
     color: white;
     border: 3px solid rgb(148, 141, 141);
     border-radius: 10px;
     margin:50px;
-}
+    display: flex;
+} */
 
 #contenedor{
     width: 100px;
@@ -24,19 +25,18 @@ list-style: none;
     
 }
 
-h2{
-    color: white;
-    margin-left: 50px;
-}
 
-#misPedidos{
+
+/* #misPedidos{
     color: white;
     border: 3px solid rgb(148, 141, 141);
     border-radius: 10px;
     margin:50px;
     height: 500px;
+   
+    
 
-}
+} */
 #button {
     
     border-radius: 10px;
@@ -52,8 +52,28 @@ h2{
     transition: 0.7s;
 }
 
-.form-controlInput{
-    width: 180px;
-    border-radius: 5px;
+
+
+h3{
+    color:white;
 }
 
+#border-formulario{
+    max-width: 25em;
+    /* width: 1200px; */
+    padding: .5em;
+    margin: 100px;
+/*     background-color: rgb(120, 119, 123, 0.3);*/
+    background-color: var(--primary);
+    border-radius: 0.5em;
+    box-shadow: inset 1px 1px 22px 4px rgba(0, 0, 0, 0.85);
+}
+
+#fondoBoton{
+    color: white;
+    background-color: var(--primary);
+}
+#imgUser{
+    width: 100px;
+    height: 100px;
+}
