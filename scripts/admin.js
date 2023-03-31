@@ -57,6 +57,7 @@ setTimeout(function () {
     fila.insertCell(9).innerHTML = producto.nota;
     fila.insertCell(10).innerHTML = producto.puntuacion;
     fila.insertCell(11).innerHTML = producto.precioTostado;
+    fila.insertCell(12).innerHTML = producto.inventario;
     //botones
     let btnEditar = document.createElement("button");
     btnEditar.setAttribute("class", "btn btn-warning btnEditarProducto");
@@ -64,12 +65,12 @@ setTimeout(function () {
     btnEditar.setAttribute("data-bs-toggle", "modal");
     btnEditar.setAttribute("data-bs-target", "#modalEditarProducto");
     btnEditar.innerHTML = "Editar";
-    fila.insertCell(12).appendChild(btnEditar);
+    fila.insertCell(13).appendChild(btnEditar);
     let btnEliminar = document.createElement("button");
     btnEliminar.setAttribute("class", "btn btn-danger btnEliminarProducto");
     btnEliminar.setAttribute("type", "button");
     btnEliminar.innerHTML = "Eliminar";
-    fila.insertCell(13).appendChild(btnEliminar);
+    fila.insertCell(14).appendChild(btnEliminar);
   });
 }, 500);
 

@@ -12,7 +12,8 @@
       "nota":"Manzana verde, chocolate, pasa, acidez citrica, dulzor miel ",
       "puntuacion":84,
       "precioTostado":300,
-      "rutaImagen":"./public/img/products/producto1.png"
+      "rutaImagen":"./public/img/products/producto1.png",
+      "inventario": 10
    },
    {
       "id":2,
@@ -27,7 +28,8 @@
       "nota":"Melon seco, durazno, chocolate, canela, acidez cítrica",
       "puntuacion":85.42,
       "precioTostado":340,
-      "rutaImagen":"./public/img/products/producto2.png"
+      "rutaImagen":"./public/img/products/producto2.png",
+      "inventario": 11
    },
    {
       "id":3,
@@ -42,6 +44,7 @@
       "nota":"Chocolate negro, licor dulce, uva blanca, acidez citrica",
       "puntuacion":0,
       "precioTostado":175,
-      "rutaImagen":"./public/img/products/producto3.png"
+      "rutaImagen":"./public/img/products/producto3.png",
+      "inventario": 5
    }
 ]
