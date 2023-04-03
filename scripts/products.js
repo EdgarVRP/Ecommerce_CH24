@@ -1,3 +1,4 @@
+//products-container es el div en el HTML donde se crean las tarjetas de los productos
 const container = document.getElementById("products-container");
 
 // Eliminar las cartas internas del container que tiene los productos
@@ -77,8 +78,48 @@ function showProducts() {
 
 function updateModal(i) {
 	//document.getElementById("modal-img").src = PRODUCT.rutaImagen;
-	document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
-    console.log("hola");
+	
+    //Modidica el titulo del Modal (Ver más)
+    document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
+    
+    //Traer el div del modal para el body
+    const modalDivBody = document.getElementById("row-modal-body");
+    const modalDivBodyInfo = `
+            <div class="text-center mt-1">
+                <h4 class="card-title">${DATA_PRODUCTS[i].nombre}</h4>
+                <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].nombre}</h6>
+            </div>
+    
+            <div class="text-center">
+                <div class="p-3 mx-n3 mb-2" style="background-color: #2e151a; border-radius: 15px;">
+                    <h5 class="h4 mb-0 lightYellowText">Vistazo</h5>
+                </div>
+    
+                <div class="d-flex flex-column mb-3">
+                    <span class="h5 mb-0 lightYellowText">Región: </span>
+                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                </div>
+                
+                <div class="d-flex flex-column mb-3">
+                    <span class="h5 mb-0 lightYellowText">Altura: </span>
+                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                </div>
+    
+                <div class="d-flex flex-column mb-3">
+                    <span class="h5 mb-0 lightYellowText">Humedad: </span>
+                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                </div>
+                                            
+                <div class="p-3 mx-n3 mb-4" style="background-color: #2e151a; border-radius: 15px;">
+                    <h5 class="h5 mb-0 lightYellowText">Notas: </h5>
+                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                </div>
+                
+            </div>`;
+    
+    modalDivBody.innerHTML += modalDivBodyInfo;
+    
+    //console.log("hola");
 	//document.getElementById("modal-count").innerHTML = DATA_CART[i].count;
 	// alert(id)
 }
