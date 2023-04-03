@@ -1,10 +1,9 @@
-/* 
-p {
-    background-color: yellow;
-} 
-*/
 
-.card-title, .lightYellowText{
+ .colorText{
+    color: var(--primary);
+}
+
+.lightYellowText{
     color: var(--secondary2);
 }
 
@@ -12,7 +11,11 @@ p {
     background-color: var(--primary);
     border-color: azure;
     margin: 16px;
-    
+}
+
+.modalLittleBoxes {
+    background-color: var(--primary);
+    border-radius: 15px;
 }
 
 .btnVerMas {
@@ -42,3 +45,4 @@ p {
     color: var(--primary);
     transition: 0.7s;
 }
+

@@ -30,7 +30,6 @@ mexicana.
 
 Tecnologías utilizadas
 
-
 | Front End         | Back End    | Base de datos | Control de versiones |
 | ----------------- | ----------- | ------------- | -------------------- |
 | HTML5             | JAVA        | MYSQL         | Git                  |
@@ -40,4 +39,4 @@ Tecnologías utilizadas
 
 ## Diagrama Entidad Relacion
 
-![1680280907070](image/readme/1680280907070.png)
+![1680407938585](image/readme/1680407938585.png)
