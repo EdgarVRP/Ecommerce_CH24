@@ -33,8 +33,8 @@ function addProduct(id) {
     // Producto a agregar con caracteristicas default
 	let product = {
 		id: id,
-		grind: 0,
-		roast: 0,
+		grind: 2,
+		roast: 2,
 		count: 1,
 	};
 	DATA_CART.push(product);

@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "grind": 0,
-        "roast": 0,
+        "grind": 2,
+        "roast": 2,
         "count": 1
     },
     {
         "id": 2,
-        "grind": 0,
-        "roast": 0,
+        "grind": 2,
+        "roast": 2,
         "count": 2
     },
     {
         "id": 2,
         "grind": 2,
-        "roast": 0,
+        "roast": 2,
         "count": 2
     },
     {
         "id": 1,
-        "grind": 0,
-        "roast": 1,
+        "grind": 2,
+        "roast": 2,
         "count": 4
     }
 ]

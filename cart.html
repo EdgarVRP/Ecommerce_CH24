@@ -41,86 +41,165 @@
 
   <div class="container">
 
-    <div id="products">
-      <!-- <div class="product">
-        <div class="row">
+    <hr>
 
-          <div id="info" class="col-12 col-md-6">
-            <button id="product-delete" class="button" onclick="deleteProduct()"><i class="bi bi-x"></i></button>
+    <div id="container-products">
 
-            <img id="" class="img-product" src="public/img/products/product_1.png" alt="">
-            <div>
-              <p>${PRODUCT.nombre}</p>
-              <p>Molido: ${grind}</p>
-              <p>Tostado: ${roast}</p>
-            </div>
-          </div>
+    </div>
 
-          <div id="amount" class="col-4 col-md-3">
-            <button class="button" onclick="subCount()" style="width: 36px">-</button>
-            <p>${DATA_CART[i].count}</p>
-            <button class="button" onclick="addCount()" style="width: 36px">+</button>
-          </div>
-
-          <div id="buttons" class="col-8 col-md-3">
-            <div class="row">
-
-              <div id="price" class="col-6 col-md-12">
-                <p>$${subtotal}</p>
-              </div>
-
-              <div id="details" class="col-6 col-md-12">
-                <button class="button" data-bs-toggle="modal" data-bs-target="#modal-product"
-                  onclick="updateModal()" style="width: 150px;">Detalles</button>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div> -->
-
-
+    <!-- Mensaje de carrito vacio si no hay productos en el -->
+    <div id="container-message" style="display: flex; justify-content: center; color: white; visibility: visible;">
+      <h2>Carrito vacio</h2>
     </div>
 
     <hr>
 
-    <!-- Mensaje de carrito vacio si no hay productos en el -->
-    <div id="message" style="display: flex; justify-content: center; color: white;">
-      <h2>Carrito vacio</h2>
-    </div>
+    <!-- Contenedor de informacion, forma de pago y pagar -->
+    <div id="container-bottom" class="row">
 
-    <!-- Parte inferior de la pagina de carrito donde se encuentra la parte de pagar, iniciar sesion o pagar como invitado -->
-    <div id="bottom" class="container" style="visibility: hidden;">
-      <div class="row">
-        <div class="col-12 col-md-6">
+      <!-- Formulario boton editar save -->
+      <div id="container-shipping" class="col-12 col-md-6">
+
+        <form>
           <div class="form-row">
-            <div class="mb-2">
-              <!-- <label for="street">Calle</label> -->
-              <!-- <input name="street" type="text" class="input form-control" id="input-last"> -->
-              <!-- <p class="warning" id="warning-street">Falta algo</p> -->
+            <label class="form-label">Nombre</label>
+            <input class="form-input form-control" type="text" id="input-name">
+            <p class="warning" id="warning-name">Falta algo</p>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">Correo</label>
+            <input class="form-input form-control" type="text" id="input-email">
+            <p class="warning" id="warning-email">Falta algo</p>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">Telefono</label>
+            <input class="form-input form-control" type="text" id="input-phone">
+            <p class="warning" id="warning-phone">Falta algo</p>
+          </div>
+
+          <div class="row">
+            <div class="col-8 form-row">
+              <label class="form-label">Calle</label>
+              <input class="form-input form-control" type="text" id="input-street">
+              <p class="warning" id="warning-street">Falta algo</p>
+            </div>
+
+            <div class="col-4 form-row">
+              <label class="form-label">Numero</label>
+              <input class="form-input form-control" type="text" id="input-number">
+              <p class="warning" id="warning-number">Falta algo</p>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-8 form-row">
+              <label class="form-label">Colonia</label>
+              <input class="form-input form-control" type="text" id="input-colonia">
+              <p class="warning" id="warning-colonia">Falta algo</p>
+            </div>
+
+            <div class="col-4 form-row">
+              <label class="form-label">CP</label>
+              <input class="form-input form-control" type="text" id="input-cp">
+              <p class="warning" id="warning-cp">Falta algo</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8 form-row">
+              <label class="form-label">Estado</label>
+              <input class="form-input form-control" type="text" id="input-state">
+              <p class="warning" id="warning-state">Falta algo</p>
+            </div>
+
+            <div class="col-4 form-row">
+              <label class="form-label">Pais</label>
+              <input class="form-input form-control" type="text" id="input-country">
+              <p class="warning" id="warning-country">Falta algo</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">Informacion adicional</label>
+            <input class="form-input form-control" type="text" id="input-info">
+            <p class="warning" id="warning-info">Falta algo</p>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <!-- <button id="btn-save-edit" class="btn button">Guardar</button> -->
+          </div>
+        </form>
+      </div>
+
+      <!-- Total, informacion de pago, pagar -->
+      <div id="container-pay" class="col-12 col-md-6">
+
+        <p id="p-shipping" class="textp">Envio: $200.00</p>
+        <p id="p-total" class="textp">Total: $200.00</p>
+
+        <!-- <div class="container-option-pay" style="visibility: visible;"> -->
+          <!-- <button class="btn button">Paypal</button> -->
+          <!-- <button class="btn button">Tarjeta</button> -->
+        <!-- </div> -->
+
+        <!-- <div class="container-credit-card" style="visibility: hidden;">
+          <div class="form-row">
+            <div class="">
+              <label for="input-name">Nombre de la tarjeta</label>
+              <input name="name" type="text" class="input form-control" id="input-name">
+              <p class="warning" id="warning-name">Falta algo</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="">
+              <label for="input-name">Numero</label>
+              <input name="name" type="text" class="input form-control" id="input-name">
+              <p class="warning" id="warning-name">Falta algo</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col form-row">
+              <div class="">
+                <label for="input-name">Mes</label>
+                <input name="name" type="text" class="input form-control" id="input-name">
+                <p class="warning" id="warning-name">Falta algo</p>
+              </div>
+            </div>
+
+            <div class="col form-row">
+              <div class="">
+                <label for="input-name">Año</label>
+                <input name="name" type="text" class="input form-control" id="input-name">
+                <p class="warning" id="warning-name">Falta algo</p>
+              </div>
+            </div>
+
+            <div class="col form-row">
+              <div class="">
+                <label for="input-name">CCV</label>
+                <input name="name" type="text" class="input form-control" id="input-name">
+                <p class="warning" id="warning-name">Falta algo</p>
+              </div>
+            </div> 
+          </div>-->
+          <div class="container-buttons">
+            <button id="btn-pay" class="btn button">Pagar</button>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <p id="total"></p>
-        </div>
-      </div>
 
-      <div id="$btnsPay" class="d-flex justify-content-around">
-        <button id="$btnPayGuest" class="btn btn-primary">Pagar como invitado</button>
-        <button id="$btnPayUser" class="btn btn-primary">Pagar como usuario</button>
-      </div>
+        <br>
+        <br>
 
-      <div id="$btnPayTotal" class="d-flex justify-content-center">
-        <button id="$btnPay" class="btn btn-primary">Pagar</button>
-      </div>
 
-      <br>
-      <br>
-      <br>
+      </div>
     </div>
   </div>
+
+  <br>
 
   <!-- Modal para modificar productos que se modifica dependiendo del producto que se quiera modificar -->
   <div id="modal-product" class="modal fade" tabindex="-1" role="dialog">
@@ -135,25 +214,25 @@
           <div class="row">
             <div class="col-4">
               <img id="modal-img" src="" alt="" style="height: 128px; width: 128px;">
-              <button type="button" class="btn btn-primary">Eliminar</button>
+              <!-- <button type="button" class="btn btn-primary">Eliminar</button> -->
 
             </div>
             <div class="col-8">
-              <p>Descripcion:</p>
+              <!-- <p>Descripcion:</p> -->
 
               <p>Molido:</p>
               <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio1g" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1g">No</label>
+                <!-- <input type="radio" class="btn-check" name="ground-radio" id="btnradio1a" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1a">No</label> -->
 
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio2g" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2g">Bajo</label>
+                <input type="radio" class="btn-check" name="ground-radio" id="btnradio2a" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2a">Bajo</label>
 
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio3g" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3g">Medio</label>
+                <input type="radio" class="btn-check" name="ground-radio" id="btnradio3a" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio3a">Medio</label>
 
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio4g" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio4g">Alto</label>
+                <input type="radio" class="btn-check" name="ground-radio" id="btnradio4a" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio4a">Alto</label>
               </div>
 
               <br>
@@ -161,28 +240,28 @@
 
               <p>Tostado:</p>
               <div id="radio-toast" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">No</label>
+                <!-- <input type="radio" class="btn-check" name="roast-radio" id="btnradio1b" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1b">No</label> -->
 
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Bajo</label>
+                <input type="radio" class="btn-check" name="roast-radio" id="btnradio2b" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2b">Bajo</label>
 
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">Medio</label>
+                <input type="radio" class="btn-check" name="roast-radio" id="btnradio3b" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio3b">Medio</label>
 
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio4" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio4">Alto</label>
+                <input type="radio" class="btn-check" name="roast-radio" id="btnradio4b" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio4b">Alto</label>
               </div>
 
               <br>
               <br>
 
-              <p>Cantidad:</p>
+              <!-- <p>Cantidad:</p>
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-primary">+</button>
                 <button id="modal-count" type="button" class="btn btn-primary">3</button>
                 <button type="button" class="btn btn-primary">-</button>
-              </div>
+              </div> -->
 
             </div>
           </div>

@@ -1,43 +1,24 @@
-#product-delete {
-    /* Color de texto */
-    text-align: center;
-    height: 48px;
-    width: 48px;
-    border-radius: 16px;
-    line-height: 0px;
-    /* margin-top: 0px; */
-    /* margin-left: 0px; */
-    color: white;
-    left: 0px;
-    top: 0px;
-    margin: 8px;
-    font-size: 30px;
-    text-align: center;
-}
-
 .product {
     margin: 16px;
     background-color: var(--secondary2);
     border-radius: 16px;
 }
 
-#amount{
+.center{
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-.button {
-    background-color: var(--primary); /* Green */
-    border: 2px solid var(--secondary);
-    color: white;
-    padding: 4px 8px;
+.product-info{
+    display: flex;
     text-align: center;
-    font-size: 18px;
-    width: 36px;
-    border-radius: 12px;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
 }
+
 
 #price p {
     font-size: 24px;
@@ -70,12 +51,6 @@
     /* align-items: center; */
 }
 
-#buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 hr {
     height: 2px;
     color: var(--secondary2);
@@ -96,21 +71,24 @@ hr {
     width: 30%;
 }
 
-/* Estilo de alertas de formulario de informacion incorrecta */
-.warning {
-    text-align: center;
-    color: #ca240e !important;
-    visibility: hidden;
-}
-
-/* Revisar el uso de important */
-.input {
-    border-radius: 10px;
-    background-color: var(--secondary2) !important;
-    color: var(--black) !important;
-}
 
 #bottom * {
     font-family: 'Ubuntu', sans-serif;
     color: var(--secondary2);
+}
+
+.textp {
+    color: white;
+    font-size: 32px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+    margin-right: 60px;
+}
+
+.container-option-pay,
+.container-buttons{
+    display: flex;
+    justify-content: end;
+    margin: 16px;
 }
