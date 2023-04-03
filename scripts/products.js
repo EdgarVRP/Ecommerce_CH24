@@ -80,11 +80,14 @@ function updateModal(i) {
     const modalTitle = document.getElementById("modal-title");
     //Traer el div del modal para el body
     const modalDivBody = document.getElementById("row-modal-body");
+    //Traer footer del Modal
+    const modalDivFooter = document.getElementById("modal-footer");
 
     //Se limpia el modal primero
     //Si no se limpian cuando se cierra y vuelve a abrir el modal se duplican todos los elementos
     modalTitle.innerHTML = ``;
     modalDivBody.innerHTML = ``;
+    modalDivFooter.innerHTML=``;
     
     //Pendiente de cambiar la imagen
     const modalTitleInfo = `
@@ -195,8 +198,13 @@ function updateModal(i) {
                 
             </div>`;
     
-    modalDivBody.innerHTML += modalDivBodyInfo;
+    const modalFooterInfo = `
+        <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" data-mdb-ripple-color="dark" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger flex-fill ms-1 btnBuyNow" onclick="addProduct(${DATA_PRODUCTS[i].id})">Comprar ahora</button>
+    `;
     
+    modalDivBody.innerHTML += modalDivBodyInfo;
+    modalDivFooter.innerHTML += modalFooterInfo;
    
 }
 

@@ -11,7 +11,11 @@
     background-color: var(--primary);
     border-color: azure;
     margin: 16px;
-    
+}
+
+.modalLittleBoxes {
+    background-color: var(--primary);
+    border-radius: 15px;
 }
 
 .btnVerMas {
