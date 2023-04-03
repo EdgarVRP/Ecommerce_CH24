@@ -75,22 +75,35 @@ function showProducts() {
 
 
 function updateModal(i) {
-	//document.getElementById("modal-img").src = PRODUCT.rutaImagen;
 	
-    //Modidica el titulo del Modal (Ver más)
+	//Traer el titulo del Modal (Ver más)
     const modalTitle = document.getElementById("modal-title");
+    //Traer el div del modal para el body
+    const modalDivBody = document.getElementById("row-modal-body");
+
+    //Se limpia el modal primero
+    //Si no se limpian cuando se cierra y vuelve a abrir el modal se duplican todos los elementos
+    modalTitle.innerHTML = ``;
+    modalDivBody.innerHTML = ``;
+    
     //Pendiente de cambiar la imagen
     const modalTitleInfo = `
-    <a class="navbar-brand" href="./admin.html">
-        <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
-        <h3>${DATA_PRODUCTS[i].variedad}</h3>
-    </a>`;
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
+            </div>
+            <div class="col">
+                <h3 class="colorText">${DATA_PRODUCTS[i].variedad}</h3>
+                <p class="colorText">Desde: $${DATA_PRODUCTS[i].precioTostado} </p>
+            </div>
+        </div>
+    </div>`;
     
     modalTitle.innerHTML += modalTitleInfo;
     //document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
     
-    //Traer el div del modal para el body
-    const modalDivBody = document.getElementById("row-modal-body");
+    
     const modalDivBodyInfo = `
             <div style="padding: 5%; border-radius: 5%;">        
                 <div id="carouselExampleIndicators" class="carousel slide" >
@@ -120,27 +133,62 @@ function updateModal(i) {
                     </button>
                 </div>
             </div>
+
             <div class="text-center">
-                <div class="p-3 mx-n3 mb-2" style="background-color: #2e151a; border-radius: 15px;">
+                <div class="p-3 mx-n3 mb-2 modalLittleBoxes" >
                     <h5 class="h4 mb-0 lightYellowText">Descripción General</h5>
                 </div>
-    
-                <div class="d-flex flex-column mb-3">
-                    <span class="h5 mb-0 colorText">Región: </span>
-                    <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].region}</span>
-                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Región: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].region}</span>
+                            </div>
+                            
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Cosecha: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].cosecha}</span>
+                            </div>
                 
-                <div class="d-flex flex-column mb-3">
-                    <span class="h5 mb-0 colorText">Altura: </span>
-                    <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].altura}</span>
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Altura: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].altura}</span>
+                            </div>
+
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Humedad: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].humedad}%</span>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Proceso: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].proceso}</span>
+                            </div>
+                            
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Praparación: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].preparacion}</span>
+                            </div>
+                
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Variedad: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].variedad}</span>
+                            </div>
+
+                            <div class="d-flex flex-column mb-3">
+                                <span class="h5 mb-0 colorText">Puntuación: </span>
+                                <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].puntuacion}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
     
-                <div class="d-flex flex-column mb-3">
-                    <span class="h5 mb-0 colorText">Humedad: </span>
-                    <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].humedad}</span>
-                </div>
-                                            
-                <div class="p-3 mx-n3 mb-4" style="background-color: #2e151a; border-radius: 15px;">
+                                                            
+                <div class="p-3 mx-n3 mb-4 modalLittleBoxes" >
                     <h5 class="h5 mb-0 lightYellowText">Notas: </h5>
                     <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nota}</span>
                 </div>
