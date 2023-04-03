@@ -1,6 +1,6 @@
-Query para crear base de datos llamada cafealonso
+Query para crear base de datos llamada cafealfonso
 
-CREATE DATABASE cafealonso;
+CREATE DATABASE cafealfonso;
 
 Query para crear la tabla usuario en MySQL
 
@@ -23,7 +23,6 @@ codigoPostal INT
 
 Query para crear tabla productos en MySQL
 
-
 CREATE TABLE productos (
   idProducto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL,
@@ -38,7 +37,6 @@ CREATE TABLE productos (
   precio DOUBLE,
   inventario INT
 );
-
 
 Query para crear la tabla Venta en MySQL:
 
