@@ -94,3 +94,11 @@ img {
     margin: 32px;
     background-color: var(--primary);
 }
+
+#titulo-info{
+    font-size: 64px !important;
+}
+
+/* h1 {
+    font-size: 100px;
+} */
