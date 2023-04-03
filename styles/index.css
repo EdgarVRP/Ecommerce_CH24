@@ -49,13 +49,19 @@ img {
 
 .card-title {
     color: #EFB817;
-    font-size: 5rem;
+    font-size: 100px;
 
 }
 
 .card-text {
     color: black;
     font-size: 2rem;
+}
+
+/* titulo de curiosidades */
+#info{
+    color: #EFB817;
+    font-size: 5rem;
 }
 
 /* para centrar el contenido de las tarjetas info */

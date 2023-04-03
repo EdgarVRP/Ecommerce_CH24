@@ -31,7 +31,7 @@
     </div> -->
 
     <!-- Div del video -->
-    <div id="video-container" class="div border">
+    <div id="video-container" class="div"> <!-- le quite el border -->
         <video id="video" autoplay muted loop class="">
             <source src="assets/video/index.mp4" type="video/mp4">
         </video>
@@ -41,12 +41,31 @@
     </div>
 
     <!-- Div carrusel -->
-    <div id="carousel" class="div border pt-3">
+    <div id="carousel" class="div pt-3"> <!-- le quite el border -->
         <!-- bootstrap -->
           <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- Mision -->
+              <!-- Problematica -->
               <div class="carousel-item active">
+                <!-- tarjeta problematica -->
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/problematica.jpg" class="img-fluid rounded-start" alt="Imagen problematica">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Problematica</h5>
+                        <p class="card-text">Café Alfonso busca acercar los productos de estos pequeños productores a las cafeterías de México buscando visibilizar la calidad de estos productores,  promover la cultura cafetalera y apoyar el trabajo de cientos de mexicanos.</p>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta mision -->
+
+                <!-- Mision -->
+              <div class="carousel-item"> <!-- le quite el active -->
                 <!-- tarjeta mision -->
                 <div class="card mb-3">
                   <div class="row g-0">
@@ -113,13 +132,13 @@
     </div><!-- fin carrusel -->
 
     <!-- Curiosidades del cafe -->
-    <div id="info" class="div border">
-      <h1>Curiosidades del cafe</h1>
+    <div id="info" class="div"> <!-- le quite el border -->
+      <h1 id="titulo-info">Curiosidades del cafe</h1>
     </div>
 
     <!-- div de las tarjetas info -->
-    <div class="tarjetas-info m-3">
-      <div class="row justify-content-center mt-3 border">
+    <div class="tarjetas-info m-3"> 
+      <div class="row justify-content-center mt-3"> <!-- le quite el border -->
         <!-- tarjeta uno -->
         <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
