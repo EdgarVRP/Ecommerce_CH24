@@ -31,7 +31,7 @@
     </div> -->
 
     <!-- Div del video -->
-    <div id="video-container" class="div border">
+    <div id="video-container" class="div"> <!-- le quite el border -->
         <video id="video" autoplay muted loop class="">
             <source src="assets/video/index.mp4" type="video/mp4">
         </video>
@@ -41,12 +41,31 @@
     </div>
 
     <!-- Div carrusel -->
-    <div id="carousel" class="div border pt-3">
+    <div id="carousel" class="div pt-3"> <!-- le quite el border -->
         <!-- bootstrap -->
           <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- Mision -->
+              <!-- Problematica -->
               <div class="carousel-item active">
+                <!-- tarjeta problematica -->
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/problematica.jpg" class="img-fluid rounded-start" alt="Imagen problematica">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Problematica</h5>
+                        <p class="card-text">Café Alfonso busca acercar los productos de estos pequeños productores a las cafeterías de México buscando visibilizar la calidad de estos productores,  promover la cultura cafetalera y apoyar el trabajo de cientos de mexicanos.</p>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta mision -->
+
+                <!-- Mision -->
+              <div class="carousel-item"> <!-- le quite el active -->
                 <!-- tarjeta mision -->
                 <div class="card mb-3">
                   <div class="row g-0">
@@ -113,19 +132,19 @@
     </div><!-- fin carrusel -->
 
     <!-- Curiosidades del cafe -->
-    <div id="info" class="div border">
-      <h1>Curiosidades del cafe</h1>
+    <div id="info" class="div"> <!-- le quite el border -->
+      <h1 id="titulo-info">Curiosidades del cafe</h1>
     </div>
 
     <!-- div de las tarjetas info -->
-    <div class="tarjetas-info m-3">
-      <div class="row justify-content-center mt-3 border">
+    <div class="tarjetas-info m-3"> 
+      <div class="row justify-content-center mt-3"> <!-- le quite el border -->
         <!-- tarjeta uno -->
         <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <p class="card-text-info">Después del agua, es la bebida más consumida del mundo.</p>
+            <div class="card-body-info">
+              <p class="card-text-info">Los antioxidantes son vitaminas y minerales que se pueden encontrar de forma natural en diversos alimentos; nos ayudan con a retrasar el envejecimiento de células y tejidos, así como a regenerarlos, previniendo así una gran cantidad de enfermedades, muchas de ellas relacionadas con el corazón y el cerebro.</p>
             </div>
           </div>
         </div><!-- fin tarjeta  -->
@@ -134,8 +153,8 @@
         <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <p class="card-text-info">El 1 de octubre se celebra el Día Internacional del Café.</p>
+            <div class="card-body-info">
+              <p class="card-text-info">La propiedad más conocida del café es que puede aportarnos energía, pero en realidad lo que hace la cafeína es estimular ciertas zonas del cerebro que activan las funciones cognitivas, mejoran la memoria y la forma en la que procesamos la información. Por esta razón nos sentimos más activos y somos capaces de tener un mejor rendimiento en las actividades diarias.</p>
             </div>
           </div>
         </div> <!-- fin tarjeta 2 -->
@@ -144,38 +163,38 @@
         <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <p class="card-text-info">Lo que llamamos granos de café en realidad son las semillas de una fruta.</p>
+            <div class="card-body-info">
+              <p class="card-text-info">Así como la cafeína puede estimular las funciones cognitivas, también tiene la capacidad de intervenir en el sistema nervioso, haciendo que el cansancio tarde en aparecer, lo que permite tener un mejor rendimiento al momento de hacer ejercicio físico. Esta es la razón por la cual algunas bebidas deportivas contienen cafeína.</p>
             </div>
           </div>
         </div> <!-- fin tarjeta 3 -->
 
         <!-- tarjeta 4 -->
-        <div class="col-lg-4 col-md-6 col-sm-12 centrar border">
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
+            <div class="card-body-info">
               <p class="card-text-info">Una de las principales propiedades del café, como casi todo el mundo sabe, es su alto contenido en cafeína. La cafeína es un componente que tiene múltiples efectos en nuestro organismo, pero uno de ellos es que actúa como termogénico.</p>
             </div>
           </div>
         </div> <!-- fin tarjeta 4 -->
 
         <!-- tarjeta 5 -->
-        <div class="col-lg-4 col-md-6 col-sm-12 centrar border">
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
+            <div class="card-body-info">
               <p class="card-text-info">Se ha demostrado que el consumo regular de café tiene la capacidad no solo de combatir algunas enfermedades crónicas y degenerativas como el Alzheimer, el Parkinson y la Diabetes tipo 2, si no también de proteger la salud del hígado.</p>
             </div>
           </div>
         </div> <!-- fin tarjeta 5 -->
 
         <!-- tarjeta 6 -->
-        <div class="col-lg-4 col-md-6 col-sm-12 centrar border">
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
           <div class="card" style="width: 15rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <p class="card-text-info">La cafeína tiene la capacidad de estimular los niveles de adrenalina en sangre, lo que se traduce en un rendimiento muscular y físico de hasta un 11% más.</p>
+            <div class="card-body-info">
+              <p class="card-text-info">Tomar café tiene la capacidad de acelerar el proceso metabólico de quema de grasas llamado termogénesis. Combinado con una dieta baja en calorías y ejercicio, tomar café contribuirá en tu proceso de pérdida de peso y te ayudará a estar en mejor estado físico.</p>
             </div>
           </div>
         </div> <!-- fin tarjeta 6 -->
