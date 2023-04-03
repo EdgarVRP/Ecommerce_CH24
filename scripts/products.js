@@ -80,7 +80,16 @@ function updateModal(i) {
 	//document.getElementById("modal-img").src = PRODUCT.rutaImagen;
 	
     //Modidica el titulo del Modal (Ver más)
-    document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
+    const modalTitle = document.getElementById("modal-title");
+    //Pendiente de cambiar la imagen
+    const modalTitleInfo = `
+    <a class="navbar-brand" href="./admin.html">
+        <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
+        <h1>${DATA_PRODUCTS[i].nombre}</h1>
+    </a>`;
+    
+    modalTitle.innerHTML += modalTitleInfo;
+    //document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
     
     //Traer el div del modal para el body
     const modalDivBody = document.getElementById("row-modal-body");
