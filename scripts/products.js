@@ -94,10 +94,10 @@ function updateModal(i) {
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
+                <img id="logo-navbar" src="assets/img/logo_black.png" alt="Logo" width="36">
             </div>
             <div class="col">
-                <h3 class="colorText">${DATA_PRODUCTS[i].variedad}</h3>
+                <h4 class="colorText">${DATA_PRODUCTS[i].variedad}</h4>
                 <p class="colorText">Desde: $${DATA_PRODUCTS[i].precioTostado} </p>
             </div>
         </div>
