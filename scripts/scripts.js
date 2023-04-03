@@ -112,7 +112,7 @@ function updateNavUser() {
 		document.querySelector("#nav-user").href = "login.html";
 	}
 
-	if (DATA_USER != null && DATA_USER.user == "ADMIN") {
+	if (DATA_USER != null && DATA_USER.user == "Admin") {
 		document.querySelector("#nav-admin").style.visibility = "visible";
 	} else {
 		document.querySelector("#nav-admin").style.visibility = "hidden";
