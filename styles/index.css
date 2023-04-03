@@ -73,3 +73,13 @@ img {
 .card-text-info{
     font-size: 16px;
 }
+
+.card-body-info{
+    margin: 10px;
+    align-self: center;
+    border-radius: 10px;
+    display: flex;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
