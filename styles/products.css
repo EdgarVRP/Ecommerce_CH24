@@ -3,8 +3,11 @@ p {
     background-color: yellow;
 } 
 */
+ .colorText{
+    color: var(--primary);
+}
 
-.card-title, .lightYellowText{
+.lightYellowText{
     color: var(--secondary2);
 }
 
@@ -42,3 +45,4 @@ p {
     color: var(--primary);
     transition: 0.7s;
 }
+

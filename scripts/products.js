@@ -57,7 +57,7 @@ function showProducts() {
               class="card-img-top" alt="" />
               <div class="card-body">
                   <div class="text-center mt-1">
-                      <h4 class="card-title">${DATA_PRODUCTS[i].region}</h4>
+                      <h4 class="card-title lightYellowText">${DATA_PRODUCTS[i].region}</h4>
                       <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].precioTostado}</h6>
                   </div>
       
@@ -85,7 +85,7 @@ function updateModal(i) {
     const modalTitleInfo = `
     <a class="navbar-brand" href="./admin.html">
         <img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
-        <h1>${DATA_PRODUCTS[i].nombre}</h1>
+        <h3>${DATA_PRODUCTS[i].variedad}</h3>
     </a>`;
     
     modalTitle.innerHTML += modalTitleInfo;
@@ -94,34 +94,57 @@ function updateModal(i) {
     //Traer el div del modal para el body
     const modalDivBody = document.getElementById("row-modal-body");
     const modalDivBodyInfo = `
-            <div class="text-center mt-1">
-                <h4 class="card-title">${DATA_PRODUCTS[i].nombre}</h4>
-                <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].nombre}</h6>
+            <div style="padding: 5%; border-radius: 5%;">        
+                <div id="carouselExampleIndicators" class="carousel slide" >
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://varieties.worldcoffeeresearch.org/thumbs/varieties/bourbon/img_2785-2880x1920-q50.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://varieties.worldcoffeeresearch.org/thumbs/varieties/bourbon/img_2785-2880x1920-q50.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://varieties.worldcoffeeresearch.org/thumbs/varieties/bourbon/img_2785-2880x1920-q50.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
-    
             <div class="text-center">
                 <div class="p-3 mx-n3 mb-2" style="background-color: #2e151a; border-radius: 15px;">
-                    <h5 class="h4 mb-0 lightYellowText">Vistazo</h5>
+                    <h5 class="h4 mb-0 lightYellowText">Descripción General</h5>
                 </div>
     
                 <div class="d-flex flex-column mb-3">
-                    <span class="h5 mb-0 lightYellowText">Región: </span>
-                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                    <span class="h5 mb-0 colorText">Región: </span>
+                    <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].region}</span>
                 </div>
                 
                 <div class="d-flex flex-column mb-3">
-                    <span class="h5 mb-0 lightYellowText">Altura: </span>
-                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                    <span class="h5 mb-0 colorText">Altura: </span>
+                    <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].altura}</span>
                 </div>
     
                 <div class="d-flex flex-column mb-3">
-                    <span class="h5 mb-0 lightYellowText">Humedad: </span>
-                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                    <span class="h5 mb-0 colorText">Humedad: </span>
+                    <span class="h6 mb-0 colorText">${DATA_PRODUCTS[i].humedad}</span>
                 </div>
                                             
                 <div class="p-3 mx-n3 mb-4" style="background-color: #2e151a; border-radius: 15px;">
                     <h5 class="h5 mb-0 lightYellowText">Notas: </h5>
-                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nombre}</span>
+                    <span class="h6 mb-0 lightYellowText">${DATA_PRODUCTS[i].nota}</span>
                 </div>
                 
             </div>`;
