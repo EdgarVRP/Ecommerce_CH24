@@ -19,8 +19,9 @@ function validarForm(){
   const estado = document.getElementById("esta").value;
   const cp = document.getElementById("cp").value; 
   const modal = document.getElementById("miModal"); 
+
   var jsonDatosUser;
-  var aviso=""
+  var aviso;
 
 
   // expresiones RegExp para validar algunas variables
@@ -29,10 +30,9 @@ function validarForm(){
   const regexTel = /[0-9]{10}/
   const regexFecha = /[0-9-]{3,20}/
   const regexNum = /[0-9]{1,5}/
-
-
   var contador=0;
   //console.log("------------------")
+
 
   // Validaciones mediante RegExp y Numero de caracteres
   // se valida cada variable, si se cumple con alguno de los criterios
@@ -41,73 +41,73 @@ function validarForm(){
 
   // validacion nombre por longitud
   if(nombre.length < 3){
-    aviso+="El Nombre requiere por lo menos 3 caracteres\n"
+    aviso="El Nombre requiere por lo menos 3 caracteres\n"
     contador++;
   }
 
   // validacion apellido por longitud
   else if(apellido.length < 3){
-    aviso+="El Apellido requiere por lo menos 3 caracteres\n"
+    aviso="El Apellido requiere por lo menos 3 caracteres\n"
     contador++;
   }
   
   // validacion correo por regexp
   else if(!regexCorreo.test(correo)){
-    aviso+="El Correo no tiene un formato correcto\n"
+    aviso="El Correo no tiene un formato correcto\n"
     contador++;
   }
 
   // validacion contraseña por regexp y longitud
   else if(!regexContraseña.test(contrasena)|| contrasena.length<7){
-    aviso+="La Contraseña no debe llevar espacios y requiere minimo 7 caracteres\n"
+    aviso="La Contraseña no debe llevar espacios y requiere minimo 8 caracteres\n"
     contador++;
   }
   
   // validacion telefono por regexp
   else if(!regexTel.test(tel)){
-    aviso+="El Telefono requiere 10 digitos\n"
+    aviso="El Telefono requiere 10 digitos\n"
     contador++;
   }
 
     // validacion fecha por regexp
   else if(!regexFecha.test(fecha)){
-    aviso+="Selecciona la fecha\n"
+    aviso="Selecciona la fecha\n"
     contador++;
   }
 
   // validacion direccion por longitud
   else if(direccion.length<5){
-    aviso+="Tu Direccion debe tener al menos 5 caracteres\n"
+    aviso="Tu Direccion debe tener al menos 5 caracteres\n"
     contador++;
   }
 
   // validacion numero direccion por regexp
   else if(!regexNum.test(numDire)){
-    aviso+="Escribe un Numero de Direccion valido\n"
+    aviso="Escribe un Numero de Direccion valido\n"
     contador++;
   }
 
   // validacion colonia por longitud
   else if(colonia.length<5){
-    aviso+="Tu colonia requiere al menos 5 caracteres\n"
+    aviso="Tu colonia requiere al menos 5 caracteres\n"
     contador++;
   }
 
   // validacion municipio por longitud
   else if(municipio.length<5){
-    aviso+="Tu municipio requiere al menos 5 caracteres\n"
+    aviso="Tu municipio requiere al menos 5 caracteres\n"
     contador++;
   }
 
   // validacion estado por longitud
   else if(estado.length<5){
-    aviso+="Tu estado requiere al menos 5 caracteres\n"
+    aviso="Tu estado requiere al menos 5 caracteres\n"
     contador++;
   }
 
   // validacion codigo postal por regexp
   else if(!regexNum.test(cp)){
-    aviso+="Escribe un Codigo Postal valido\n"
+    aviso="Escribe un Codigo Postal valido\n"
     contador++;
   }
 
@@ -115,7 +115,7 @@ function validarForm(){
   // dado que no se entro a ninguna estructura de control
   // por lo cual el aviso corresponde a registro correcto
   else{
-    aviso+="Bienvenido\n ¡Registro Exitoso!";
+    aviso="Bienvenido ¡Registro Exitoso!";
   }
 
   // Aqui se establece el aviso con la info correcta o incorrecta segun sea el caso
@@ -126,6 +126,12 @@ function validarForm(){
   // de control, por lo cual los valores son correctos, se creo un objeto
   // y posteriormente un json
   if(contador==0){
+
+    console.log(correo);
+    console.log(contrasena);
+
+    //var
+
     var usuario={
       nombre:nombre,
       apellido:apellido,
@@ -142,10 +148,7 @@ function validarForm(){
     }
     jsonDatosUser=JSON.stringify(usuario);  
     console.log(jsonDatosUser);
+    localStorage.setItem("usuario", jsonDatosUser);
   }
 }
-
-
-
-
 
