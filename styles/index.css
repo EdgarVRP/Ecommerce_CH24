@@ -3,7 +3,7 @@ body .div {
     color: var(--white);
     font-size: 32px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 img {
@@ -17,24 +17,35 @@ img {
 }
 
 #video {
-    height: 300px;
+    height: 750px;
     width: 100%;
     object-fit: cover;
     display: block;
     position: relative;
     z-index: 0;
+    bottom: 60px; /* para ocultar la marca de agua del video original */
 }
 
 #text-video {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
     color: var(--secondary2);
+    display: block;
+    padding: 35px;
+}
+
+#over-video {
+    position: absolute;
+    top: 150px;
+    z-index: 1;
+    margin-top: 10px;
+    padding: 35px;
 }
 
 /* Tamaño de la letra del video */
@@ -98,6 +109,20 @@ img {
 
 #titulo-info{
     font-size: 64px !important;
+}
+
+.btnVerMas {
+    background-color: white;
+    border-color: transparent;
+    color: black;
+
+}
+
+.btnVerMas:hover {
+    background-color: black;
+    border-color: transparent;
+    color: white;
+    transition: 0.5s;
 }
 
 /* h1 {
