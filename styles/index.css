@@ -17,13 +17,12 @@ img {
 }
 
 #video {
-    height: 750px;
+    height: 700px;
     width: 100%;
     object-fit: cover;
     display: block;
     position: relative;
     z-index: 0;
-    bottom: 60px; /* para ocultar la marca de agua del video original */
 }
 
 #text-video {
@@ -51,20 +50,44 @@ img {
     /* display: block; */
 }
 
+.container {
+    position: absolute;
+    z-index: 1; 
+}
+
 /* Tamaño de la letra del video */
 #text-p{
-    font-size: 80px; /* No llegar a 100% */
+    font-size: 80px; /* No exceder de 80% */
 }
 
 #video-container {
     position: relative;
 }
 
+.btnVerMas {
+    background-color: white;
+    border-color: transparent;
+    color: black;
+
+}
+
+.btnVerMas:hover {
+    background-color: black;
+    border-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+
+
 /* estilos tarjetas carrusel */
+
+.card-body {
+    border-color: transparent;
+}
 
 .card-title {
     color: #EFB817;
-    font-size: 100px;
+    font-size: 80px;
 
 }
 
@@ -79,20 +102,11 @@ img {
     font-size: 5rem;
 }
 
-/* para centrar el contenido de las tarjetas info */
-.centrar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#titulo-info{
+    font-size: 64px !important;
 }
 
-.tarjetas-info{
-    font-size: 16px; 
-}
-
-.card-text-info{
-    font-size: 24px;
-}
 
 .card-body-info{
     margin: 10px;
@@ -110,27 +124,19 @@ img {
     background-color: var(--primary);
 }
 
-#titulo-info{
-    font-size: 64px !important;
+/* para centrar el contenido de las tarjetas info */
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btnVerMas {
-    background-color: white;
-    border-color: transparent;
-    color: black;
-
+.tarjetas-info{
+    font-size: 16px; 
 }
 
-.btnVerMas:hover {
-    background-color: black;
-    border-color: transparent;
-    color: white;
-    transition: 0.5s;
-}
-
-.container {
-    position: absolute;
-    z-index: 1; 
+.card-text-info{
+    font-size: 24px;
 }
 
 /* h1 {
