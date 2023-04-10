@@ -10,21 +10,12 @@ body {
 
 /* Autocompletado color background */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px var(--secondary2) inset !important;
 }
 
-.background {
-    /* position: absolute;
-    width: 80%;
-    height: 80%;
-    margin: 300 300 100 100;
-    background-color: red;
-    z-index: -1;
-    border-radius: 50px; */
-}
 
 /* Estilos de form-contact*/
 #form-contact {
@@ -32,33 +23,9 @@ input:-webkit-autofill:active{
     flex-direction: column;
 }
 
-
-/* Revisar el uso de important */
-.input {
-    border-radius: 10px;
-    background-color: var(--secondary2) !important;
-    color: var(--black) !important;
-}
-
-/* Color de los input de form cuando se pasa sobre ellos */
-.input:focus {
-    background: #9e9e9e93;
-}
-
 /* Estilos de botons de enviar */
 #button {
-    width: 125px;
-    border-radius: 10px;
     align-self: end;
-    background-color: var(--primary2);
-    border-color: white;
-    color: #fcbf6b;
-}
-#button:hover{
-    background-color: #efb815;
-    border-color: transparent;
-    color: var(--primary2);
-    transition: 0.7s;
 }
 
 /* Estilos de linea en el titulo de contactanos */
