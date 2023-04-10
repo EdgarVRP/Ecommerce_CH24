@@ -27,6 +27,7 @@ img {
 }
 
 #text-video {
+    box-sizing: border-box;
     position: absolute;
     top: 0;
     width: 100%;
@@ -38,19 +39,21 @@ img {
     color: var(--secondary2);
     display: block;
     padding: 35px;
+    line-height: 260%;
 }
 
 #over-video {
     position: absolute;
-    top: 150px;
-    z-index: 1;
+    top: 200px;
+    z-index: 2;
     margin-top: 10px;
     padding: 35px;
+    /* display: block; */
 }
 
 /* Tamaño de la letra del video */
 #text-p{
-    font-size: 100px;
+    font-size: 80px; /* No llegar a 100% */
 }
 
 #video-container {
@@ -123,6 +126,11 @@ img {
     border-color: transparent;
     color: white;
     transition: 0.5s;
+}
+
+.container {
+    position: absolute;
+    z-index: 1; 
 }
 
 /* h1 {
