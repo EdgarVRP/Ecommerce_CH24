@@ -34,6 +34,7 @@ img {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    color: var(--secondary2);
 }
 
 /* Tamaño de la letra del video */
