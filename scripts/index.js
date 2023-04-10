@@ -2,7 +2,7 @@ let values = "";
 let remove = false;
 
 //const data = ["Bienvenid", "os queridos", "os consumidores", "as queridas", "as consumidoras", "es querides ", "es consumidores"];
-const data = ["Bienvenidos ", " queridos", " consumidores"];
+const data = ["¡Bienvenidos ", " queridos!", " consumidores!"];
 let iname = 0;
 let ichar = 0;
 
@@ -11,10 +11,13 @@ function animation(){
     
     if (remove){
         values = values.substring(0, values.length-1);
-        if (values.length < 12){
+        if (values.length < 13){
             remove = false;
+
             //values = "Bienvenid";
-            values = "Bienvenidos ";
+            //12 o 13 dependiendo del contexto!
+
+            values = "!Bienvenidos ";
         }
 
     } else {
