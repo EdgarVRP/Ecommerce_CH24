@@ -12,6 +12,7 @@
     --black: #000000;
 }
 
+
 /* Aplicar estilo a todo elemento */
 * {
     /* font-family: "Comic Sans MS", "Comic Sans"; */
@@ -322,7 +323,7 @@ article {
 /* Estilo de alertas de formulario de informacion incorrecta */
 .warning {
     text-align: center;
-    color: #ca240e !important;
+    color: #EFB817 !important;
     visibility: hidden;
     font-size: 16px;
     margin: 0px;
@@ -350,7 +351,6 @@ article {
     border-color: white;
     color: #fcbf6b;
     margin: 8px;
-
 }
 
 .small-button {
@@ -371,8 +371,17 @@ article {
 
 .small-button:hover,
 .button:hover {
-    background-color: #efb815;
+    background-color: #fcbf6b;
     border-color: transparent;
-    color: var(--primary1);
-    transition: 0.2s;
+    color: var(--black);
+    transition: 0.4s;
+}
+
+.form-control{
+    color: black !important;
+    /* background-color: blacfasdfk; */
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
