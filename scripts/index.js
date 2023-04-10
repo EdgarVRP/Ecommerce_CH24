@@ -37,4 +37,4 @@ function animation(){
     textVideo.innerHTML = values;
 }
 
-setInterval(animation, 200);
+setInterval(animation, 150);
