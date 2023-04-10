@@ -50,7 +50,7 @@ img {
     /* display: block; */
 }
 
-.container {
+#textOverVideo {
     position: absolute;
     z-index: 1; 
 }
