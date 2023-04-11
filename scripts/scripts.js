@@ -1,5 +1,5 @@
 // const SERVER_URL = "http://localhost:8080/";
-const SERVER_URL = "ecommercebackend-production-ff9a.up.railway.app/";
+const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
 
 // cambiar un variable de color global
 
