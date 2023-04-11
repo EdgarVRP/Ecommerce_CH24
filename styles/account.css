@@ -85,14 +85,29 @@ h3{
 
 #fondoBoton{
     color: white;
-    background-color: var(--primary);
+    background-color: var(--primary);  
+   
+
+    
 }
 #imgUser{
     width: 100px;
     height: 100px;
+    
 }
 
 .form-label,
 label {
     color: black !important;
 }
+
+.accordion-button{
+    color:black;
+}
+
+/* .accordion-button:not(.collapsed)::after {
+    background-color: white;
+    color: white;
+    border-top-color: aliceblue;
+    transform: var(--bs-accordion-btn-icon-transform);
+} */
