@@ -106,7 +106,7 @@ darkMode.onclick = function () {
 updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
-	// console.log(DATA_USER);
+	console.log(DATA_USER);
 
 
 	if (DATA_USER != null && DATA_USER.nombre != undefined) {
