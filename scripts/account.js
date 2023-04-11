@@ -145,12 +145,7 @@ function validarForm(){
       contador++;
     }
   
-      // validacion fecha por regexp
-    else if(!regexFecha.test(fecha)){
-      aviso+="Selecciona la fecha\n"
-      contador++;
-    }
-  
+
     
   
     // Si se llega este ultimo else significa que los datos proporcionados son correctos
@@ -173,7 +168,7 @@ function validarForm(){
         nombre:nombre,
         apellido:apellido,
         email:correo,
-        contrasena:contrasena,
+        
         tel:tel,
         fechaNac:fecha,
         
