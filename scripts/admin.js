@@ -1,48 +1,31 @@
 //Pagina de administrador de productos a vender
 let tabla = document.getElementById("tablaProductos");
 
-if (localStorage.getItem("productos") === null) {
   //Realizando peticion get al archivo data.json si no hay datos en local storage
   var productos = [];
-  fetch("./testing/Productos.json")
+  fetch("http://localhost:8080/productos")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       productos = data;
-      console.log(productos);
     })
     .catch(function (error) {
       console.error("Error al realizar la petición:", error);
     });
-} else {
-  //Obteniendo datos de local storage
-  productos = JSON.parse(localStorage.getItem("productos"));
-}
-//Estableciendo el id de usuario en localstorage
-localStorage.setItem("id", 1);
-//Obteniedno id de usuario por localstorage
-let id = localStorage.getItem("id");
-//timmer de .5 segundos para que se ejecute la peticion get
-let productosLocalStorage = [];
 
+//timmer de .5 segundos para que se ejecute la peticion get
 //MOSTRAR PRODUCTOS
 
 setTimeout(function () {
-  //Vaciando datos de JSON a local storage
-  //console.log(productos);
-  localStorage.setItem("productos", JSON.stringify(productos));
-  //Obteniendo datos de local storage
-  productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
-  //console.log(productosLocalStorage);
   // Agregar cada producto a la tabla.
-  productosLocalStorage.forEach(function (producto) {
+  productos.forEach(function (producto) {
     //añadiendo fila
     let fila = tabla.insertRow();
     fila.setAttribute("id", producto.id);
     fila.insertCell(0).innerHTML = producto.nombre;
     //imagen
     let imagen = document.createElement("img");
-    imagen.setAttribute("src", producto.rutaImagen);
+    imagen.setAttribute("src", producto.rutaimagen);
     imagen.setAttribute("width", "100px");
     imagen.setAttribute("height", "100px");
     fila.insertCell(1).appendChild(imagen);
@@ -56,7 +39,7 @@ setTimeout(function () {
     fila.insertCell(8).innerHTML = producto.variedad;
     fila.insertCell(9).innerHTML = producto.nota;
     fila.insertCell(10).innerHTML = producto.puntuacion;
-    fila.insertCell(11).innerHTML = producto.precioTostado;
+    fila.insertCell(11).innerHTML = producto.precio;
     fila.insertCell(12).innerHTML = producto.inventario;
     //botones
     let btnEditar = document.createElement("button");
@@ -72,7 +55,7 @@ setTimeout(function () {
     btnEliminar.innerHTML = "Eliminar";
     fila.insertCell(14).appendChild(btnEliminar);
   });
-}, 500);
+}, 1500);
 
 //add even listener
 const on = (element, event, selector, handler) => {
