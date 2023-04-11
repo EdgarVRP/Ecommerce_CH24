@@ -1,5 +1,3 @@
-const SERVER_URL = "http://localhost:8080/";
-
 //Get inputs, warnings y boton
 const $inputName = document.querySelector("#input-name");
 const $warningName = document.querySelector("#warning-name");
@@ -32,19 +30,9 @@ $buttonSend.addEventListener("click", send);
 
 //Cuando se presiona el boton enviar
 function send(e) {
-	registerUser();
-	return;
 	//Si todo los formularios estan correctos registrar, usar $ para que check todos aunque los primero fallen
 	if (checkName(e) & checkLast(e) & checkEmail(e) & checkPass1(e) & checkPass2(e)) {
-		alert("ok");
-
-		//Comprobar si existe el usuario
-		//Registro a db
-		//guardar en local storage
-		//Iniciar sesion
-		//Redireccionar
-	} else {
-		alert("error");
+		registerUser();
 	}
 }
 
@@ -54,7 +42,7 @@ function registerUser() {
 	const email_user = $inputEmail.value;
 	const pass_user = $inputPass1.value;
 
-	let data = {
+	let DATA_USER = {
 		nombre: `${name_user}`,
 		apellido: `${last_name_user}`,
 		email: `${email_user}`,
@@ -62,22 +50,23 @@ function registerUser() {
 	};
 
 	let url = SERVER_URL + "usuarios";
-	fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+	fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(DATA_USER) })
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
-			if (data == "Usuario agregado con exito"){
-				alert("Usuario agregado con exito")
+			if (data.id == null) {
+				alert("Usuario ya registrado");
 
-			}
-			if (data == "Usuario ya registrado"){
-				alert("Usuario ya registrado")
-
+			} else {
+				alert("Usuario agregado con exito");
+				localStorage.setItem("DATA_USER", JSON.stringify(data));
+				updateNavUser();
+				window.location.href = "./";
 			}
 		})
 		.catch((error) => {
 			console.error(error);
-			alert("Error del servidor")
+			alert("Error del servidor");
 		});
 }
 

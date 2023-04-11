@@ -1,3 +1,6 @@
+// const SERVER_URL = "http://localhost:8080/";
+const SERVER_URL = "ecommercebackend-production-ff9a.up.railway.app/";
+
 // cambiar un variable de color global
 
 // document.documentElement.style.setProperty('--primary', '#ff0000');
@@ -104,15 +107,15 @@ updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
 
-	if (DATA_USER != null && DATA_USER.user != undefined) {
-		document.querySelector("#nav-user").innerHTML = DATA_USER.user;
+	if (DATA_USER != null && DATA_USER.nombre != undefined) {
+		document.querySelector("#nav-user").innerHTML = DATA_USER.nombre;
 		document.querySelector("#nav-user").href = "account.html";
 	} else {
 		document.querySelector("#nav-user").innerHTML = "Ingresar";
 		document.querySelector("#nav-user").href = "login.html";
 	}
 
-	if (DATA_USER != null && DATA_USER.user == "Admin") {
+	if (DATA_USER != null && DATA_USER.nombre == "Admin") {
 		document.querySelector("#nav-admin").style.visibility = "visible";
 	} else {
 		document.querySelector("#nav-admin").style.visibility = "hidden";
