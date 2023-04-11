@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Estilos CSS generales -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Estilos CSS contact -->
+    <link rel="stylesheet" href="styles/signupV2.css">
+    <!--  Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Iconos bootstrap -->
+    <!-- Example: <i class="bi-alarm"></i> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div id="navbar"></div>
+
+
+    <!-- Contenedor contact -->
+    <div id="contact" class="container">
+        <br>
+        <!-- Titulo y linea -->
+        <h2 class="linea"><span id="title">Registro</span></h2>
+
+
+        <!-- Contenedor general -->
+        <div class="container row">
+
+            <!-- Derecha Imagen y texto derecha -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Texto -->
+                <p id="fonts">Un gusto que te unas a nuestra gran comunidad cafetalera </p>
+
+                <!-- Imagen -->
+                <img class="img-fluid" src="https://coffee.alexflipnote.dev/random" alt="" id="img">
+            </div>
+
+            <!-- Izquierda Formularios y boton -->
+            <div class="col-lg-6 col-md-6 col-sm-12 align-right">
+                <form id="form-contact">
+                    <!-- Formulario nombre -->
+                    <div class="form-row">
+                        <div class="mb-1">
+                            <label for="input-name">Nombre</label>
+                            <input name="name" type="text" class="form-control" id="input-name">
+                            <p class="warning" id="warning-name">Falta algo</p>
+                        </div>
+                    </div>
+
+                    <!-- Formulario apellido -->
+                    <div class="form-row">
+                        <div class="mb-1">
+                            <label for="last">Apellido</label>
+                            <input name="last" type="text" class="form-control" id="input-last">
+                            <p class="warning" id="warning-last">Falta algo</p>
+                        </div>
+                    </div>
+
+                    <!-- Formulario email -->
+                    <div class="form-row">
+                        <div class="mb-2">
+                            <label for="input-email">Email</label>
+                            <input name="email" type="email" class="form-control" id="input-email">
+                            <p class="warning" id="warning-email">Falta algo</p>
+                        </div>
+                    </div>
+
+                    <!-- Formulario password -->
+                    <div class="form-row">
+                        <div class="mb-2">
+                            <label for="input-pass1">Contraseña</label>
+                            <input name="pass1" type="password" class="form-control" id="input-pass1">
+                            <p class="warning" id="warning-pass1">Falta algo</p>
+                        </div>
+                    </div>
+
+                    <!-- Formulario repetir password -->
+                    <div class="form-row">
+                        <div class="mb-2">
+                            <label for="input-pass2">Repetir contraseña</label>
+                            <input name="pass2" type="password" class="form-control" id="input-pass2">
+                            <p class="warning" id="warning-pass2">Falta algo</p>
+                        </div>
+                    </div>
+
+                    <!-- Boton de enviar info del form por default seria type="submit"-->
+                    <button type="button" class="btn button" id="button">Registrarse</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <article></article>
+    <div id="footer"></div>
+
+    <!-- Script para todos los archivos -->
+    <script src="scripts/scripts.js"></script>
+
+    <!-- Script de contact -->
+    <script src="scripts/signupV2.js"></script>
+
+
+    <!-- Script Bootstrap 5.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

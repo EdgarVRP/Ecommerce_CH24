@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Sing Un</title>
 
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,109 +14,145 @@
     <!-- Estilos CSS generales -->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- Estilos CSS contact -->
-    <link rel="stylesheet" href="styles/signupV2.css">
-    <!--  Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Estilos CSS signin -->
+    <link rel="stylesheet" href="styles/signup.css">
+
     <!-- Iconos bootstrap -->
     <!-- Example: <i class="bi-alarm"></i> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body>
-
-    <div class="background"></div>
-
     <div id="navbar"></div>
 
+    <div class="central-div">
+        <!--  Imagen Granos de cafe   -->        
+        <img src="./assets/img/cafe-back.png" alt="" class="img-gra">
+        <!--  Titulo Registro   -->        
+        <div class="title-r">Registro</div>
+        <!--  Contenedor central  -->        
+        <div class="cont">
+            <form action="#" id="form" onsubmit="return validarForm()">
+            <div class="user">
 
-    <!-- Contenedor contact -->
-    <div id="contact" class="container">
-        <br>
-        <!-- Titulo y linea -->
-        <h2 class="linea"><span id="title">Registro</span></h2>
+                <!--  Seccion Nombre   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Nombre</b></span>
+<!--                     <input id="name" type="text" pattern="[A-Za-z]{4,12}" required>-->       
+                     <input id="name" type="text">
+                </div>
 
+                <!--  Seccion Apellidos   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Apellidos</b></span>
+<!--                     <input id="lana" type="text" pattern="[A-Za-z]{4,22}" required>
+ -->                <input id="lana" type="text">
+                </div>
 
-        <!-- Contenedor general -->
-        <div class="container row">
+                <!--  Seccion email   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>E-mail</b></span>
+<!--                     <input id="email" type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+ -->                <input id="email" type="email">
+                </div>
 
-            <!-- Derecha Imagen y texto derecha -->
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <!-- Texto -->
-                <p id="fonts">Un gusto que te unas a nuestra gran comunidad cafetalera </p>
+                <!--   Seccion Contraseña    -->
+                <div class="inp-info">
+                    <span class="name-inp"><b>Contraseña</b></span>
+                    <input id="password" type="password">
+                </div>
 
-                <!-- Imagen -->
-                <img class="img-fluid" src="https://coffee.alexflipnote.dev/random" alt="" id="img">
+                <!--   Seccion telefono   -->
+                <div class="inp-info">
+                    <span class="name-inp"><b>Telefono</b></span>
+                    <input id="tel" type="text" maxlength="10">
+                </div> 
+
+                <!--  Seccion Nacimiento   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Nacimiento</b></span>
+                    <input id="date" type="date" min="1923-01-01" max="2010-12-31">
+                </div>
+                
+                <!--  Seccion direccion   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Calle</b></span>
+                    <input id="addr" type="text">
+                </div>
+                
+                <!--  Seccion numero direccion -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Numero</b></span>
+                    <input id="numd" type="number" min="1" max="99999" >
+                </div>
+
+                <!--  Seccion colonia   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Colonia</b></span>
+                    <input id="colo" type="text" >
+                </div>
+                
+                <!--  Seccion municipio   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Municipio</b></span>
+                    <input id="muni" type="text">
+                </div>
+                
+                <!--  Seccion estado   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Estado</b></span>
+                    <input id="esta" type="text" >
+                </div>
+                
+                <!--  Seccion Codigo Postal   -->        
+                <div class="inp-info">
+                    <span class="name-inp"><b>Codigo Postal</b></span>
+                    <input id="cp" type="number" pattern="[0-9]{5}"  min="1" max="99999">
+                </div> 
+            </div>
+            <br>
+
+            <!--  Seccion Boton de Registro   -->        
+            <div class="inp-info">
+                <input type="submit" value="Registrar" class="btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             </div>
 
-            <!-- Izquierda Formularios y boton -->
-            <div class="col-lg-6 col-md-6 col-sm-12 align-right">
-                <form id="form-contact">
-                    <!-- Formulario nombre -->
-                    <div class="form-row">
-                        <div class="mb-1">
-                            <label for="input-name">Nombre</label>
-                            <input name="name" type="text" class="form-control" id="input-name">
-                            <p class="warning" id="warning-name">Falta algo</p>
-                        </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-
-                    <!-- Formulario apellido -->
-                    <div class="form-row">
-                        <div class="mb-1">
-                            <label for="last">Apellido</label>
-                            <input name="last" type="text" class="form-control" id="input-last">
-                            <p class="warning" id="warning-last">Falta algo</p>
-                        </div>
+                    <div class="modal-body" id="miModal">
+                    Llena el formulario para poder registrarte
                     </div>
-
-                    <!-- Formulario email -->
-                    <div class="form-row">
-                        <div class="mb-2">
-                            <label for="input-email">Email</label>
-                            <input name="email" type="email" class="form-control" id="input-email">
-                            <p class="warning" id="warning-email">Falta algo</p>
-                        </div>
+                    <div class="modal-footer">
+            <!--           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
-
-                    <!-- Formulario password -->
-                    <div class="form-row">
-                        <div class="mb-2">
-                            <label for="input-pass1">Contraseña</label>
-                            <input name="pass1" type="password" class="form-control" id="input-pass1">
-                            <p class="warning" id="warning-pass1">Falta algo</p>
-                        </div>
-                    </div>
-
-                    <!-- Formulario repetir password -->
-                    <div class="form-row">
-                        <div class="mb-2">
-                            <label for="input-pass2">Repetir contraseña</label>
-                            <input name="pass2" type="password" class="form-control" id="input-pass2">
-                            <p class="warning" id="warning-pass2">Falta algo</p>
-                        </div>
-                    </div>
-
-                    <!-- Boton de enviar info del form por default seria type="submit"-->
-                    <button type="button" class="btn button" id="button">Registrarse</button>
-
-                </form>
+                </div>
+                </div>
             </div>
+
+            </form>
+
+            <div id="alerta"></div>
+            
+            <hr>
         </div>
     </div>
-    <br>
-
+    
     <article></article>
     <div id="footer"></div>
 
+    <!-- Script de signin -->
+    <script src="./scripts/signup.js"></script>
+
     <!-- Script para todos los archivos -->
     <script src="scripts/scripts.js"></script>
-
-    <!-- Script de contact -->
-    <script src="scripts/signupV2.js"></script>
-
 
     <!-- Script Bootstrap 5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
