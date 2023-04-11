@@ -1,20 +1,21 @@
 // Obtenemos los inputs y los botones
+const userName = document.getElementById("UserName");
 const nameInput = document.getElementById("inputNombre");
+const apellidoInput = document.getElementById("inputApellido");
 const emailInput = document.getElementById("inputEmail");
-const editBtn = document.getElementById("buttonEditar");
-const saveBtn = document.getElementById("buttonGuardar");
-const editBtn1 = document.getElementById("buttonEditar1");
-const saveBtn1 = document.getElementById("buttonGuardar1");
-const telefonoInput = document.getElementById("inputTelefono");
 const nacimientoInput = document.getElementById("inputNacimiento");
+const telefonoInput = document.getElementById("inputTelefono");
 const contrasenaInput = document.getElementById("inputContrasena");
 const calleInput = document.getElementById("inputCalle");
+const numeroInput = document.getElementById("inputNumero");
 const codigoPostalInput = document.getElementById("inputCodigoPostal");
 const coloniaInput = document.getElementById("inputColonia");
 const municipioInput = document.getElementById("inputMunicipio");
 const estadoInput = document.getElementById("inputEstado");
-const numeroInput = document.getElementById("inputNumero");
-const apellidoInput = document.getElementById("inputApellido");
+const editBtn = document.getElementById("buttonEditar");
+const saveBtn = document.getElementById("buttonGuardar");
+const editBtn1 = document.getElementById("buttonEditar1");
+const saveBtn1 = document.getElementById("buttonGuardar1");
 
 const salirCuenta = document.querySelector("#salir-cuenta");
 const eliminarCuenta = document.querySelector("#eliminar-cuenta");
@@ -27,6 +28,27 @@ salirCuenta.addEventListener("click", () => {
 eliminarCuenta.addEventListener("click", () => {
 	deleteUser();
 });
+
+window.onload = () => {
+	updateData();
+};
+
+function updateData(){
+	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
+	// console.log(DATA_USER);
+	userName.innerHTML = "Bienvenido " + DATA_USER.nombre;
+	nameInput.value = DATA_USER.nombre;
+	apellidoInput.value = DATA_USER.apellido;
+	emailInput.value = DATA_USER.email;
+	nacimientoInput.value = DATA_USER.nacimiento;
+	telefonoInput.value = DATA_USER.telefono;
+	calleInput.value = DATA_USER.calle;
+	numeroInput.value = DATA_USER.numero;
+	codigoPostalInput.value = DATA_USER.codigopostal;
+	coloniaInput.value = DATA_USER.colonia;
+	municipioInput.value = DATA_USER.municipio;
+	estadoInput.value = DATA_USER.estado;
+}
 
 function deleteUser() {
 	let dataUser = JSON.parse(localStorage.getItem("DATA_USER"));
@@ -47,11 +69,11 @@ function deleteUser() {
 // Función para habilitar los inputs
 function enableInputsDatos() {
 	nameInput.disabled = false;
-	emailInput.disabled = false;
-	telefonoInput.disabled = false;
-	nacimientoInput.disabled = false;
-	contrasenaInput.disabled = false;
 	apellidoInput.disabled = false;
+	emailInput.disabled = false;
+	nacimientoInput.disabled = false;
+	telefonoInput.disabled = false;
+	contrasenaInput.disabled = false;
 }
 
 function enableInputsDireccion() {
@@ -66,11 +88,11 @@ function enableInputsDireccion() {
 // Función para deshabilitar los inputs
 function disableInputsDatos() {
 	nameInput.disabled = true;
-	emailInput.disabled = true;
-	telefonoInput.disabled = true;
-	nacimientoInput.disabled = true;
-	contrasenaInput.disabled = true;
 	apellidoInput.disable = true;
+	emailInput.disabled = true;
+	nacimientoInput.disabled = true;
+	telefonoInput.disabled = true;
+	contrasenaInput.disabled = true;
 }
 
 function disableInputsDireccion() {
@@ -186,12 +208,15 @@ function validarForm() {
 			nombre: nombre,
 			apellido: apellido,
 			email: correo,
-			contrasena: contrasena,
-			tel: tel,
-			fechaNac: fecha,
+			password: contrasena,
+			telefono: tel,
+			nacimiento: fecha,
 		};
-		jsonDatosUser = JSON.stringify(usuario);
-		console.log(jsonDatosUser);
+		console.log(usuario);
+		updateUsuario(DATA_USER.id, usuario);
+
+		// jsonDatosUser = JSON.stringify(usuario);
+		// console.log(jsonDatosUser);
 	}
 }
 
@@ -262,7 +287,23 @@ function validarDireccion() {
 			estado: estado,
 			cp: cp,
 		};
-		jsonDatosUser = JSON.stringify(usuario);
-		console.log(jsonDatosUser);
+		updateUsuario(DATA_USER.id, usuario);
+		// jsonDatosUser = JSON.stringify(usuario);
+		// console.log(jsonDatosUser);
 	}
+}
+
+function updateUsuario(id, data) {
+	let url = SERVER_URL + `usuarios/${id}`;
+	fetch(url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+		.then((response) => response.json())
+		.then((data) => {
+			// console.log(data);
+			localStorage.setItem("DATA_USER", JSON.stringify(data));
+			updateNavUser();
+			updateData();
+		})
+		.catch((error) => {
+			console.error(error);
+		});
 }

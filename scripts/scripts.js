@@ -1,5 +1,5 @@
-// const SERVER_URL = "http://localhost:8080/";
-const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
+const SERVER_URL = "http://localhost:8080/";
+// const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
 
 // cambiar un variable de color global
 
@@ -31,20 +31,20 @@ document.body.innerHTML += `<div class="fab-container">
 </div>`;
 
 const navbar = document.getElementById("navbar");
-navbar.innerHTML = `<nav class="navbar fixed-top navbar-expand-md sticky-top">
+navbar.innerHTML = `  <nav class="navbar fixed-top navbar-expand-md sticky-top">
 <div class="container-fluid">
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pages">
-	<span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pages" style="background-color:#fff;">
+	<span class="navbar-toggler-icon" style="color:#fff;"></span>
   </button>
 
-  <a class="navbar-brand" href="./admin.html">
+  <a class="navbar-brand" href="./">
 	<img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
 	<p>Cafe Alfonso</p>
   </a>
 
   <div class="collapse navbar-collapse" id="pages">
 	<ul class="navbar-nav ms-auto">
-	  <li id="nav-admin" class="nav-item"><a class="nav-link" href="./admin.html">Admin</a></li>
+	  <li id="nav-admin" class="nav-item"><a class="nav-link" href="./admin.html">Administrador</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./">Inicio</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./contact.html">Contactanos</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./about.html">Nosotros</a></li>
@@ -54,7 +54,7 @@ navbar.innerHTML = `<nav class="navbar fixed-top navbar-expand-md sticky-top">
   </div>
   <div id="nav-cart-container">
 	<a id="nav-cart" class="nav-icon" href="./cart.html"><i class="bi bi-cart2"></i></a>
-	<p id="nav-cart-count">3</p>
+	<p id="nav-cart-count">0</p>
   </div>
 </div>
 </nav>`;
@@ -106,6 +106,8 @@ darkMode.onclick = function () {
 updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
+	// console.log(DATA_USER);
+
 
 	if (DATA_USER != null && DATA_USER.nombre != undefined) {
 		document.querySelector("#nav-user").innerHTML = DATA_USER.nombre;
@@ -115,7 +117,7 @@ function updateNavUser() {
 		document.querySelector("#nav-user").href = "login.html";
 	}
 
-	if (DATA_USER != null && DATA_USER.nombre == "Admin") {
+	if (DATA_USER != null && DATA_USER.esAdmin == "YES") {
 		document.querySelector("#nav-admin").style.visibility = "visible";
 	} else {
 		document.querySelector("#nav-admin").style.visibility = "hidden";
