@@ -1,5 +1,5 @@
-// const SERVER_URL = "http://localhost:8080/";
-const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
+const SERVER_URL = "http://localhost:8080/";
+// const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
 
 // cambiar un variable de color global
 
@@ -117,7 +117,7 @@ function updateNavUser() {
 		document.querySelector("#nav-user").href = "login.html";
 	}
 
-	if (DATA_USER != null && DATA_USER.esAdmin == "YES") {
+	if (DATA_USER != null && DATA_USER.es_admin == "YES") {
 		document.querySelector("#nav-admin").style.visibility = "visible";
 	} else {
 		document.querySelector("#nav-admin").style.visibility = "hidden";

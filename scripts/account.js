@@ -44,7 +44,7 @@ function updateData(){
 	telefonoInput.value = DATA_USER.telefono;
 	calleInput.value = DATA_USER.calle;
 	numeroInput.value = DATA_USER.numero;
-	codigoPostalInput.value = DATA_USER.codigopostal;
+	codigoPostalInput.value = DATA_USER.codigo_postal;
 	coloniaInput.value = DATA_USER.colonia;
 	municipioInput.value = DATA_USER.municipio;
 	estadoInput.value = DATA_USER.estado;
