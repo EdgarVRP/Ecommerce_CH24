@@ -31,6 +31,7 @@ function validarForm(){
   const regexFecha = /[0-9-]{3,20}/
   const regexNum = /[0-9]{1,5}/
   var contador=0;
+  let exito=false;
   //console.log("------------------")
 
 
@@ -67,6 +68,24 @@ function validarForm(){
   else if(!regexTel.test(tel)){
     aviso="El Telefono requiere 10 digitos\n"
     contador++;
+  }
+
+  else{
+    var usuario={
+      nombre:nombre,
+      apellido:apellido,
+      email:correo,
+      contrasena:contrasena,
+      tel:tel
+    }
+    jsonDatosUser=JSON.stringify(usuario);  
+    console.log(jsonDatosUser);
+    localStorage.setItem("usuario", jsonDatosUser);
+    exito=true;
+  }
+  
+  if(exito==true){
+    aviso="Bienvenido ¡Registro Exitoso!";
   }
 
     // validacion fecha por regexp

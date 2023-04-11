@@ -44,12 +44,13 @@ body{
     flex-direction: column;
     margin: auto;
 	max-width: 900px;
-	width: 100%;
+	width: 80%;
 	text-align: center;
     background-color:rgba(158, 143, 114, 0.216);
 /*     padding: 25px 30px;*/
     border-radius: 15px;
     font-family: 'Ubuntu', sans-serif;
+    padding: 15px;
 }
 
 
@@ -63,7 +64,7 @@ body{
 
 /* titulo */
 .title-r{
-    color: antiquewhite;
+    color:var(--secondary2);
     font-family: 'Ubuntu', sans-serif;
     font-size: 30px;
     font-weight: 700;
@@ -75,12 +76,10 @@ body{
 /* Clase a los Input */
 .name-inp{
     font-family: 'Ubuntu', sans-serif;
-    font-style: italic;
     color: var(--secondary2);
     font-weight: bold;
     font-size: 20px;
     padding: 20px;
-
 }
 
 /* imagen */
@@ -115,7 +114,9 @@ form .inp-info span.name-inp{
     margin-bottom: 5px;
 }
 
-
+.espacio{
+    margin: 0 0 0 35px;
+}
 
 
 .user .inp-info input{
@@ -135,7 +136,7 @@ form .inp-info span.name-inp{
 /*     border-radius: 15px;*/
     padding: 15px;
     font-family: 'Ubuntu', sans-serif;
-    font-style: italic;
+    font-size: larger;
     font-weight:bold ;
     margin:auto;
     color:var(--primary);
@@ -150,17 +151,10 @@ form .inp-info span.name-inp{
 
 }
 
-@media (max-width: 768px) {
-	.container {
-		max-width: 75%;
-	}
+.campos{
+    color: var(--secondary2);
+    font-family: 'Ubuntu', sans-serif;
+    font-size:medium;
 }
-
-@media (max-width: 480px) {
-	.container {
-		max-width: 100%;
-	}
-}
-
 
 
