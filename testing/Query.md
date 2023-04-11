@@ -141,11 +141,9 @@ CREATE TABLE productos (
   humedad INT,
   proceso VARCHAR(100),
   preparacion VARCHAR(100),
-  variedad VARCHAR(100), 
-
-nota VARCHAR(500),
-
-puntuacion INT,
+  variedad VARCHAR(100),
+  nota VARCHAR(500),
+  puntuacion INT,
   precio DOUBLE,
   inventario INT
 );

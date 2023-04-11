@@ -1,22 +1,20 @@
 //Pagina de administrador de productos a vender
 let tabla = document.getElementById("tablaProductos");
 
-  //Realizando peticion get al archivo data.json si no hay datos en local storage
-  var productos = [];
-  fetch("http://localhost:8080/productos")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      productos = data;
-    })
-    .catch(function (error) {
-      console.error("Error al realizar la petición:", error);
-    });
-
-//timmer de .5 segundos para que se ejecute la peticion get
+//Realizando peticion get al archivo data.json si no hay datos en local storage
+var productos = [];
+fetch("http://localhost:8080/productos")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    productos = data;
+    mostrarProductos();
+  })
+  .catch(function (error) {
+    console.error("Error al realizar la petición:", error);
+  });
 //MOSTRAR PRODUCTOS
-
-setTimeout(function () {
+function mostrarProductos() {
   // Agregar cada producto a la tabla.
   productos.forEach(function (producto) {
     //añadiendo fila
@@ -55,7 +53,7 @@ setTimeout(function () {
     btnEliminar.innerHTML = "Eliminar";
     fila.insertCell(14).appendChild(btnEliminar);
   });
-}, 1500);
+}
 
 //add even listener
 const on = (element, event, selector, handler) => {
@@ -104,8 +102,8 @@ on(document, "click", ".btnEditarProducto", (e) => {
 //Boton Modal editar producto
 on(document, "click", "#btnModificarProducto", (e) => {
   //Obteniendo id de la fila seleccionada
-  let idProducto = document.getElementById("idProducto").value;
-  console.log(idProducto);
+  let id = document.getElementById("idProducto").value;
+  console.log(id);
   //obteniendo datos del modal
   let nombreProducto = document.getElementById("editnombreProducto").value;
   let regionProducto = document.getElementById("editregionProducto").value;
@@ -125,27 +123,60 @@ on(document, "click", "#btnModificarProducto", (e) => {
   let inventarioProducto = document.getElementById(
     "editinventarioProducto"
   ).value;
-  //obteniendo datos de local storage
-  let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
   //buscando el producto a editar
-  let producto = productosLocalStorage.find(
-    (producto) => producto.id == idProducto
-  );
-  //editando producto
-  producto.nombre = nombreProducto;
-  producto.region = regionProducto;
-  producto.cosecha = cosechaProducto;
-  producto.altura = alturaProducto;
-  producto.humedad = humedadProducto;
-  producto.proceso = procesoProducto;
-  producto.preparacion = preparacionProducto;
-  producto.variedad = variedadProducto;
-  producto.nota = notaProducto;
-  producto.puntuacion = puntuacionProducto;
-  producto.precioTostado = precioProducto;
-  producto.inventario = inventarioProducto;
-  //actualizando local storage
-  localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+  let producto = {
+    nombre: nombreProducto,
+    region: regionProducto,
+    cosecha: cosechaProducto,
+    altura: alturaProducto,
+    humedad: humedadProducto,
+    proceso: procesoProducto,
+    preparacion: preparacionProducto,
+    variedad: variedadProducto,
+    nota: notaProducto,
+    puntuacion: puntuacionProducto,
+    precio: precioProducto,
+    inventario: inventarioProducto,
+  };
+  // actualizando producto
+  console.log(producto);
+  // console.log(JSON.stringify(producto));
+  // Convertir objeto JSON a cadena
+  const payload = JSON.stringify(producto);
+  //`http://localhost:8080/productos/${id}`
+  // Crear URL con query params
+const url = new URL(`http://localhost:8080/productos/${id}`);
+url.searchParams.set('nombre', producto.nombre);
+url.searchParams.set('region', producto.region);
+url.searchParams.set('cosecha', producto.cosecha);
+url.searchParams.set('altura', producto.altura);
+url.searchParams.set('humedad', producto.humedad);
+url.searchParams.set('proceso', producto.proceso);
+url.searchParams.set('preparacion', producto.preparacion);
+url.searchParams.set('variedad', producto.variedad);
+url.searchParams.set('nota', producto.nota);
+url.searchParams.set('puntuacion', producto.puntuacion);
+url.searchParams.set('precio', producto.precio);
+url.searchParams.set('inventario', producto.inventario);
+console.log(url);
+// Realizar solicitud PUT utilizando fetch
+fetch(url, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: payload
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error al enviar la solicitud');
+    }
+    // Hacer algo con la respuesta exitosa, si es necesario
+  })
+  .catch(error => {
+    // Hacer algo con el error
+    console.error(error);
+  });
 });
 
 //ELIMINAR PRODUCTO
@@ -153,16 +184,20 @@ on(document, "click", "#btnModificarProducto", (e) => {
 on(document, "click", ".btnEliminarProducto", (e) => {
   //obteniendo id de la fila seleccionada
   let idProducto = e.target.parentNode.parentNode.id;
-  //obteniendo datos de local storage
-  let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
-  //buscando el producto a eliminar
-  let producto = productosLocalStorage.find(
-    (producto) => producto.id == idProducto
-  );
+  console.log(idProducto);
   //eliminando producto
-  productosLocalStorage.splice(productosLocalStorage.indexOf(producto), 1);
-  //actualizando local storage
-  localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+  fetch(`http://localhost:8080/productos/${idProducto}`, {
+    //hago la conexion a la URL
+    method: "DELETE",
+  })
+    .then((response) => response.text())
+    .then((producto) => {
+      console.log(producto);
+      console.log("Producto eliminado correctamente", producto);
+    })
+    .catch((error) => {
+      console.log("No pudimos eliminar el producto", error);
+    });
   //eliminando fila
   e.target.parentNode.parentNode.remove();
 });
@@ -170,6 +205,7 @@ on(document, "click", ".btnEliminarProducto", (e) => {
 //CREAR PRODUCTO
 //Boton crear producto
 on(document, "click", "#btnCrearProducto", (e) => {
+  //e.preventDefault();
   //Se comprueba que esten llenos los campos
   if (
     document.getElementById("nombreProducto").value == "" ||
@@ -182,7 +218,13 @@ on(document, "click", "#btnCrearProducto", (e) => {
     document.getElementById("variedadProducto").value == "" ||
     document.getElementById("notaProducto").value == ""
   ) {
-    //alert("Por favor llene todos los campos");
+    alert("Por favor llene todos los campos");
+  } else if (
+    // detectando si el campo precioProducto es un numero
+    isNaN(document.getElementById("precioProducto").value)
+  ) {
+    e.preventDefault();
+    alert("Por favor ingrese un numero en el campo precio");
   } else {
     //obteniendo datos del modal
     let nombreProducto = document.getElementById("nombreProducto").value;
@@ -199,12 +241,10 @@ on(document, "click", "#btnCrearProducto", (e) => {
     let puntuacionProducto =
       document.getElementById("puntuacionProducto").value;
     let precioProducto = document.getElementById("precioProducto").value;
-    let inventarioProducto = document.getElementById("inventarioProducto").value;
-    //obteniendo datos de local storage
-    let productosLocalStorage = JSON.parse(localStorage.getItem("productos"));
+    let inventarioProducto =
+      document.getElementById("inventarioProducto").value;
     //creando producto
     let producto = {
-      id: productosLocalStorage.length + 1,
       nombre: nombreProducto,
       region: regionProducto,
       cosecha: cosechaProducto,
@@ -215,12 +255,28 @@ on(document, "click", "#btnCrearProducto", (e) => {
       variedad: variedadProducto,
       nota: notaProducto,
       puntuacion: puntuacionProducto,
-      precioTostado: precioProducto,
-      inventario: inventarioProducto
+      precio: precioProducto,
+      inventario: inventarioProducto,
     };
     //console.log(producto);
-    //agregando producto a local storage
-    productosLocalStorage.push(producto);
-    localStorage.setItem("productos", JSON.stringify(productosLocalStorage));
+    //Fetch a la URL de mi API (el RequestMapping del Controller)
+
+    fetch("http://localhost:8080/productos", {
+      //hago la conexion a la URL
+
+      //Especifico el tipo de solicitud que manejare
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(producto), //Pasamos la constante definida anteriormente como cuerpo de la solicitud
+    })
+      .then((response) => response.text())
+      .then((producto) => {
+        console.log("Producto guardado correctamente", producto);
+      })
+      .catch((error) => {
+        console.log("No pudimos guardar el producto", error);
+      });
   }
 });
