@@ -12,7 +12,7 @@ const $apellido = document.getElementById("lana");
 const $correo = document.getElementById("email");
 const $contrasena = document.getElementById("password");
 const $tel = document.getElementById("tel");
-const $fecha = document.getElementById("date");
+// const $fecha = document.getElementById("date");
 const $direccion = document.getElementById("addr");
 const $numDire = document.getElementById("numd");
 const $colonia = document.getElementById("colo");
@@ -28,7 +28,7 @@ masDatos.addEventListener("click", () => {
 });
 
 function disableForm(value) {
-	$fecha.disabled = value;
+	// $fecha.disabled = value;
 	$direccion.disabled = value;
 	$numDire.disabled = value;
 	$colonia.disabled = value;
@@ -45,7 +45,7 @@ function validarForm() {
 	const correo = $correo.value;
 	const contrasena = $contrasena.value;
 	const tel = $tel.value;
-	const fecha = $fecha.value;
+	// const fecha = $fecha.value;
 	const direccion = $direccion.value;
 	const numDire = $numDire.value;
 	const colonia = $colonia.value;
@@ -60,7 +60,7 @@ function validarForm() {
 	const regexCorreo = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}/;
 	const regexContraseña = /[a-zA-Z0-9_]\S{7,20}/;
 	const regexTel = /[0-9]{10}/;
-	const regexFecha = /[0-9-]{3,20}/;
+	// const regexFecha = /[0-9-]{3,20}/;
 	const regexNum = /[0-9]{1,5}/;
 	var contador = 0;
 	let exito = false;
@@ -141,10 +141,10 @@ function validarForm() {
 	}
 
 	// validacion fecha por regexp
-	else if (!regexFecha.test(fecha)) {
-		aviso = "Selecciona la fecha\n";
-		contador++;
-	}
+	// else if (!regexFecha.test(fecha)) {
+	// 	aviso = "Selecciona la fecha\n";
+	// 	contador++;
+	// }
 	// validacion direccion por longitud
 	else if (direccion.length < 5) {
 		aviso = "Tu Direccion debe tener al menos 5 caracteres\n";
@@ -191,13 +191,12 @@ function validarForm() {
 			email: correo,
 			password: contrasena,
 			telefono: tel,
-			nacimiento: fecha,
 			calle: direccion,
 			numero: numDire,
 			colonia: colonia,
 			municipio: municipio,
 			estado: estado,
-			codigopostal: cp,
+			codigo_postal: cp,
 		};
 
 		let url = SERVER_URL + "usuarios";

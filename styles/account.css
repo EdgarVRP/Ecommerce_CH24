@@ -73,10 +73,11 @@ h3{
 }
 
 #border-formulario{
+    display: flex;
     max-width: 25em;
     /* width: 1200px; */
     padding: .5em;
-    margin: 100px;
+    margin-top: 100px;
 /*     background-color: rgb(120, 119, 123, 0.3);*/
     background-color: var(--primary);
     border-radius: 0.5em;
@@ -86,14 +87,11 @@ h3{
 #fondoBoton{
     color: white;
     background-color: var(--primary);  
-   
-
-    
 }
+
 #imgUser{
     width: 100px;
     height: 100px;
-    
 }
 
 .form-label,
