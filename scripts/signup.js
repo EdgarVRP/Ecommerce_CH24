@@ -12,7 +12,7 @@ const $apellido = document.getElementById("lana");
 const $correo = document.getElementById("email");
 const $contrasena = document.getElementById("password");
 const $tel = document.getElementById("tel");
-const $fecha = document.getElementById("date");
+// const $fecha = document.getElementById("date");
 const $direccion = document.getElementById("addr");
 const $numDire = document.getElementById("numd");
 const $colonia = document.getElementById("colo");
@@ -28,7 +28,7 @@ masDatos.addEventListener("click", () => {
 });
 
 function disableForm(value) {
-	$fecha.disabled = value;
+	// $fecha.disabled = value;
 	$direccion.disabled = value;
 	$numDire.disabled = value;
 	$colonia.disabled = value;
@@ -45,7 +45,7 @@ function validarForm() {
 	const correo = $correo.value;
 	const contrasena = $contrasena.value;
 	const tel = $tel.value;
-	const fecha = $fecha.value;
+	// const fecha = $fecha.value;
 	const direccion = $direccion.value;
 	const numDire = $numDire.value;
 	const colonia = $colonia.value;
@@ -60,7 +60,7 @@ function validarForm() {
 	const regexCorreo = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}/;
 	const regexContraseña = /[a-zA-Z0-9_]\S{7,20}/;
 	const regexTel = /[0-9]{10}/;
-	const regexFecha = /[0-9-]{3,20}/;
+	// const regexFecha = /[0-9-]{3,20}/;
 	const regexNum = /[0-9]{1,5}/;
 	var contador = 0;
 	let exito = false;
@@ -74,25 +74,30 @@ function validarForm() {
 	// validacion nombre por longitud
 	if (nombre.length < 3) {
 		aviso = "El Nombre requiere por lo menos 3 caracteres\n";
-		contador++;
+		//contador++;
+		$modal.innerHTML = aviso;
+
 	}
 
 	// validacion apellido por longitud
 	else if (apellido.length < 3) {
 		aviso = "El Apellido requiere por lo menos 3 caracteres\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion correo por regexp
 	else if (!regexCorreo.test(correo)) {
 		aviso = "El Correo no tiene un formato correcto\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion contraseña por regexp y longitud
 	else if (!regexContraseña.test(contrasena) || contrasena.length < 7) {
 		aviso = "La Contraseña no debe llevar espacios y requiere minimo 8 caracteres\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion telefono por regexp
@@ -115,70 +120,82 @@ function validarForm() {
 			.then((data) => {
 				console.log(data);
 				if (data.id == null) {
-					alert("Usuario ya registrado");
+					//alert("Usuario ya registrado");
 					aviso = "Usuario ya registrado";
+					$modal.innerHTML = aviso;
+
 				} else {
-					alert("Bienvenido ¡Registro Exitoso!");
+					//alert("Bienvenido ¡Registro Exitoso!");
 					aviso = "Bienvenido ¡Registro Exitoso!";
 					localStorage.setItem("DATA_USER", JSON.stringify(data));
 					updateNavUser();
 					window.location.href = "./";
+					$modal.innerHTML = aviso;
+
 				}
 			})
 			.catch((error) => {
 				console.error(error);
 				// alert("Error del servidor");
 				aviso = "Error del servidor";
-				alert("Error del servidor");
+				//alert("Error del servidor");
+				$modal.innerHTML = aviso;
+
 			});
 
 		// aviso="Bienvenido ¡Registro Exitoso!";
 		// Aqui se establece el aviso con la info correcta o incorrecta segun sea el caso
 		// este aviso aparecera en una venatana modal, una vez que se da click en submit
 		// console.log(aviso)
-		$modal.innerHTML = aviso;
-		return;
+		//$modal.innerHTML = aviso;
+		//return;
 	}
 
 	// validacion fecha por regexp
-	else if (!regexFecha.test(fecha)) {
-		aviso = "Selecciona la fecha\n";
-		contador++;
-	}
+	// else if (!regexFecha.test(fecha)) {
+	// 	aviso = "Selecciona la fecha\n";
+	// 	contador++;
+	// }
 	// validacion direccion por longitud
 	else if (direccion.length < 5) {
 		aviso = "Tu Direccion debe tener al menos 5 caracteres\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion numero direccion por regexp
 	else if (!regexNum.test(numDire)) {
 		aviso = "Escribe un Numero de Direccion valido\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion colonia por longitud
 	else if (colonia.length < 5) {
 		aviso = "Tu colonia requiere al menos 5 caracteres\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion municipio por longitud
 	else if (municipio.length < 5) {
 		aviso = "Tu municipio requiere al menos 5 caracteres\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion estado por longitud
 	else if (estado.length < 5) {
 		aviso = "Tu estado requiere al menos 5 caracteres\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// validacion codigo postal por regexp
 	else if (!regexNum.test(cp)) {
 		aviso = "Escribe un Codigo Postal valido\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
 	}
 
 	// Si se llega este ultimo else significa que los datos proporcionados son correctos
@@ -191,13 +208,12 @@ function validarForm() {
 			email: correo,
 			password: contrasena,
 			telefono: tel,
-			nacimiento: fecha,
 			calle: direccion,
 			numero: numDire,
 			colonia: colonia,
 			municipio: municipio,
 			estado: estado,
-			codigopostal: cp,
+			codigo_postal: cp,
 		};
 
 		let url = SERVER_URL + "usuarios";
@@ -206,20 +222,26 @@ function validarForm() {
 			.then((data) => {
 				console.log(data);
 				if (data.id == null) {
-					alert("Usuario ya registrado");
+					//alert("Usuario ya registrado");
 					aviso = "Usuario ya registrado";
+					$modal.innerHTML = aviso;
+
 				} else {
-					alert("Usuario agregado con exito");
+					//alert("Usuario agregado con exito");
 					aviso = "Bienvenido ¡Registro Exitoso!";
 					localStorage.setItem("DATA_USER", JSON.stringify(data));
 					updateNavUser();
 					window.location.href = "./";
+					$modal.innerHTML = aviso;
+
 				}
 			})
 			.catch((error) => {
 				console.error(error);
-				alert("Error del servidor");
+				//alert("Error del servidor");
 				aviso = "Error del servidor";
+				$modal.innerHTML = aviso;
+
 			});
 
 		// aviso="Bienvenido ¡Registro Exitoso!";
@@ -227,7 +249,7 @@ function validarForm() {
 
 	// Aqui se establece el aviso con la info correcta o incorrecta segun sea el caso
 	// este aviso aparecera en una venatana modal, una vez que se da click en submit
-	$modal.innerHTML = aviso;
+	//$modal.innerHTML = aviso;
 
 	// Dado que el contador esta en cero, significa que no entro en algun flujo
 	// de control, por lo cual los valores son correctos, se creo un objeto

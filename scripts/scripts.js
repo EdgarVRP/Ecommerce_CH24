@@ -106,7 +106,7 @@ darkMode.onclick = function () {
 updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
-	// console.log(DATA_USER);
+	console.log(DATA_USER);
 
 
 	if (DATA_USER != null && DATA_USER.nombre != undefined) {
@@ -117,7 +117,7 @@ function updateNavUser() {
 		document.querySelector("#nav-user").href = "login.html";
 	}
 
-	if (DATA_USER != null && DATA_USER.esAdmin == "YES") {
+	if (DATA_USER != null && DATA_USER.es_admin == "YES") {
 		document.querySelector("#nav-admin").style.visibility = "visible";
 	} else {
 		document.querySelector("#nav-admin").style.visibility = "hidden";
