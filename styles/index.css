@@ -3,7 +3,7 @@ body .div {
     color: var(--white);
     font-size: 32px;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 img {
@@ -100,11 +100,14 @@ img {
 #info{
     color: #EFB817;
     font-size: 5rem;
+    text-align: center;
+    
 }
 
 
 #titulo-info{
-    font-size: 64px !important;
+    font-size: 65px !important;
+    text-align: center !important;
 }
 
 
