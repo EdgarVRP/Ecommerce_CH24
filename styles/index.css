@@ -110,21 +110,22 @@ img {
     text-align: center !important;
 }
 
-
+/* Esta clase cambia el tono del fondo de la tarjeta*/
 .card-body-info{
     margin: 10px;
     align-self: center;
     border-radius: 10px;
     display: flex;
-    background-color: var(--primary);
+    background-color: var(--primary2);
     color: var(--white);
 }
 
+/* Esta clase cambia el tono del fondo del texto*/
 .card-info{
     width: 500px;
-    height: 600px;
+    height: 500px;
     margin: 32px;
-    background-color: var(--primary);
+    background-color: var(--primary2);
 }
 
 /* para centrar el contenido de las tarjetas info */
@@ -139,7 +140,7 @@ img {
 }
 
 .card-text-info{
-    font-size: 24px;
+    font-size: 16px;
 }
 
 /* h1 {
