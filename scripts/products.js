@@ -10,7 +10,8 @@ let DATA_CART = [];
 getProducts();
 
 function getProducts() {
-	fetch(SERVER_URL + "productos")
+	let url = SERVER_URL + `productos`;
+	fetch(url, { method: "GET", headers: { "Content-Type": "application/json" } })
 		.then((response) => response.json())
 		.then((data) => {
 			DATA_PRODUCTS = data;
