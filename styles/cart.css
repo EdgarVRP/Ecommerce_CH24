@@ -92,3 +92,7 @@ hr {
     justify-content: end;
     margin: 16px;
 }
+
+input[type="text"]:disabled {
+    background: rgb(218, 218, 218) !important;
+}

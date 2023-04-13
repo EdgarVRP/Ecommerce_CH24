@@ -20,6 +20,7 @@ const $municipio = document.getElementById("muni");
 const $estado = document.getElementById("esta");
 const $cp = document.getElementById("cp");
 const $modal = document.getElementById("miModal");
+let carga=0;
 
 disableForm(true);
 
@@ -37,7 +38,18 @@ function disableForm(value) {
 	$cp.disabled = value;
 }
 
+/* window.addEventListener('load', function() {
+	if(carga==0){
+		location.reload()
+		carga++;
+	}
+  });
+ */
+
 function validarForm() {
+
+	//event.preventDefault();
+
 	console.log("validarForm");
 	// Se crean varibles acorde al valor de los input del formulario
 	const nombre = $nombre.value;

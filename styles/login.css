@@ -167,8 +167,10 @@
 }
 
 
-<<<<<<< HEAD
-=======
+.letras{
+  text-align: center;
+  align-items: center;
+  font-size: large;
+  border-radius: 9px;
+}
 
-
->>>>>>> 366f2ceb86cc00fb997768980af9bbcf1c2c4f2f
