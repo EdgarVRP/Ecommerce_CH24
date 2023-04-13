@@ -31,7 +31,7 @@ document.body.innerHTML += `<div class="fab-container">
 </div>`;
 
 const navbar = document.getElementById("navbar");
-navbar.innerHTML = `  <nav class="navbar fixed-top navbar-expand-md sticky-top">
+navbar.innerHTML = `<nav class="navbar fixed-top navbar-expand-md sticky-top">
 <div class="container-fluid">
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pages" style="background-color:#fff;">
 	<span class="navbar-toggler-icon" style="color:#fff;"></span>
@@ -39,7 +39,7 @@ navbar.innerHTML = `  <nav class="navbar fixed-top navbar-expand-md sticky-top">
 
   <a class="navbar-brand" href="./">
 	<img id="logo-navbar" src="assets/img/logo_white.png" alt="Logo" width="36">
-	<p>Cafe Alfonso</p>
+	<p>Café Alfonso</p>
   </a>
 
   <div class="collapse navbar-collapse" id="pages">
@@ -106,7 +106,7 @@ darkMode.onclick = function () {
 updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
-	console.log(DATA_USER);
+	// console.log(DATA_USER);
 
 
 	if (DATA_USER != null && DATA_USER.nombre != undefined) {

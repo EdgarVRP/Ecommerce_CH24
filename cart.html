@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Compra</title>
+  <title>Carrito</title>
 
   <!-- Bootstrap 5.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -60,75 +60,79 @@
       <!-- Formulario boton editar save -->
       <div id="container-shipping" class="col-12 col-md-6">
 
-        <form>
-          <div class="form-row">
-            <label class="form-label">Nombre</label>
-            <input class="form-input form-control" type="text" id="input-name">
-            <p class="warning" id="warning-name">Falta algo</p>
-          </div>
+        
 
-          <div class="form-row">
-            <label class="form-label">Correo</label>
-            <input class="form-input form-control" type="text" id="input-email">
-            <p class="warning" id="warning-email">Falta algo</p>
+        <form>
+          <div class="row">
+            <div class="col-6 form-row">
+              <label class="form-label">Nombre</label>
+              <input class="form-input form-control" type="text" id="name-input">
+              <p class="warning" id="warning-name">Falta algo</p>
+            </div>
+
+            <div class="col-6 form-row">
+              <label class="form-label">Apellido</label>
+              <input class="form-input form-control" type="text" id="apellido-input">
+              <p class="warning" id="warning-apellido">Falta algo</p>
+            </div>
           </div>
 
           <div class="form-row">
             <label class="form-label">Telefono</label>
-            <input class="form-input form-control" type="text" id="input-phone">
-            <p class="warning" id="warning-phone">Falta algo</p>
+            <input class="form-input form-control" type="text" id="telefono-input">
+            <p class="warning" id="warning-telefono">Falta algo</p>
           </div>
 
           <div class="row">
             <div class="col-8 form-row">
               <label class="form-label">Calle</label>
-              <input class="form-input form-control" type="text" id="input-street">
-              <p class="warning" id="warning-street">Falta algo</p>
+              <input class="form-input form-control" type="text" id="calle-input">
+              <p class="warning" id="warning-calle">Falta algo</p>
             </div>
 
             <div class="col-4 form-row">
               <label class="form-label">Numero</label>
-              <input class="form-input form-control" type="text" id="input-number">
-              <p class="warning" id="warning-number">Falta algo</p>
+              <input class="form-input form-control" type="text" id="numero-input">
+              <p class="warning" id="warning-numero">Falta algo</p>
             </div>
           </div>
 
           <div class="row">
             <div class="col-8 form-row">
               <label class="form-label">Colonia</label>
-              <input class="form-input form-control" type="text" id="input-colonia">
+              <input class="form-input form-control" type="text" id="colonia-input">
               <p class="warning" id="warning-colonia">Falta algo</p>
             </div>
 
             <div class="col-4 form-row">
               <label class="form-label">CP</label>
-              <input class="form-input form-control" type="text" id="input-cp">
-              <p class="warning" id="warning-cp">Falta algo</p>
+              <input class="form-input form-control" type="text" id="codigo-postal-input">
+              <p class="warning" id="warning-codigo-postal">Falta algo</p>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-8 form-row">
-              <label class="form-label">Estado</label>
-              <input class="form-input form-control" type="text" id="input-state">
-              <p class="warning" id="warning-state">Falta algo</p>
+            <div class="col-6 form-row">
+              <label class="form-label">Municipio</label>
+              <input class="form-input form-control" type="text" id="municipio-input">
+              <p class="warning" id="warning-municipio">Falta algo</p>
             </div>
 
-            <div class="col-4 form-row">
-              <label class="form-label">Pais</label>
-              <input class="form-input form-control" type="text" id="input-country">
-              <p class="warning" id="warning-country">Falta algo</p>
+            <div class="col-6 form-row">
+              <label class="form-label">Estado</label>
+              <input class="form-input form-control" type="text" id="estado-input">
+              <p class="warning" id="warning-estado">Falta algo</p>
             </div>
           </div>
 
           <div class="form-row">
             <label class="form-label">Informacion adicional</label>
-            <input class="form-input form-control" type="text" id="input-info">
+            <input class="form-input form-control" type="text" id="info-input">
             <p class="warning" id="warning-info">Falta algo</p>
           </div>
 
           <div class="d-flex justify-content-end">
-            <!-- <button id="btn-save-edit" class="btn button">Guardar</button> -->
+            <button type="button" id="btn-save-info" class="btn button">Editar</button>
           </div>
         </form>
       </div>
@@ -140,8 +144,8 @@
         <p id="p-total" class="textp">Total: $200.00</p>
 
         <!-- <div class="container-option-pay" style="visibility: visible;"> -->
-          <!-- <button class="btn button">Paypal</button> -->
-          <!-- <button class="btn button">Tarjeta</button> -->
+        <!-- <button class="btn button">Paypal</button> -->
+        <!-- <button class="btn button">Tarjeta</button> -->
         <!-- </div> -->
 
         <!-- <div class="container-credit-card" style="visibility: hidden;">
@@ -186,17 +190,17 @@
               </div>
             </div> 
           </div>-->
-          <div class="container-buttons">
-            <button id="btn-pay" class="btn button">Pagar</button>
-          </div>
+        <div class="container-buttons">
+          <button id="btn-pay" class="btn button">Pagar</button>
         </div>
-
-        <br>
-        <br>
-
-
       </div>
+
+      <br>
+      <br>
+
+
     </div>
+  </div>
   </div>
 
   <br>
@@ -220,37 +224,39 @@
             <div class="col-8">
               <!-- <p>Descripcion:</p> -->
 
-              <p>Molido:</p>
-              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <!-- <input type="radio" class="btn-check" name="ground-radio" id="btnradio1a" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1a">No</label> -->
+              <p>Tostado:</p>
+              <div id="radio-toast" class="btn-group" role="group" aria-label="Seleccion del tostado del cafe">
+                <input type="radio" class="btn-check" name="roast-radio" id="btn-tostado-no" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-tostado-no">No</label>
 
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio2a" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2a">Bajo</label>
+                <input type="radio" class="btn-check" name="roast-radio" id="btn-tostado-bajo" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-tostado-bajo">Bajo</label>
 
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio3a" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio3a">Medio</label>
+                <input type="radio" class="btn-check" name="roast-radio" id="btn-tostado-medio" autocomplete="off"
+                  checked>
+                <label class="btn btn-outline-primary" for="btn-tostado-medio">Medio</label>
 
-                <input type="radio" class="btn-check" name="ground-radio" id="btnradio4a" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio4a">Alto</label>
+                <input type="radio" class="btn-check" name="roast-radio" id="btn-tostado-alto" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-tostado-alto">Alto</label>
               </div>
 
               <br>
               <br>
 
-              <p>Tostado:</p>
-              <div id="radio-toast" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <!-- <input type="radio" class="btn-check" name="roast-radio" id="btnradio1b" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1b">No</label> -->
+              <p>Molido:</p>
+              <div class="btn-group" role="group" aria-label="Seleccion del molido del cafe">
+                <input type="radio" class="btn-check" name="ground-radio" id="btn-molido-no" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-molido-no">No</label>
 
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio2b" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2b">Bajo</label>
+                <input type="radio" class="btn-check" name="ground-radio" id="btn-molido-bajo" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-molido-bajo">Bajo</label>
 
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio3b" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio3b">Medio</label>
+                <input type="radio" class="btn-check" name="ground-radio" id="btn-molido-medio" autocomplete="off"
+                  checked>
+                <label class="btn btn-outline-primary" for="btn-molido-medio">Medio</label>
 
-                <input type="radio" class="btn-check" name="roast-radio" id="btnradio4b" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio4b">Alto</label>
+                <input type="radio" class="btn-check" name="ground-radio" id="btn-molido-alto" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-molido-alto">Alto</label>
               </div>
 
               <br>
@@ -267,8 +273,9 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Actualizar</button>
+          <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+          <button id="btn-update-product" type="button" class="btn button"
+            data-bs-dismiss="modal">Actualizar</button>
 
         </div>
       </div>
