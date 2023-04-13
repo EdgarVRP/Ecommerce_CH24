@@ -172,7 +172,19 @@ on(document, "click", "#btnModificarProducto", (e) => {
   url.searchParams.set("inventario", producto.inventario);
   url.searchParams.set("rutaimagen", producto.imagen);
   console.log(url);
-  // Realizar solicitud PUT utilizando fetch
+  //Se crea un objeto FormData
+  let formData = new FormData();
+  //Se agrega el archivo al objeto FormData
+  formData.append("file", document.getElementById("editimagenProducto").files[0]);
+  //Se realiza fetch para enviar la imagen
+  fetch(SERVER_URL + "file", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((producto) => {
+      console.log("Imagen guardada correctamente", producto);
+      // Realizar solicitud PUT utilizando fetch
   fetch(url, {
     method: "PUT",
     headers: {
@@ -184,31 +196,18 @@ on(document, "click", "#btnModificarProducto", (e) => {
       if (!response.ok) {
         throw new Error("Error al enviar la solicitud");
       }
-      
-      //Se crea un objeto FormData
-      let formData = new FormData();
-      //Se agrega el archivo al objeto FormData
-      formData.append("file", document.getElementById("editimagenProducto").files[0]);
-      //Se realiza fetch para enviar la imagen
-      fetch(SERVER_URL + "file", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.text())
-        .then((producto) => {
-          console.log("Imagen guardada correctamente", producto);
-          //Se actualiza pagina
-          location.reload();
-        })
-        .catch((error) => {
-          console.log("No pudimos guardar la imagen", error);
-        });
-      //Se actualiza pagina
-      location.reload();
+  //Se actualiza pagina
+  location.reload();
     })
     .catch((error) => {
       // Hacer algo con el error
       console.error(error);
+    });
+      //Se actualiza pagina
+      location.reload();
+    })
+    .catch((error) => {
+      console.log("No pudimos guardar la imagen", error);
     });
 });
 
