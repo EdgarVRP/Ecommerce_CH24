@@ -30,7 +30,7 @@ function cargarProductos() {
       fila.insertCell(0).innerHTML = producto.nombre;
       //imagen
       let imagen = document.createElement("img");
-      // imagen.setAttribute("src", producto.rutaimagen);
+      imagen.setAttribute("src", SERVER_URL + producto.rutaimagen);
       imagen.setAttribute("width", "100px");
       imagen.setAttribute("height", "100px");
       fila.insertCell(1).appendChild(imagen);
@@ -132,6 +132,8 @@ on(document, "click", "#btnModificarProducto", (e) => {
   let inventarioProducto = document.getElementById(
     "editinventarioProducto"
   ).value;
+  //imagen del producto con substring
+  let rutaimagenProducto = document.getElementById("editimagenProducto").value.substring(12);
   //buscando el producto a editar
   let producto = {
     nombre: nombreProducto,
@@ -146,6 +148,7 @@ on(document, "click", "#btnModificarProducto", (e) => {
     puntuacion: puntuacionProducto,
     precio: precioProducto,
     inventario: inventarioProducto,
+    imagen: rutaimagenProducto
   };
   // actualizando producto
   console.log(producto);
@@ -180,8 +183,25 @@ on(document, "click", "#btnModificarProducto", (e) => {
       if (!response.ok) {
         throw new Error("Error al enviar la solicitud");
       }
-      // Hacer algo con la respuesta exitosa, si es necesario
-
+      
+      //Se crea un objeto FormData
+      let formData = new FormData();
+      //Se agrega el archivo al objeto FormData
+      formData.append("file", document.getElementById("editimagenProducto").files[0]);
+      //Se realiza fetch para enviar la imagen
+      fetch(SERVER_URL + "file", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.text())
+        .then((producto) => {
+          console.log("Imagen guardada correctamente", producto);
+          //Se actualiza pagina
+          location.reload();
+        })
+        .catch((error) => {
+          console.log("No pudimos guardar la imagen", error);
+        });
       //Se actualiza pagina
       location.reload();
     })
@@ -255,6 +275,9 @@ on(document, "click", "#btnCrearProducto", (e) => {
     let precioProducto = document.getElementById("precioProducto").value;
     let inventarioProducto =
       document.getElementById("inventarioProducto").value;
+      //Se obtiene solo el nombre del archivo con substring
+      //let rutaimagenProducto = document.getElementById("imagenProducto").value;
+      let rutaimagenProducto = document.getElementById("imagenProducto").value.substring(12);
     //creando producto
     let producto = {
       nombre: nombreProducto,
@@ -269,6 +292,7 @@ on(document, "click", "#btnCrearProducto", (e) => {
       puntuacion: puntuacionProducto,
       precio: precioProducto,
       inventario: inventarioProducto,
+      rutaimagen: rutaimagenProducto,
     };
     //console.log(producto);
     //Fetch a la URL de mi API (el RequestMapping del Controller)
@@ -286,9 +310,25 @@ on(document, "click", "#btnCrearProducto", (e) => {
       .then((response) => response.text())
       .then((producto) => {
         console.log("Producto guardado correctamente", producto);
-
-        //Se actualiza pagina
-        location.reload();
+        //Se realiza fetch para enviar la imagen
+        //Se crea un objeto FormData
+        let formData = new FormData();
+        //Se agrega el archivo al objeto FormData
+        formData.append("file", document.getElementById("imagenProducto").files[0]);
+        //Se realiza fetch para enviar la imagen
+        fetch(SERVER_URL + "file", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.text())
+          .then((producto) => {
+            console.log("Imagen guardada correctamente", producto);
+            //Se actualiza pagina
+            location.reload();
+          })
+          .catch((error) => {
+            console.log("No pudimos guardar la imagen", error);
+          });
       })
       .catch((error) => {
         console.log("No pudimos guardar el producto", error);
