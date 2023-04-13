@@ -98,7 +98,7 @@ img {
 
 /* titulo de curiosidades */
 #info{
-    color: #EFB817;
+    color: white;
     font-size: 5rem;
     text-align: center;
     
@@ -108,6 +108,7 @@ img {
 #titulo-info{
     font-size: 65px !important;
     text-align: center !important;
+
 }
 
 /* Esta clase cambia el tono del fondo de la tarjeta*/
@@ -123,9 +124,11 @@ img {
 /* Esta clase cambia el tono del fondo del texto*/
 .card-info{
     width: 500px;
-    height: 500px;
+    height: 400px;
     margin: 32px;
     background-color: var(--primary2);
+    border-color: transparent
+    
 }
 
 /* para centrar el contenido de las tarjetas info */
