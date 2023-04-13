@@ -165,3 +165,12 @@
   background-color:var(--amaOs);
   color:var(--blanco);
 }
+
+
+.letras{
+  text-align: center;
+  align-items: center;
+  font-size: large;
+  border-radius: 9px;
+}
+

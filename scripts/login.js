@@ -61,8 +61,10 @@ function iniciarSesion(event) {
 	if (!regexpUs.test(usuario)) {
 		texto = "El formato del email es incorrecto";
 		document.getElementById("texto").innerHTML = `
-            <div class="alert alert-warning" role="alert">
-            ${texto}
+            <div class="alert alert-warning letras" role="alert">
+			<i class="fa-sharp fa-solid fa-envelope"></i>
+			&nbsp;&nbsp;
+			${texto}
             </div>
             `;
 		return;
@@ -72,9 +74,11 @@ function iniciarSesion(event) {
 
 	// regExp para contraseña
 	if (!regexpCo.test(contrasena)) {
-		texto = "El tamaño de la contraseña debe ser minimo 7 caracteres";
+		texto = "La contraseña debe tener minimo 8 caracteres";
 		document.getElementById("texto").innerHTML = `
-            <div class="alert alert-warning" role="alert">
+            <div class="alert alert-warning letras" role="alert">
+			<i class="fa-solid fa-key"></i>
+			&nbsp;&nbsp;
             ${texto}
             </div>
             `;
@@ -91,15 +95,24 @@ function iniciarSesion(event) {
 				// console.log(data);
 				if (data.id == null) {
 					document.getElementById("texto").innerHTML = `
-                        <div class="alert alert-warning" role="alert">
-                            ¡Correo y/o contraseña invalidos!
-                        </div>
+                    <div class="alert alert-danger letras" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        &nbsp;&nbsp;¡Correo y/o contraseña invalidos! 
+                    </div>
                         `;
 				} else {
-					alert("Sesion iniciada con exito");
+					//alert("Sesion iniciada con exito");
 					localStorage.setItem("DATA_USER", JSON.stringify(data));
 					updateNavUser();
-					window.location.href = "./";
+					document.getElementById("texto").innerHTML = `
+                    <div class="alert alert-success d-flex align-items-center letras" role="alert">
+                        <i class="fa-solid fa-mug-saucer"></i>                        
+                        &nbsp;&nbsp;¡Qué gusto verte!
+                    </div>
+					`;
+					setInterval(function() {
+						window.location.href = "./";
+					  }, 2000);
 				}
 			})
 			.catch((error) => console.error(error));

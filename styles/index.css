@@ -3,7 +3,7 @@ body .div {
     color: var(--white);
     font-size: 32px;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 img {
@@ -98,30 +98,37 @@ img {
 
 /* titulo de curiosidades */
 #info{
-    color: #EFB817;
+    color: white;
     font-size: 5rem;
+    text-align: center;
+    
 }
 
 
 #titulo-info{
-    font-size: 64px !important;
+    font-size: 65px !important;
+    text-align: center !important;
+
 }
 
-
+/* Esta clase cambia el tono del fondo de la tarjeta*/
 .card-body-info{
     margin: 10px;
     align-self: center;
     border-radius: 10px;
     display: flex;
-    background-color: var(--primary);
+    background-color: var(--primary2);
     color: var(--white);
 }
 
+/* Esta clase cambia el tono del fondo del texto*/
 .card-info{
     width: 500px;
-    height: 600px;
+    height: 400px;
     margin: 32px;
-    background-color: var(--primary);
+    background-color: var(--primary2);
+    border-color: transparent
+    
 }
 
 /* para centrar el contenido de las tarjetas info */
@@ -136,7 +143,7 @@ img {
 }
 
 .card-text-info{
-    font-size: 24px;
+    font-size: 16px;
 }
 
 /* h1 {
