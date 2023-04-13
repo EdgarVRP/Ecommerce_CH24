@@ -10,7 +10,7 @@ let DATA_CART = [];
 getProducts();
 
 function getProducts() {
-	fetch("./testing/products.json")
+	fetch(SERVER_URL + "productos")
 		.then((response) => response.json())
 		.then((data) => {
 			DATA_PRODUCTS = data;
@@ -58,7 +58,7 @@ function showProducts() {
               <div class="card-body">
                   <div class="text-center mt-1">
                       <h4 class="card-title lightYellowText">${DATA_PRODUCTS[i].region}</h4>
-                      <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].precioTostado}</h6>
+                      <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].precio}</h6>
                   </div>
       
                   <div class="d-flex flex-row">
@@ -98,7 +98,7 @@ function updateModal(i) {
             </div>
             <div class="col">
                 <h4 class="colorText">${DATA_PRODUCTS[i].variedad}</h4>
-                <p class="colorText">Desde: $${DATA_PRODUCTS[i].precioTostado} </p>
+                <p class="colorText">Desde: $${DATA_PRODUCTS[i].precio} </p>
             </div>
         </div>
     </div>`;
