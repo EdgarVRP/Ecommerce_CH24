@@ -23,15 +23,15 @@ function getProducts() {
 }
 
 function addProduct(id) {
-    // localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
-    DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
-    // console.log(DATA_CART);
+	// localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+	DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
+	// console.log(DATA_CART);
 
-    if (DATA_CART == null){
-        DATA_CART = []
-    }
+	if (DATA_CART == null) {
+		DATA_CART = [];
+	}
 
-    // Producto a agregar con caracteristicas default
+	// Producto a agregar con caracteristicas default
 	let product = {
 		id: id,
 		grind: 2,
@@ -47,14 +47,12 @@ function addProduct(id) {
 	updateNavCart();
 }
 
-
 function showProducts() {
 	for (let i = 0; i < DATA_PRODUCTS.length; i++) {
-        
 		const productCard = `<div class="col-md-12 col-lg-3 mb-3 mb-lg-0">
           <div class="card productCard">
-              <img src="${DATA_PRODUCTS[i].rutaImagen}"
-              class="card-img-top" alt="" />
+          <img src="./public/img/products/${DATA_PRODUCTS[i].rutaimagen}"
+          class="card-img-top" alt="" />
               <div class="card-body">
                   <div class="text-center mt-1">
                       <h4 class="card-title lightYellowText">${DATA_PRODUCTS[i].region}</h4>
@@ -72,25 +70,22 @@ function showProducts() {
 	}
 }
 
-
-
 function updateModal(i) {
-	
 	//Traer el titulo del Modal (Ver más)
-    const modalTitle = document.getElementById("modal-title");
-    //Traer el div del modal para el body
-    const modalDivBody = document.getElementById("row-modal-body");
-    //Traer footer del Modal
-    const modalDivFooter = document.getElementById("modal-footer");
+	const modalTitle = document.getElementById("modal-title");
+	//Traer el div del modal para el body
+	const modalDivBody = document.getElementById("row-modal-body");
+	//Traer footer del Modal
+	const modalDivFooter = document.getElementById("modal-footer");
 
-    //Se limpia el modal primero
-    //Si no se limpian cuando se cierra y vuelve a abrir el modal se duplican todos los elementos
-    modalTitle.innerHTML = ``;
-    modalDivBody.innerHTML = ``;
-    modalDivFooter.innerHTML=``;
-    
-    //Pendiente de cambiar la imagen
-    const modalTitleInfo = `
+	//Se limpia el modal primero
+	//Si no se limpian cuando se cierra y vuelve a abrir el modal se duplican todos los elementos
+	modalTitle.innerHTML = ``;
+	modalDivBody.innerHTML = ``;
+	modalDivFooter.innerHTML = ``;
+
+	//Pendiente de cambiar la imagen
+	const modalTitleInfo = `
     <div class="container">
         <div class="row">
             <div class="col-2">
@@ -102,12 +97,11 @@ function updateModal(i) {
             </div>
         </div>
     </div>`;
-    
-    modalTitle.innerHTML += modalTitleInfo;
-    //document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
-    
-    
-    const modalDivBodyInfo = `
+
+	modalTitle.innerHTML += modalTitleInfo;
+	//document.getElementById("modal-title").innerHTML = DATA_PRODUCTS[i].nombre;
+
+	const modalDivBodyInfo = `
             <div style="padding: 5%; border-radius: 5%;">        
                 <div id="carouselExampleIndicators" class="carousel slide" >
                     <div class="carousel-indicators">
@@ -197,14 +191,12 @@ function updateModal(i) {
                 </div>
                 
             </div>`;
-    
-    const modalFooterInfo = `
+
+	const modalFooterInfo = `
         <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas" data-mdb-ripple-color="dark" data-bs-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-danger flex-fill ms-1 btnBuyNow" onclick="addProduct(${DATA_PRODUCTS[i].id})">Comprar ahora</button>
     `;
-    
-    modalDivBody.innerHTML += modalDivBodyInfo;
-    modalDivFooter.innerHTML += modalFooterInfo;
-   
-}
 
+	modalDivBody.innerHTML += modalDivBodyInfo;
+	modalDivFooter.innerHTML += modalFooterInfo;
+}

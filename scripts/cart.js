@@ -294,7 +294,7 @@ $btnPay.onclick = function () {
 				idProducto: `${PRODUCTOS[i]}`,
 				fechaEntrega: `${PEDIDO_FECHA}`,
 				fechaPago: `${ENTREGA_FECHA}`,
-				precioVenta: `${DATA_PRODUCTS[PRODUCTOS[i]].precioTostado * CANTIDAD[i]}`,
+				precioVenta: `${DATA_PRODUCTS[PRODUCTOS[i]].precio * CANTIDAD[i]}`,
 				tostado: `${TOSTADO[i]}`,
 				molido: `${MOLIDO[i]}`,
 				count: `${CANTIDAD[i]}`,
@@ -316,9 +316,8 @@ let DATA_CART = [];
 
 getProducts();
 
-// Obtiene los productos de la base de dea tos y los guarda en el local storage
 function getProducts() {
-	fetch("./testing/products.json")
+	fetch(SERVER_URL + "productos")
 		.then((response) => response.json())
 		.then((data) => {
 			DATA_PRODUCTS = data;
@@ -356,7 +355,7 @@ function updateCart() {
 	for (let i = 0; i < DATA_CART.length; i++) {
 		let PRODUCT = DATA_PRODUCTS.find((product) => product.id == DATA_CART[i].id);
 
-		const subtotal = PRODUCT.precioTostado * DATA_CART[i].count;
+		const subtotal = PRODUCT.precio * DATA_CART[i].count;
 		const grind = arrGrind[DATA_CART[i].grind];
 		const roast = arrRoast[DATA_CART[i].roast];
 
@@ -365,7 +364,7 @@ function updateCart() {
           <div id="info" class="col-12 col-md-6">
             <button id="product-delete" class="btn small-button" onclick="deleteProduct()">x</button>
 
-            <img class="img-product" src="${PRODUCT.rutaImagen}" alt="">
+            <img class="img-product" src="./public/img/products/${PRODUCT.rutaimagen}" alt="">
             <div class="product-info">
               <p>${PRODUCT.nombre}</p>
               <p>Tostado: ${roast}</p>
@@ -470,7 +469,7 @@ function updateModal(i) {
 	$btnMolidoMedio.checked = molidoModal == 2;
 	$btnMolidoAlto.checked = molidoModal == 3;
 
-	document.getElementById("modal-img").src = PRODUCT.rutaImagen;
+	document.getElementById("modal-img").src = `./public/img/products/${PRODUCT.rutaimagen}`;
 	document.getElementById("modal-title").innerHTML = PRODUCT.nombre;
 }
 

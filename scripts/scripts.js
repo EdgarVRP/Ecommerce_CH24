@@ -1,6 +1,6 @@
 //const SERVER_URL = "http://localhost:8080/";
-//const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
-const SERVER_URL = "https://ecommercebackend-production-50a2.up.railway.app/";
+const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/";
+// const SERVER_URL = "https://ecommercebackend-production-50a2.up.railway.app/";
 
 // cambiar un variable de color global
 
@@ -107,7 +107,7 @@ darkMode.onclick = function () {
 updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
-	// console.log(DATA_USER);
+	console.log(DATA_USER);
 
 
 	if (DATA_USER != null && DATA_USER.nombre != undefined) {
