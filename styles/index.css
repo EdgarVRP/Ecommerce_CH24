@@ -57,7 +57,7 @@ img {
 
 /* Tamaño de la letra del video */
 #text-p{
-    font-size: 55px;
+    font-size: 58px;
     text-align: center; 
  
 }
@@ -65,7 +65,7 @@ img {
 @media only screen and (max-width: 767px) {
     /* Cambiar tamaño de letra del #text-p para pantallas de celular */
     #text-p {
-      font-size: 32px;
+      font-size: 30px;
     }
   }
 
