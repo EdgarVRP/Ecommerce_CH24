@@ -57,7 +57,7 @@ img {
 
 /* Tamaño de la letra del video */
 #text-p{
-    font-size: 80px; /* No exceder de 80% */
+    font-size: 11vw; 
 }
 
 #video-container {
