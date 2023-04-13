@@ -170,6 +170,7 @@ on(document, "click", "#btnModificarProducto", (e) => {
   url.searchParams.set("puntuacion", producto.puntuacion);
   url.searchParams.set("precio", producto.precio);
   url.searchParams.set("inventario", producto.inventario);
+  url.searchParams.set("rutaimagen", producto.imagen);
   console.log(url);
   // Realizar solicitud PUT utilizando fetch
   fetch(url, {
