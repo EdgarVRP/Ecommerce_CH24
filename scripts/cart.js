@@ -165,7 +165,6 @@ function loadUsuario() {
 	}
 
 	// console.log(DATA_USER);
-
 	let url = SERVER_URL + `usuarios/${DATA_USER.id}`;
 	fetch(url, { method: "GET", headers: { "Content-Type": "application/json" } })
 		.then((response) => response.json())
