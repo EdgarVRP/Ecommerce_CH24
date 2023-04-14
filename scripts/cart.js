@@ -468,7 +468,7 @@ function updateCart() {
           <div id="info" class="col-12 col-md-6">
             <button id="product-delete" class="btn small-button" onclick="deleteProduct()">x</button>
 
-            <img class="img-product" src="./public/img/products/${PRODUCT.rutaimagen}" alt="">
+            <img class="img-product" src="${SERVER_URL}${PRODUCT.rutaimagen}" alt="">
             <div class="product-info">
               <p>${PRODUCT.nombre}</p>
               <p>Tostado: ${roast}</p>
