@@ -36,7 +36,7 @@
     <div id="contact" class="container">
         <br>
         <!-- Titulo y linea -->
-        <h2 class="linea"><span id="title">Contactanos</span></h2>
+        <h2 class="linea"><span id="title" class="text-label">Contactanos</span></h2>
 
 
         <!-- Contenedor general -->
@@ -45,20 +45,21 @@
             <!-- Derecha Imagen y texto derecha -->
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Texto -->
-                <p id="fonts">Si tienes alguna duda, comentario o sugerencia, puedes contactarnos y nos comunicaremos contigo lo antes posible. </p>
+                <p id="fonts" class="text-label">Si tienes alguna duda, comentario o sugerencia, puedes contactarnos y nos comunicaremos contigo lo antes posible. </p>
 
                 <!-- Imagen -->
-                <img class="img-fluid" src="https://coffee.alexflipnote.dev/random" alt="" id="img">
+                <img class="img-fluid" src="./public/img/contact/6.jpg" alt="" id="img">
             </div>
 
-            <!-- Izquierda Formularios y boton -->
-            <div class="col-lg-6 col-md-6 col-sm-12 align-right">
+            <!-- Izquierda Formularios y boton, cuando la pantalla sea grande tiene 6/12 y un margen superior-->
+            <!-- Cuando la pantalla es chica tiene 12/12 (toda la pantalla de ancho) y sin margen superior -->
+            <div class="col-lg-6 col-md-6 col-sm-12 align-right mt-lg-5">
                 <form id="form-contact" action="https://formspree.io/f/mrgvllpe" method="POST">
                     <!-- Formulario nombre -->
                     <div class="form-row mt-1">
                         <div class="mb-2">
-                            <label for="input-name">Nombre</label>
-                            <input name="name" type="text" class="input form-control" id="input-name">
+                            <label class="form-label" for="input-name">Nombre</label>
+                            <input name="name" type="text" class="form-input form-control" id="input-name">
                             <p class="warning" id="warning-name">Falta algo</p>
                         </div>
                     </div>
@@ -66,8 +67,8 @@
                     <!-- Formulario apellido -->
                     <div class="form-row">
                         <div class="mb-2">
-                            <label for="last">Apellido</label>
-                            <input name="last" type="text" class="input form-control" id="input-last">
+                            <label class="form-label" for="last">Apellido</label>
+                            <input name="last" type="text" class="form-input form-control" id="input-last">
                             <p class="warning" id="warning-last">Falta algo</p>
                         </div>
                     </div>
@@ -75,8 +76,8 @@
                     <!-- Formulario email -->
                     <div class="form-row">
                         <div class="mb-2">
-                            <label for="input-email">Email</label>
-                            <input name="email" type="email" class="input form-control" id="input-email">
+                            <label class="form-label" for="input-email">Email</label>
+                            <input name="email" type="email" class="form-input form-control" id="input-email">
                             <p class="warning" id="warning-email">Falta algo</p>
                         </div>
                     </div>
@@ -84,8 +85,8 @@
                     <!-- Formulario telefono -->
                     <div class="form-row">
                         <div class="mb-2">
-                            <label for="input-phone">Telefono</label>
-                            <input name="phone" type="tel" maxlength="10" class="input form-control" id="input-phone">
+                            <label class="form-label" for="input-phone">Telefono</label>
+                            <input name="phone" type="tel" maxlength="10" class="form-input form-control" id="input-phone">
                             <p class="warning" id="warning-phone">Falta algo</p>
                         </div>
                     </div>
@@ -93,15 +94,15 @@
                     <!-- Formulario comentarios -->
                     <div class="form-row">
                         <div class="mb-2">
-                            <label for="input-comments">Comentarios</label>
-                            <textarea name="comments" id="input-comments" class="input form-control"
+                            <label class="form-label" for="input-comments">Comentarios</label>
+                            <textarea name="comments" id="input-comments" class="form-input form-control"
                                 style="height: 100px"></textarea>
                             <p class="warning" id="warning-comments">Falta algo</p>
                         </div>
                     </div>
 
                     <!-- Boton de enviar info del form por default seria type="submit"-->
-                    <button type="button" class="btn btn-primary" id="button">Enviar</button>
+                    <button type="button" class="btn button" id="button">Enviar</button>
                 </form>
             </div>
         </div>

@@ -23,15 +23,10 @@
 </head>
 
 <body>
-    <div id="navbar"></div>
-
-    <!-- Div de bienvenida -->
-    <!-- <div id="welcome" class="div border">
-        <h1>Bienvenides querides consumidores !!</h1>
-    </div> -->
+    <div id="navbar" class="sticky-top"></div>
 
     <!-- Div del video -->
-    <div id="video-container" class="div"> <!-- le quite el border -->
+    <div id="video-container" class="div">
         <video id="video" autoplay muted loop class="">
             <source src="assets/video/index.mp4" type="video/mp4">
         </video>
@@ -56,9 +51,8 @@
     </div>
 
     <!-- Div carrusel -->
-    <div id="carousel" class="div pt-3"> <!-- le quite el border -->
-        <!-- bootstrap -->
-          <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="carousel" class="div pt-3">
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <!-- Problematica -->
               <div class="carousel-item active">

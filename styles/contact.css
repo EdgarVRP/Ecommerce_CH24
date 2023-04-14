@@ -5,26 +5,8 @@ body {
 /* En esta pagina todo sera de esta fuente y color */
 #contact * {
     font-family: 'Ubuntu', sans-serif;
-    color: var(--secondary2);
 }
 
-/* Autocompletado color background */
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--secondary2) inset !important;
-}
-
-.background {
-    /* position: absolute;
-    width: 80%;
-    height: 80%;
-    margin: 300 300 100 100;
-    background-color: red;
-    z-index: -1;
-    border-radius: 50px; */
-}
 
 /* Estilos de form-contact*/
 #form-contact {
@@ -33,32 +15,9 @@ input:-webkit-autofill:active{
 }
 
 
-/* Revisar el uso de important */
-.input {
-    border-radius: 10px;
-    background-color: var(--secondary2) !important;
-    color: var(--black) !important;
-}
-
-/* Color de los input de form cuando se pasa sobre ellos */
-.input:focus {
-    background: #9e9e9e93;
-}
-
-/* Estilos de botons de enviar */
+/* Estilos de boton de enviar */
 #button {
-    width: 125px;
-    border-radius: 10px;
     align-self: end;
-    background-color: var(--primary2);
-    border-color: white;
-    color: #fcbf6b;
-}
-#button:hover{
-    background-color: #efb815;
-    border-color: transparent;
-    color: var(--primary2);
-    transition: 0.7s;
 }
 
 /* Estilos de linea en el titulo de contactanos */
@@ -83,12 +42,14 @@ h2.linea span {
     padding: 0 15px;
 }
 
+/* Estilos de la imagen de contacto */
 #img {
     border-radius: 32px;
     min-width: 90%;
     margin-bottom: 32px;
 }
 
+/* La imagen se elimina cuando el dispositivo es menor a 400px de ancho */
 @media (max-width: 400px) {
     #img {
         display: none;

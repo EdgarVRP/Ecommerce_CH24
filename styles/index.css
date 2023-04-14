@@ -1,4 +1,4 @@
-/* Cambiar color y tamano de texto a toda clase div adentro de body se puede quitar body la verdad*/
+/* Cambiar color y tamano de texto a toda clase div adentro de body*/
 body .div {
     color: var(--white);
     font-size: 32px;
@@ -17,7 +17,7 @@ img {
 }
 
 #video {
-    height: 700px;
+    height: 600px;
     width: 100%;
     object-fit: cover;
     display: block;
@@ -153,8 +153,9 @@ img {
 
 .card-text-info{
     font-size: 16px;
+    text-align: center;
 }
 
-/* h1 {
-    font-size: 100px;
-} */
+.card-img-top {
+    padding: 16px;
+}

@@ -8,8 +8,25 @@
     --primary2: #412c30;
     --secondary: #EFB817;
     --secondary2: #fff0e5;
-    --white: #FFFFFF;
+    --white: #ffffff;
     --black: #000000;
+
+
+    --button-background: #412c30;
+    --button-text-color : #fcbf6b;
+    --button-border-color: #ffffff;
+
+    --button-background-hover: #ffd760;
+    --button-text-color-hover: #412c30;
+    --button-border-color-hover: #000000;
+
+    --form-background: #EFB817;
+    --form-text-color : #2a1e1e;
+    --form-border-color: #2a1e1e;
+
+    --label-background: #EFB817;
+    --label-text-color : #2a1e1e;
+    --label-border-color: #2a1e1e;
 }
 
 
@@ -253,10 +270,6 @@ article {
     z-index: 2;
 }
 
-/* que sera ::before? */
-/* para que sirve inherit? me imagino que hereda el color de fondo?*/
-/* diferencias entre absolute y relative */
-/* esto es como un quadrante para hacer el diseño  */
 .fab-container .fab::before {
     content: " ";
     /* 3 linea magicas que mueven el cuadrate a donde sea */
@@ -314,11 +327,8 @@ article {
 .fab-container .sub-button .material-icons {
     /* color con rgb */
     color: rgb(255, 255, 255);
-    /* curiosamente los iconos aparecen un poco arriba con esto se arregla */
     /* padding-top: 6px; */
 }
-
-/*Estilos formulario*/
 
 /* Estilo de alertas de formulario de informacion incorrecta */
 .warning {
@@ -337,10 +347,18 @@ article {
     /* background-color: rebeccapurple; */
 }
 
+/* Autocompletado color background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--secondary2) inset !important;
+}
+
 
 .form-label {
-    color: white !important;
-    margin: 0 0 0 8px;
+    color: var(--white) !important;
+    margin: 0 0 0 10px;
 }
 
 /* Estilos de botons de enviar */
@@ -348,9 +366,9 @@ article {
     width: 125px;
     height: 45px;
     border-radius: 10px;
-    background-color: var(--primary2);
-    border-color: white;
-    color: #fcbf6b;
+    background-color: var(--button-background);
+    border-color: var(--button-border-color);
+    color: var(--button-text-color);
     margin: 8px;
 }
 
@@ -361,9 +379,9 @@ article {
     
     font-size: 24px;
     border-radius: 10px;
-    background-color: var(--primary2);
-    border-color: white;
-    color: #fcbf6b;
+    background-color: var(--button-background);
+    border-color: var(--button-border-color);
+    color: var(--button-text-color);
 
     display: flex;
     justify-content: center;
@@ -372,18 +390,13 @@ article {
 
 .small-button:hover,
 .button:hover {
-    background-color: #fcbf6b;
-    border-color: transparent;
-    color: var(--black);
+    background-color: var(--button-background-hover);
+    border-color: var(--button-border-color-hover);
+    color: var(--button-text-color-hover);
     transition: 0.4s;
 }
 
-.form-control{
-    /* color: black !important; */
-    /* background-color: blacfasdfk; */
-}
-
-.navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.text-label{
+    color: var(--white);
 }
 
