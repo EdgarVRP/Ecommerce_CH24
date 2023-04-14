@@ -183,34 +183,49 @@ $btnSaveInfo.addEventListener("click", function () {
 		$btnSaveInfo.innerHTML = "Guardar";
 		disableInputs(false);
 	} else {
-		if (checkNombre() & checkApellido() & checkTelefono() & checkCalle() & checkNumero() & checkColonia() & checkCodigoPostal() & checkMunicipio() & checkEstado()) {
-			let usuario = {
-				// nombre: $nameInput.value,
-				// apellido: $apellidoInput.value,
-				// email: $emailInput.value,
-				telefono: $telefonoInput.value,
-				calle: $calleInput.value,
-				numero: $numeroInput.value,
-				colonia: $coloniaInput.value,
-				codigo_postal: $codigoPostalInput.value,
-				municipio: $municipioInput.value,
-				estado: $estadoInput.value,
-			};
+		if (
+			checkNombre() &
+			checkApellido() &
+			checkTelefono() &
+			checkCalle() &
+			checkNumero() &
+			checkColonia() &
+			checkCodigoPostal() &
+			checkMunicipio() &
+			checkEstado()
+		) {
+			if (DATA_USER != null || DATA_USER.length != 0) {
+				// Si esta iniciada sesion guardar lo datos en la base de datos
+				let usuario = {
+					// nombre: $nameInput.value,
+					// apellido: $apellidoInput.value,
+					// email: $emailInput.value,
+					telefono: $telefonoInput.value,
+					calle: $calleInput.value,
+					numero: $numeroInput.value,
+					colonia: $coloniaInput.value,
+					codigo_postal: $codigoPostalInput.value,
+					municipio: $municipioInput.value,
+					estado: $estadoInput.value,
+				};
 
-			let url = SERVER_URL + `usuarios/${DATA_USER.id}`;
-			fetch(url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(usuario) })
-				.then((response) => response.json())
-				.then((data) => {
-					localStorage.setItem("DATA_USER", JSON.stringify(data));
-					$btnSaveInfo.innerHTML = "Editar";
-					disableInputs(true);
+				let url = SERVER_URL + `usuarios/${DATA_USER.id}`;
+				fetch(url, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(usuario),
 				})
-				.catch((error) => {
-					console.error(error);
-				});
+					.then((response) => response.json())
+					.then((data) => {
+						localStorage.setItem("DATA_USER", JSON.stringify(data));
+						$btnSaveInfo.innerHTML = "Editar";
+						disableInputs(true);
+					})
+					.catch((error) => {
+						console.error(error);
+					});
+			}
 		}
-
-
 	}
 });
 
@@ -274,7 +289,17 @@ $btnMolidoAlto.addEventListener("click", function () {
 });
 
 $btnPay.onclick = function () {
-	if (checkNombre() & checkApellido() & checkTelefono() & checkCalle() & checkNumero() & checkColonia() & checkCodigoPostal() & checkMunicipio() & checkEstado()) {
+	if (
+		checkNombre() &
+		checkApellido() &
+		checkTelefono() &
+		checkCalle() &
+		checkNumero() &
+		checkColonia() &
+		checkCodigoPostal() &
+		checkMunicipio() &
+		checkEstado()
+	) {
 		const PRODUCTOS = DATA_USER.carrito_productos.split(",");
 		const TOSTADO = DATA_USER.carrito_tostado.split(",");
 		const MOLIDO = DATA_USER.carrito_molido.split(",");
@@ -336,7 +361,6 @@ function updateCart() {
 	DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
 	console.log(DATA_CART);
 	updateDataCart();
-
 
 	if (DATA_CART == null || DATA_CART.length == 0) {
 		$containerMessage.style.visibility = "visible";
@@ -514,7 +538,7 @@ function checkTelefono(e) {
 	return false;
 }
 
-function checkCalle (e) {
+function checkCalle(e) {
 	// Si esta vacio muestra advertencia
 	if ($calleInput.value == "") {
 		$warningCalle.style.visibility = "visible";
@@ -528,7 +552,7 @@ function checkCalle (e) {
 	return false;
 }
 
-function checkNumero (e) {
+function checkNumero(e) {
 	// Si esta vacio muestra advertencia
 	if ($numeroInput.value == "") {
 		$warningNumero.style.visibility = "visible";
@@ -542,7 +566,7 @@ function checkNumero (e) {
 	return false;
 }
 
-function checkNumero (e) {
+function checkNumero(e) {
 	// Si esta vacio muestra advertencia
 	if ($numeroInput.value == "") {
 		$warningNumero.style.visibility = "visible";
@@ -556,7 +580,7 @@ function checkNumero (e) {
 	return false;
 }
 
-function checkColonia (e) {
+function checkColonia(e) {
 	// Si esta vacio muestra advertencia
 	if ($coloniaInput.value == "") {
 		$warningColonia.style.visibility = "visible";
@@ -570,7 +594,7 @@ function checkColonia (e) {
 	return false;
 }
 
-function checkCodigoPostal (e) {
+function checkCodigoPostal(e) {
 	// Si esta vacio muestra advertencia
 	if ($codigoPostalInput.value == "") {
 		$warningCodigoPostal.style.visibility = "visible";
@@ -584,7 +608,7 @@ function checkCodigoPostal (e) {
 	return false;
 }
 
-function checkMunicipio (e) {
+function checkMunicipio(e) {
 	// Si esta vacio muestra advertencia
 	if ($municipioInput.value == "") {
 		$warningMunicipio.style.visibility = "visible";
@@ -598,22 +622,21 @@ function checkMunicipio (e) {
 	return false;
 }
 
-function checkEstado (e) {
+function checkEstado(e) {
 	// Si esta vacio muestra advertencia
 	if ($estadoInput.value == "") {
 		$warningEstado.style.visibility = "visible";
 		$warningEstado.textContent = "No puede estar vacio";
 
 		// Correcto
-	}
-	else {
+	} else {
 		$warningEstado.style.visibility = "hidden";
 		return true;
 	}
 	return false;
 }
 
-function addVenta(venta){
+function addVenta(venta) {
 	let url = SERVER_URL + "ventas";
 	fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(venta) })
 		.then((response) => response.json())
@@ -624,4 +647,3 @@ function addVenta(venta){
 			console.error(error);
 		});
 }
-
