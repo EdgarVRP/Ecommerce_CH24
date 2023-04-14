@@ -1,29 +1,28 @@
 /* Cambiar o ocultar color del borde por defecto */
-.border {
+/* .border {
 	border-color: red !important;
-}
+} */
 
 :root {
-	/* --icons: #ffffff; */
-	/* --letter: #d81818; */
-	--primary:#241014;
-    --primary2:#2E151A;
-    --secondary:#EFB817;
-    --secondary2:#FCBF6B; /*letters*/
-    --white:#FFFFFF;
-    --black:#000000;
+    --primary: #2a1e1e;
+    --primary2: #412c30;
+    --secondary: #EFB817;
+    --secondary2: #fff0e5;
+    --white: #FFFFFF;
+    --black: #000000;
 }
+
 
 /* Aplicar estilo a todo elemento */
 * {
-	/* font-family: "Comic Sans MS", "Comic Sans"; */
+    /* font-family: "Comic Sans MS", "Comic Sans"; */
     /* font-family: 'Ubuntu', sans-serif; */
-	font-family: 'Playfair Display', ;
-	font-weight: bold;
+    font-family: 'Playfair Display', ;
+    font-weight: bold;
 
-	/* debug */
-	
-	/* border: solid rgb(43, 255, 0) !important;
+    /* debug */
+
+    /* border: solid rgb(43, 255, 0) !important;
 	color: rgb(255, 0, 0) !important;
 	border-width: 1px !important; 
 	background-color: white !important; */
@@ -31,12 +30,12 @@
 
 /********************** BODY **********************/
 body {
-	/* Altura minima de toda la pantalla para que el footer este hasta abajo */
+    /* Altura minima de toda la pantalla para que el footer este hasta abajo */
     min-height: 100vh;
     margin: 0;
-	display: flex;
+    display: flex;
     flex-direction: column;
-	background-color: var(--primary2);
+    background-color: var(--primary2);
 }
 
 /* Dummy div entre navbar y footter que se expande parue el */
@@ -47,120 +46,344 @@ article {
 
 /********************** NAVBAR **********************/
 .navbar {
-	background-color: var(--primary);
+    background-color: var(--primary);
 }
 
 .nav-link {
-	color: var(--secondary2);
+    color: var(--secondary2);
 }
 
 .nav-link:hover {
-	color: var(--white);
+    color: var(--white);
 }
 
-.navbar-brand{
-	color: var(--white);
+.navbar-brand {
+    color: var(--secondary2);
 }
 
 .navbar-brand:hover {
-	color: #c5c5c5;
+    color: #c5c5c5;
 }
 
 .nav-icon {
-	color: var(--secondary2);
-	font-size: 32px;
-	margin-bottom: 16px;
+    color: var(--secondary2);
+    font-size: 32px;
+    margin-bottom: 16px;
 }
 
 .nav-icon:hover {
-	color: var(--white);
+    color: var(--white);
 }
+
+#nav-cart-container {
+    display: flex;
+    position: relative;
+    color: white;
+    /* bottom: 8px; */
+}
+
+/* Estilos del contador de productos en el carrito */
+#nav-cart-count {
+    /* Libre posicion en el div */
+    position: absolute;
+    /* Color de texto */
+    color: black;
+    /* Central texto horizontalmente en el circulo */
+    text-align: center;
+    /* Diametro del circulo */
+    height: 20px;
+    width: 20px;
+    /* Color de circulo */
+    background-color: yellow;
+    /* Cuadrado a circulo */
+    border-radius: 16px;
+    /* Centrar verticalmente texto en el circulo */
+    line-height: 19px;
+    /* Mover el indicador */
+    margin-top: 8px;
+    margin-left: 20px;
+    /* Tamaño de la fuente */
+    font-size: 16px;
+}
+
 
 
 /********************** FOOTER **********************/
 
 /* Aplica estilo a la clase footer */
 .footer {
-	background-color: var(--primary);
+    background-color: var(--primary);
 
-	display: flex;
+    display: flex;
 
-	flex-direction: row;
+    flex-direction: row;
 
-	padding: 5px;
+    padding: 5px;
 
-	/* Central horizontal */
-	margin: auto;
+    /* Central horizontal */
+    margin: auto;
 }
 
 /* Contiene un div de texto y div de logos cambia a flex columna en anchos pequenos */
 .footer .container {
-	display: flex;
+    display: flex;
 
-	/* Cuando el ancho se pequeno este valor cambia a column */
-	flex-direction: row;
+    /* Cuando el ancho se pequeno este valor cambia a column */
+    flex-direction: row;
 
-	/* Centra los hijos verticalmente */
-	align-items: center;
+    /* Centra los hijos verticalmente */
+    align-items: center;
 
-	/* Magica linea que centra los hijos horizontalmente */
-	justify-content: center;
+    /* Magica linea que centra los hijos horizontalmente */
+    justify-content: center;
 }
 
 /* Aplica estilo al texto en el footter */
-.footer-text p {
-	/* Centra horizontalmente el texto */
-	text-align: center;
+.footer-text p,
+.footer-text p a {
+    /* Centra horizontalmente el texto */
+    text-align: center;
 
-	/* Centra verticalmente el texto */
-	margin: auto;
+    /* Centra verticalmente el texto */
+    margin: auto;
+
+    font-size: 16px !important;
+
 }
 
 .footer-text {
-	/* Color de texto */
-	color: var(--secondary2);
+    /* Color de texto */
+    color: var(--secondary2);
 
-	/* Sepracion entre el texto y los logos */
-	margin-right: 20px;
+    /* Sepracion entre el texto y los logos */
+    margin-right: 20px;
 }
 
 .footer-logos {
-	display: flex;
+    display: flex;
 }
 
 /* Iconos con link en el footer */
 .footer a {
-	color: var(--secondary2);
-	font-size: 32px;
-	margin: 5px;
-	margin-bottom: 16px;
+    color: var(--secondary2);
+    font-size: 32px;
+    margin: 5px;
+    margin-bottom: 16px;
 }
 
 .footer a:hover {
-	color: var(--white);
+    color: var(--white);
 }
 
 .navbar-brand {
-	margin-left: 20px;
-	display: flex;
+    margin-left: 20px;
+    display: flex;
 }
 
 .navbar-brand p {
-	margin: auto;
-	margin-left: 10px;
+    margin: auto;
+    margin-left: 10px;
 }
 
 
 
 /* Footer responsivo */
 @media (max-width: 600px) {
-	.footer .container {
-		flex-direction: column;
-	}
+    .footer .container {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 350px) {
-	.navbar-brand p {
-		display: none;
-	}
+    .navbar-brand p {
+        display: none;
+    }
 }
+
+
+
+/* contendor general de todo el fab */
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* se expanda a toda la pantalla vertical para mantener el float button abierto */
+.fab-container:hover {
+    height: 100%;
+}
+
+/* mueve los iconos en zindex -1 para mostrarlos */
+.fab-container:hover .sub-button:nth-child(2) {
+    transform: translateY(-80px);
+}
+
+.fab-container:hover .sub-button:nth-child(3) {
+    transform: translateY(-140px);
+}
+
+.fab-container:hover .sub-button:nth-child(4) {
+    transform: translateY(-200px);
+}
+
+.fab-container:hover .sub-button:nth-child(5) {
+    transform: translateY(-260px);
+}
+
+.fab-container:hover .sub-button:nth-child(6) {
+    transform: translateY(-320px);
+}
+
+/********************** FAB DARK-LIGHT MODE **********************/
+
+/* estilos boton principal */
+.fab-container .fab {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    background-color: #1d1616;
+    border-radius: 50%;
+    /* siempre por delante */
+    z-index: 2;
+}
+
+/* que sera ::before? */
+/* para que sirve inherit? me imagino que hereda el color de fondo?*/
+/* diferencias entre absolute y relative */
+/* esto es como un quadrante para hacer el diseño  */
+.fab-container .fab::before {
+    content: " ";
+    /* 3 linea magicas que mueven el cuadrate a donde sea */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    background-color: inherit;
+    /* que estilo eee */
+    border-radius: 0 0 10px 0;
+    z-index: -1;
+}
+
+/* estilos de botons principal */
+.fab-container .fab .fab-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* icono princial estilos */
+.fab-container .fab .fab-content .material-icons {
+    color: white;
+    font-size: 48px;
+}
+
+/* estilos de los botones ocultos */
+.fab-container .sub-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ni idea porque estan chuecos pero esta 2 lineas los arregla */
+    bottom: 10px;
+    right: 10px;
+    /*incesario porque default es auto al parecer*/
+    height: 50px;
+    width: 50px;
+    background-color: #1d1616;
+    border-radius: 50%;
+    /* magica linea para las animaciones */
+    transition: all 0.3s ease;
+}
+
+/* cuando se encuentra sobre los ocultos el cursor cambia a pointer */
+.fab-container .sub-button:hover {
+    cursor: pointer;
+}
+
+/* iconos ocultos que se expanden blancos */
+.fab-container .sub-button .material-icons {
+    /* color con rgb */
+    color: rgb(255, 255, 255);
+    /* curiosamente los iconos aparecen un poco arriba con esto se arregla */
+    /* padding-top: 6px; */
+}
+
+/*Estilos formulario*/
+
+/* Estilo de alertas de formulario de informacion incorrecta */
+.warning {
+    text-align: center;
+    color: #EFB817 !important;
+    visibility: hidden;
+    font-size: 16px;
+    margin: 0px;
+}
+
+/* Revisar el uso de important */
+.form-input {
+    border-radius: 10px;
+    background-color: var(--secondary2) !important;
+    color: var(--black) !important;
+    /* background-color: rebeccapurple; */
+}
+
+
+.form-label {
+    color: white !important;
+    margin: 0 0 0 8px;
+}
+
+/* Estilos de botons de enviar */
+.button {
+    width: 125px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+    margin: 8px;
+}
+
+.small-button {
+    height: 45px;
+    width: 45px;
+    margin: 8px;
+    
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-button:hover,
+.button:hover {
+    background-color: #fcbf6b;
+    border-color: transparent;
+    color: var(--black);
+    transition: 0.4s;
+}
+
+.form-control{
+    /* color: black !important; */
+    /* background-color: blacfasdfk; */
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+

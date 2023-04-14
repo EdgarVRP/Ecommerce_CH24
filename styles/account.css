@@ -1,0 +1,78 @@
+
+#contenedor{
+    width: 100px;
+    height: 100px;
+    
+}
+
+#buttonEditar, #buttonGuardar {
+    
+    border-radius: 10px;
+    align-self: end;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+}
+
+#buttonEditar:hover, #buttonGuardar:hover{
+    background-color: #efb815;
+    border-color: transparent;
+    color: var(--primary2);
+    transition: 0.7s;
+}
+
+#buttonEditar1, #buttonGuardar1 {
+    
+    border-radius: 10px;
+    align-self: end;
+    background-color: var(--primary2);
+    border-color: white;
+    color: #fcbf6b;
+}
+
+#buttonEditar1:hover, #buttonGuardar1:hover{
+    background-color: #efb815;
+    border-color: transparent;
+    color: var(--primary2);
+    transition: 0.7s;
+}
+
+
+h3{
+    color:white;
+}
+
+#border-formulario{
+    max-width: 25em;
+    margin: 0  auto;
+    padding: 1.3em;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: var(--primary);
+    border-radius: 0.5em;
+    box-shadow: inset 1px 1px 22px 4px rgba(0, 0, 0, 0.85);
+
+}
+
+#fondoBoton{
+    color: white;
+    background-color: var(--primary);  
+}
+
+#imgUser{
+    width: 100px;
+    height: 100px;
+}
+
+.form-label,
+label {
+    color: black !important;
+}
+
+.accordion-button{
+    color:black;
+}
+
+.accordion{
+    --bs-accordion-btn-icon:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a58ca'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
+}

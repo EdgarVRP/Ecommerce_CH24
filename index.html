@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Café Alfonso</title>
 
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,27 +25,217 @@
 <body>
     <div id="navbar"></div>
 
-    <p>Home</p>
-    <a href="about.html">about</a>
-    <a href="contact.html">contact</a>
-    <a href="index.html">index</a>
-    <a href="login.html">login</a>
-    <a href="products.html">products</a>
-    <a href="signin.html">signin</a>
+    <!-- Div de bienvenida -->
+    <!-- <div id="welcome" class="div border">
+        <h1>Bienvenides querides consumidores !!</h1>
+    </div> -->
 
-    <article></article>
+    <!-- Div del video -->
+    <div id="video-container" class="div"> <!-- le quite el border -->
+        <video id="video" autoplay muted loop class="">
+            <source src="assets/video/index.mp4" type="video/mp4">
+        </video>
+        <div class="container" id="textOverVideo">
+          <div class="row">
+            <div id="text-video" class="col-12">
+              <p id="text-p">Bienvenides consumidores</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" id="over-video" >
+              <h1>¡Hola!</h1>
+              <h2>¡Juntos creamos tu mejor café!</h2>
+              <br>
+              <h3>Molemos, tostamos, mezclamos y enviamos su café directamente a usted, cuando a usted le convenga.</h3>
+              <a class="" href="./products.html">
+                <button type="button" class="btn btn-primary flex-fill me-1 btnVerMas"  style="width: 350px;">¡Quiero café!</button>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Div carrusel -->
+    <div id="carousel" class="div pt-3"> <!-- le quite el border -->
+        <!-- bootstrap -->
+          <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Problematica -->
+              <div class="carousel-item active">
+                <!-- tarjeta problematica -->
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-1"></div>
+                    <div class="col-md-3" >
+                      <img src="./assets/img/problematica.jpg" class="img-fluid rounded-start" alt="Imagen problematica" >
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title" >Problematica</h5>
+                        <p class="card-text" >Café Alfonso busca acercar los productos de estos pequeños productores a las cafeterías de México buscando visibilizar la calidad de estos productores,  promover la cultura cafetalera y apoyar el trabajo de cientos de mexicanos.</p>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta mision -->
+
+                <!-- Mision -->
+              <div class="carousel-item" > <!-- le quite el active -->
+                <!-- tarjeta mision -->
+                <div class="card mb-3" >
+                  <div class="row g-0">
+                    <div class="col-1"></div>
+                    <div class="col-md-3">
+                      <img src="./assets/img/mision.png" class="img-fluid rounded-start" alt="Imagen mision">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Mision</h5>
+                        <p class="card-text">Acompañar a nuestros clientes cuando sea y donde sea con un delicioso café que les brinde felicidad y satisfacción.</p>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta mision -->
+
+              <!-- Vision -->
+              <div class="carousel-item">
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-1"></div>
+                    <div class="col-md-3">
+                      <img src="./assets/img/vision2.jpg" class="img-fluid rounded-start" alt="Imagen vision">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Vision</h5>
+                        <p class="card-text">Impulsar para 2024 la comercialización del café producido en México a nivel Nacional e Internacional, fomentando la cultura cafetalera mexicana.</p>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta vision -->
+
+              <!-- Valores -->
+              <div class="carousel-item">
+                <!-- tarjeta valores -->
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-1"></div>
+                    <div class="col-md-3">
+                      <img src="./assets/img/valores.jpg" class="img-fluid rounded-start" alt="Imagen valores">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Valores</h5>
+                        <p class="card-text">Responsabilidad, Respeto, Trabajo en equipo, Calidad, Honestidad, Pasión. </p>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+              </div><!-- fin tarjeta valores -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div><!-- fin carrusel -->
+
+    <!-- Curiosidades del cafe -->
+    <div id="info" class="div"> <!-- le quite el border -->
+      <h1 id="titulo-info">¿Conocias estos datos sobre el Café?</h1>
+    </div>
+
+    <!-- div de las tarjetas info -->
+    <div class="tarjetas-info m-3" > 
+      <div class="row justify-content-center mt-3"> <!-- le quite el border -->
+        <!-- tarjeta uno -->
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar" style="border-color: transparent;">
+          <div class="card card-info" >
+             <img src="./assets/img/index/prueba2img.png" class="card-img-top" alt="foto corazon" > 
+            <div class="card-body-info">
+              <p class="card-text-info">Contiene antioxidantes que retrasan el envejecimiento de células y tejidos y ayudan a regenerarlos, previniendo enfermedades relacionadas con el corazón y el cerebro.</p>
+            </div>
+          </div>
+        </div><!-- fin tarjeta  -->
+
+        <!-- tarjeta 2 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
+          <div class="card card-info">
+            <img src="./assets/img/index/prueba4img.png" class="card-img-top" alt="foto corazon" > 
+            <div class="card-body-info">
+              <p class="card-text-info">La cafeína estimula zonas del cerebro que activan las funciones cognitivas, mejoran la memoria y la forma en la que procesamos la información. Nos sentimos más activos y tenedremos mejor rendimiento físico.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 2 -->
+
+        <!-- tarjeta 3 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
+          <div class="card card-info">
+            <img src="./assets/img/index/prueba1img.png" class="card-img-top" alt="foto corazon" > 
+            <div class="card-body-info">
+              <p class="card-text-info">El café se descubrió en el año 300, en Etiopía, pero fue hasta el siglo XV que se comenzaron a tostar sus granos para prapararlos como infusión</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 3 -->
+
+        <!-- tarjeta 4 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
+          <div class="card card-info">
+            <img src="./assets/img/index/prueba6img.png" class="card-img-top" alt="foto corazon" > 
+            <div class="card-body-info">
+              <p class="card-text-info">La palabra "café" se origina de la palabra árabe "kaweh", que significa fortaleza o vigor.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 4 -->
+
+        <!-- tarjeta 5 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
+          <div class="card card-info">
+            <img src="./assets/img/index/prueba3img.png" class="card-img-top" alt="foto corazon" > 
+            <div class="card-body-info">
+              <p class="card-text-info">Se puede necesitar hasta cuatro años para que un arbol de café alcance su producción madura y cada cereza de café tiene dos granos</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 5 -->
+
+        <!-- tarjeta 6 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 centrar">
+          <div class="card card-info">
+            <img src="./assets/img/index/prueba5img.png" class="card-img-top" alt="foto corazon" > 
+            <div class="card-body-info">
+              <p class="card-text-info">Después del agua, el café es la segunda bebida más consumida en todo el mundo.</p>
+            </div>
+          </div>
+        </div> <!-- fin tarjeta 6 -->
+      </div>
+    </div> <!-- Fin tarjetas info -->
+
     <div id="footer"></div>
-
-
-    <!-- Script de index -->
-    <script src="scripts/index.js"></script>
 
     <!-- Script para todos los archivos -->
     <script src="scripts/scripts.js"></script>
+
+    <!-- Script de index -->
+    <script src="scripts/index.js"></script>
 
     <!-- Script Bootstrap 5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

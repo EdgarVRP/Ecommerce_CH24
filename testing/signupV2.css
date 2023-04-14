@@ -1,0 +1,63 @@
+body {
+    background-color: var(--primary2);
+}
+
+/* En esta pagina todo sera de esta fuente y color */
+#contact * {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--secondary2);
+}
+
+/* Autocompletado color background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--secondary2) inset !important;
+}
+
+
+/* Estilos de form-contact*/
+#form-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de botons de enviar */
+#button {
+    align-self: end;
+}
+
+/* Estilos de linea en el titulo de contactanos */
+.linea {
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+h2.linea:before {
+    border-top: 2px solid var(--secondary2);
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    z-index: -1;
+}
+
+h2.linea span {
+    background: var(--primary2);
+    padding: 0 15px;
+}
+
+#img {
+    border-radius: 32px;
+    min-width: 90%;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 400px) {
+    #img {
+        display: none;
+    }
+}

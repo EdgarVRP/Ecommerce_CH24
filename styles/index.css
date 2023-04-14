@@ -1,10 +1,160 @@
-/* 
-p {
-    background-color: yellow;
-} 
-*/
+/* Cambiar color y tamano de texto a toda clase div adentro de body se puede quitar body la verdad*/
+body .div {
+    color: var(--white);
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
 
 img {
     max-width: 30;
     max-height: 40;
 }
+
+#welcome {
+    display: flex;
+    justify-content: center;
+}
+
+#video {
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+#text-video {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    color: var(--secondary2);
+    display: block;
+    padding: 20px;
+    line-height: 260%;
+}
+
+#over-video {
+    position: absolute;
+    top: 200px;
+    z-index: 2;
+    margin-top: 10px;
+    padding: 35px;
+    /* display: block; */
+}
+
+#textOverVideo {
+    position: absolute;
+    z-index: 1; 
+}
+
+/* Tamaño de la letra del video */
+#text-p{
+    font-size: 58px;
+    text-align: center; 
+ 
+}
+
+@media only screen and (max-width: 767px) {
+    /* Cambiar tamaño de letra del #text-p para pantallas de celular */
+    #text-p {
+      font-size: 30px;
+    }
+  }
+
+#video-container {
+    position: relative;
+}
+
+.btnVerMas {
+    background-color: white;
+    border-color: transparent;
+    color: black;
+
+}
+
+.btnVerMas:hover {
+    background-color: black;
+    border-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+
+
+/* estilos tarjetas carrusel */
+
+.card-body {
+    border-color: transparent;
+}
+
+.card-title {
+    color: #EFB817;
+    font-size: 80px;
+
+}
+
+.card-text {
+    color: black;
+    font-size: 2rem;
+}
+
+/* titulo de curiosidades */
+#info{
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    
+}
+
+
+#titulo-info{
+    font-size: 65px !important;
+    text-align: center !important;
+
+}
+
+/* Esta clase cambia el tono del fondo de la tarjeta*/
+.card-body-info{
+    margin: 10px;
+    align-self: center;
+    border-radius: 10px;
+    display: flex;
+    background-color: var(--primary2);
+    color: var(--white);
+}
+
+/* Esta clase cambia el tono del fondo del texto*/
+.card-info{
+    width: 500px;
+    height: 400px;
+    margin: 32px;
+    background-color: var(--primary2);
+    border-color: transparent
+    
+}
+
+/* para centrar el contenido de las tarjetas info */
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjetas-info{
+    font-size: 16px; 
+}
+
+.card-text-info{
+    font-size: 16px;
+}
+
+/* h1 {
+    font-size: 100px;
+} */
