@@ -52,7 +52,7 @@ function showProducts() {
 	for (let i = 0; i < DATA_PRODUCTS.length; i++) {
 		const productCard = `<div class="col-md-12 col-lg-3 mb-3 mb-lg-0">
           <div class="card productCard">
-          <img src="./public/img/products/${DATA_PRODUCTS[i].rutaimagen}"
+          <img src="${SERVER_URL + DATA_PRODUCTS[i].rutaimagen}"
           class="card-img-top" alt="" />
               <div class="card-body">
                   <div class="text-center mt-1 ">
