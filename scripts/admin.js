@@ -103,6 +103,9 @@ on(document, "click", ".btnEditarProducto", (e) => {
     e.target.parentNode.parentNode.childNodes[11].innerHTML;
   document.getElementById("editinventarioProducto").value =
     e.target.parentNode.parentNode.childNodes[12].innerHTML;
+  //se extrae la ruta src de la imagen para guardarla en un input hidden
+  document.getElementById("editimagenProductoTEXT").value =
+    e.target.parentNode.parentNode.childNodes[1].childNodes[0].src;
 });
 
 //EDITAR PRODUCTO
@@ -132,8 +135,20 @@ on(document, "click", "#btnModificarProducto", (e) => {
   let inventarioProducto = document.getElementById(
     "editinventarioProducto"
   ).value;
+  let rutaimagenProducto = "";
   //imagen del producto con substring
-  let rutaimagenProducto = document.getElementById("editimagenProducto").value.substring(12);
+  console.log(document.getElementById("editimagenProductoTEXT").value);
+  if (document.getElementById("editimagenProducto").value == "") {
+    //Se extrae la ruta src quitando el SERVER_URL
+    //let rutaimagenProducto = document.getElementById("editimagenProductoTEXT").value;
+    rutaimagenProducto = document
+      .getElementById("editimagenProductoTEXT")
+      .value.substring(SERVER_URL.length);
+  } else {
+    rutaimagenProducto = document
+      .getElementById("editimagenProducto")
+      .value.substring(12);
+  }
   //buscando el producto a editar
   let producto = {
     nombre: nombreProducto,
@@ -148,7 +163,7 @@ on(document, "click", "#btnModificarProducto", (e) => {
     puntuacion: puntuacionProducto,
     precio: precioProducto,
     inventario: inventarioProducto,
-    imagen: rutaimagenProducto
+    imagen: rutaimagenProducto,
   };
   // actualizando producto
   console.log(producto);
@@ -175,16 +190,10 @@ on(document, "click", "#btnModificarProducto", (e) => {
   //Se crea un objeto FormData
   let formData = new FormData();
   //Se agrega el archivo al objeto FormData
-  formData.append("file", document.getElementById("editimagenProducto").files[0]);
-  //Se realiza fetch para enviar la imagen
-  fetch(SERVER_URL + "file", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.text())
-    .then((producto) => {
-      console.log("Imagen guardada correctamente", producto);
-      // Realizar solicitud PUT utilizando fetch
+  formData.append(
+    "file",
+    document.getElementById("editimagenProducto").files[0]
+  );
   fetch(url, {
     method: "PUT",
     headers: {
@@ -196,18 +205,31 @@ on(document, "click", "#btnModificarProducto", (e) => {
       if (!response.ok) {
         throw new Error("Error al enviar la solicitud");
       }
-  //Se actualiza pagina
-  location.reload();
+      console.log(producto.imagen);
+      if (producto.imagen != "") {
+        //Se realiza fetch para enviar la imagen
+        fetch(SERVER_URL + "file", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.text())
+          .then((producto) => {
+            console.log("Imagen guardada correctamente", producto);
+            // Realizar solicitud PUT utilizando fetch
+            //Se actualiza pagina
+            location.reload();
+          })
+          .catch((error) => {
+            console.log("No pudimos guardar la imagen", error);
+          });
+      } else {
+        //Se actualiza pagina
+        location.reload();
+      }
     })
     .catch((error) => {
       // Hacer algo con el error
       console.error(error);
-    });
-      //Se actualiza pagina
-      location.reload();
-    })
-    .catch((error) => {
-      console.log("No pudimos guardar la imagen", error);
     });
 });
 
@@ -275,9 +297,11 @@ on(document, "click", "#btnCrearProducto", (e) => {
     let precioProducto = document.getElementById("precioProducto").value;
     let inventarioProducto =
       document.getElementById("inventarioProducto").value;
-      //Se obtiene solo el nombre del archivo con substring
-      //let rutaimagenProducto = document.getElementById("imagenProducto").value;
-      let rutaimagenProducto = document.getElementById("imagenProducto").value.substring(12);
+    //Se obtiene solo el nombre del archivo con substring
+    //let rutaimagenProducto = document.getElementById("imagenProducto").value;
+    let rutaimagenProducto = document
+      .getElementById("imagenProducto")
+      .value.substring(12);
     //creando producto
     let producto = {
       nombre: nombreProducto,
@@ -314,7 +338,10 @@ on(document, "click", "#btnCrearProducto", (e) => {
         //Se crea un objeto FormData
         let formData = new FormData();
         //Se agrega el archivo al objeto FormData
-        formData.append("file", document.getElementById("imagenProducto").files[0]);
+        formData.append(
+          "file",
+          document.getElementById("imagenProducto").files[0]
+        );
         //Se realiza fetch para enviar la imagen
         fetch(SERVER_URL + "file", {
           method: "POST",
