@@ -573,7 +573,7 @@ function updateModal(i) {
 	$btnMolidoMedio.checked = molidoModal == 2;
 	$btnMolidoAlto.checked = molidoModal == 3;
 
-	document.getElementById("modal-img").src = `./public/img/products/${PRODUCT.rutaimagen}`;
+	document.getElementById("modal-img").src = `${SERVER_URL}${PRODUCT.rutaimagen}`;
 	document.getElementById("modal-title").innerHTML = PRODUCT.nombre;
 }
 
