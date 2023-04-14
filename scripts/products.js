@@ -55,8 +55,8 @@ function showProducts() {
           <img src="./public/img/products/${DATA_PRODUCTS[i].rutaimagen}"
           class="card-img-top" alt="" />
               <div class="card-body">
-                  <div class="text-center mt-1">
-                      <h4 class="card-title lightYellowText">${DATA_PRODUCTS[i].region}</h4>
+                  <div class="text-center mt-1 textCardHeight">
+                      <h4 class="card-title lightYellowText">${DATA_PRODUCTS[i].nombre}</h4>
                       <h6 class="h6 mb-1 pb-2 lightYellowText">Desde: $${DATA_PRODUCTS[i].precio}</h6>
                   </div>
       
@@ -93,7 +93,7 @@ function updateModal(i) {
                 <img id="logo-navbar" src="assets/img/logo_black.png" alt="Logo" width="36">
             </div>
             <div class="col">
-                <h4 class="colorText">${DATA_PRODUCTS[i].variedad}</h4>
+                <h4 class="colorText">${DATA_PRODUCTS[i].nombre}</h4>
                 <p class="colorText">Desde: $${DATA_PRODUCTS[i].precio} </p>
             </div>
         </div>

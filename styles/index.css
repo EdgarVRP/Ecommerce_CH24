@@ -117,6 +117,7 @@ img {
 #titulo-info{
     font-size: 65px !important;
     text-align: center !important;
+    color: white;
 
 }
 
@@ -155,11 +156,18 @@ img {
     font-size: 16px;
 }
 
+.modalLittleBoxes {
+    background-color: var(--primary);
+    border-radius: 15px;
+    padding: 20px;
+    
+}
+
 /* h1 {
     font-size: 100px;
 } */
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -167,14 +175,14 @@ img {
 }
 html {
   font-family: "Montserrat";
-}
+} */
 .container-MVV {
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0;
+  padding: 30px 0;
   background-color: transparent;
 }
 .timeline {
@@ -190,7 +198,7 @@ html {
 }
 .timeline ul li {
   padding: 20px;
-  background-color: #1e1f22;
+  background-color: var(--primary);
   color: white;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -224,7 +232,7 @@ html {
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background-color: gray;
+    background-color: var(--primary);
   }
   .timeline ul li {
     width: 50%;
@@ -249,7 +257,7 @@ html {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: gray;
+    background-color: var(--primary);
     top: 0px;
   }
   .timeline ul li:nth-child(odd)::before {
@@ -265,7 +273,7 @@ html {
     top: -30px;
   }
   .timeline ul li:hover::before {
-    background-color: aqua;
+    background-color: white;
   }
 }
 

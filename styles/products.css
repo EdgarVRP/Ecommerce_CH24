@@ -13,6 +13,15 @@
     margin: 16px;
 }
 
+.card-img-top {
+    height: 200px;
+    border-color: transparent;
+}
+
+.textCardHeight {
+    height: 100px;
+}
+
 .modalLittleBoxes {
     background-color: var(--primary);
     border-radius: 15px;
