@@ -115,7 +115,9 @@ function validarForm() {
 	// validacion telefono por regexp
 	else if (!regexTel.test(tel)) {
 		aviso = "El Telefono requiere 10 digitos\n";
-		contador++;
+		$modal.innerHTML = aviso;
+		//contador++;
+		
 		//Datos basico para registro
 	} else if (!masDatos.checked) {
 		var usuario = {
@@ -140,8 +142,10 @@ function validarForm() {
 					//alert("Bienvenido ¡Registro Exitoso!");
 					aviso = "Bienvenido ¡Registro Exitoso!";
 					localStorage.setItem("DATA_USER", JSON.stringify(data));
-					updateNavUser();
-					window.location.href = "./";
+					setTimeout(function() {
+						updateNavUser();
+						window.location.href = "./";
+					}, 2000);
 					$modal.innerHTML = aviso;
 
 				}
@@ -170,7 +174,7 @@ function validarForm() {
 	// }
 	// validacion direccion por longitud
 	else if (direccion.length < 5) {
-		aviso = "Tu Direccion debe tener al menos 5 caracteres\n";
+		aviso = "Tu calle debe tener al menos 5 caracteres\n";
 		$modal.innerHTML = aviso;
 		//contador++;
 	}

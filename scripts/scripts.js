@@ -47,7 +47,7 @@ navbar.innerHTML = `<nav class="navbar fixed-top navbar-expand-md sticky-top">
 	<ul class="navbar-nav ms-auto">
 	  <li id="nav-admin" class="nav-item"><a class="nav-link" href="./admin.html">Administrador</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./">Inicio</a></li>
-	  <li class="nav-item"><a class="nav-link" href="./contact.html">Contactanos</a></li>
+	  <li class="nav-item"><a class="nav-link" href="./contact.html">Contáctanos</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./about.html">Nosotros</a></li>
 	  <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
 	  <li class="nav-item"><a id="nav-user" class="nav-link" href="./login.html">Ingresar</a></li>

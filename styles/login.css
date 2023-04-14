@@ -43,7 +43,7 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .right-form {
     max-width: 75%;
   }
@@ -53,7 +53,7 @@
   .right-form {
     max-width: 100%;
   }
-}
+} */
 
 /* Formato al fomulario amarillo*/
 .right-form form{
@@ -118,7 +118,7 @@
 /* Formato de boton Iniciar sesion */
 .buttoni{
   width:60%;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   margin: 10px 0;
   font-family: 'Ubuntu', sans-serif;
