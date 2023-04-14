@@ -31,6 +31,7 @@ const $btnSaveInfo = document.querySelector("#btn-save-info");
 const $btnPayGuest = document.querySelector("#btn-pay-guest");
 const $btnPayUser = document.querySelector("#btn-pay-user");
 const $btnPay = document.querySelector("#btn-pay");
+const $btnVaciar = document.querySelector("#btn-vaciar");
 
 const $pTotal = document.querySelector("#p-total");
 const $pShipping = document.querySelector("#p-shipping");
@@ -63,15 +64,29 @@ let idModal = 0;
 let tostadoModal = 0;
 let molidoModal = 0;
 
+const arrGrind = ["No", "Bajo", "Medio", "Alto"];
+const arrRoast = ["No", "Bajo", "Medio", "Alto"];
+
+let DATA_PRODUCTS = [];
+let DATA_CART = [];
+
+getProducts();
 loadUsuario();
 loadUserData();
 disableInputs(true);
 
+$btnVaciar.addEventListener("click", () => {
+	DATA_CART = [];
+	localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+	updateDataCart();
+	updateCart();
+});
+
 function updateDataCart() {
-	if (DATA_USER == null || DATA_USER.length == 0) {
+	//No esta sesion iniciada
+	if (DATA_USER == null || DATA_USER.id == null || DATA_USER.id == undefined) {
 		return;
 	}
-	console.log(DATA_CART);
 
 	let PRODUCTOS = [];
 	let MOLIDO = [];
@@ -92,14 +107,20 @@ function updateDataCart() {
 		carrito_cantidad: CANTIDAD.toString(),
 	};
 
-	console.log(usuario);
-
 	let url = SERVER_URL + `usuarios/${DATA_USER.id}`;
 	fetch(url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(usuario) })
 		.then((response) => response.json())
 		.then((data) => {
+			//No guarda nada si hubo un error
+			if (data == null) {
+				return;
+			}
 			localStorage.setItem("DATA_USER", JSON.stringify(data));
-			// console.log(DATA_USER);
+
+			// console.clear(); //LIMPIAR CONSOLA
+			console.log("%c INFORMACION DEL SERVIDOR GUARDADA EN LOCALSTORAGE", "color:yellow; background-color:blue");
+			console.log(JSON.stringify(DATA_USER, null, 4)); //PRESENTACION
+
 			loadCartData();
 		})
 		.catch((error) => {
@@ -108,9 +129,11 @@ function updateDataCart() {
 }
 
 function loadUserData() {
-	if (DATA_USER == null || DATA_USER.length == 0) {
+	//Si no hay datos en data user
+	if (DATA_USER == null) {
 		return;
 	}
+
 	$nameInput.value = DATA_USER.nombre;
 	$apellidoInput.value = DATA_USER.apellido;
 	// $emailInput.value = DATA_USER.email;
@@ -138,29 +161,31 @@ function disableInputs(value) {
 }
 
 function loadCartData() {
-	const PRODUCTOS = DATA_USER.carrito_productos.split(",");
-	const TOSTADO = DATA_USER.carrito_tostado.split(",");
-	const MOLIDO = DATA_USER.carrito_molido.split(",");
-	const CANTIDAD = DATA_USER.carrito_cantidad.split(",");
-
+	DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
 	let carrito_data = [];
+	if (DATA_USER.carrito_productos != "") {
+		const PRODUCTOS = DATA_USER.carrito_productos.split(",");
+		const TOSTADO = DATA_USER.carrito_tostado.split(",");
+		const MOLIDO = DATA_USER.carrito_molido.split(",");
+		const CANTIDAD = DATA_USER.carrito_cantidad.split(",");
 
-	for (let i = 0; i < PRODUCTOS.length; i++) {
-		var data = {
-			id: PRODUCTOS[i],
-			grind: TOSTADO[i],
-			roast: MOLIDO[i],
-			count: CANTIDAD[i],
-		};
-		carrito_data.push(data);
+		for (let i = 0; i < PRODUCTOS.length; i++) {
+			var data = {
+				id: PRODUCTOS[i],
+				grind: TOSTADO[i],
+				roast: MOLIDO[i],
+				count: CANTIDAD[i],
+			};
+			carrito_data.push(data);
+		}
+		localStorage.setItem("DATA_CART", JSON.stringify(carrito_data));
 	}
-
-	localStorage.setItem("DATA_CART", JSON.stringify(carrito_data));
-	// console.log(DATA_CART);
 }
 
+//Carga los datos de usuarios si esta iniciada sesion como la direccion
 function loadUsuario() {
-	if (DATA_USER == null || DATA_USER.length == 0) {
+	//No esta sesion iniciada
+	if (DATA_USER == null || DATA_USER.id == null || DATA_USER.id == undefined) {
 		return;
 	}
 
@@ -194,8 +219,8 @@ $btnSaveInfo.addEventListener("click", function () {
 			checkMunicipio() &
 			checkEstado()
 		) {
-			if (DATA_USER != null || DATA_USER.length != 0) {
-				// Si esta iniciada sesion guardar lo datos en la base de datos
+			// Si esta iniciada sesion guardar lo datos en la base de datos
+			if (DATA_USER != null && DATA_USER.id != null) {
 				let usuario = {
 					// nombre: $nameInput.value,
 					// apellido: $apellidoInput.value,
@@ -224,6 +249,27 @@ $btnSaveInfo.addEventListener("click", function () {
 					.catch((error) => {
 						console.error(error);
 					});
+			} else {
+				// Si no esta iniciada sesion guardar los datos en el local storage
+				let data = {
+					nombre: $nameInput.value,
+					apellido: $apellidoInput.value,
+					telefono: $telefonoInput.value,
+					calle: $calleInput.value,
+					numero: $numeroInput.value,
+					colonia: $coloniaInput.value,
+					codigo_postal: $codigoPostalInput.value,
+					municipio: $municipioInput.value,
+					estado: $estadoInput.value,
+				};
+
+				localStorage.setItem("DATA_USER", JSON.stringify(data));
+				DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
+				$btnSaveInfo.innerHTML = "Editar";
+
+				// console.clear(); //LIMPIAR CONSOLA
+				console.log("%c INFORMACION GUARDADA EN LOCALSTORAGE", "color:yellow; background-color:blue");
+				console.log(JSON.stringify(DATA_USER, null, 4)); //PRESENTACION
 			}
 		}
 	}
@@ -300,6 +346,16 @@ $btnPay.onclick = function () {
 		checkMunicipio() &
 		checkEstado()
 	) {
+		//Compra como invitado
+		if (DATA_USER == null || DATA_USER.id == null || DATA_USER.id == undefined) {
+			alert("Compra como invitado realizada con éxito");
+			DATA_CART = [];
+			localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+			updateCart();
+			updateDataCart();
+			return;
+		}
+
 		const PRODUCTOS = DATA_USER.carrito_productos.split(",");
 		const TOSTADO = DATA_USER.carrito_tostado.split(",");
 		const MOLIDO = DATA_USER.carrito_molido.split(",");
@@ -311,8 +367,13 @@ $btnPay.onclick = function () {
 		date.setDate(date.getDate() + 7);
 
 		let ENTREGA_FECHA = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+		console.log(DATA_PRODUCTS)
+		console.log(DATA_USER)
 
 		for (let i = 0; i < PRODUCTOS.length; i++) {
+			console.log(i)
+			console.log(PRODUCTOS)
+
 			let venta = {
 				idUsuario: `${DATA_USER.id}`,
 				idProducto: `${PRODUCTOS[i]}`,
@@ -327,26 +388,32 @@ $btnPay.onclick = function () {
 		}
 
 		alert("Compra realizada con éxito");
+		DATA_CART = [];
+		localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+		updateCart();
+		updateDataCart();
+
 	} else {
-		alert("Error");
+		// alert("Error");
+		const $alert = document.querySelector("#alert-pago");
+		$alert.style.visibility = "visible";
+		setTimeout(() => {
+			$alert.style.visibility = "hidden";
+		}, 2000);
 	}
 };
 
-const arrGrind = ["No", "Bajo", "Medio", "Alto"];
-const arrRoast = ["No", "Bajo", "Medio", "Alto"];
-
-let DATA_PRODUCTS = [];
-let DATA_CART = [];
-
-getProducts();
-
 function getProducts() {
-	fetch(SERVER_URL + "productos")
-		.then((response) => response.json())
-		.then((data) => {
-			DATA_PRODUCTS = data;
-			localStorage.setItem("DATA_PRODUCTS", JSON.stringify(DATA_PRODUCTS));
+	DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
+	DATA_PRODUCTS = JSON.parse(localStorage.getItem("DATA_PRODUCTS"));
+	let url = SERVER_URL + `productos`;
+	fetch(url, { method: "GET", headers: { "Content-Type": "application/json" } })
+	.then((response) => response.json())
+	.then((data) => {
+			localStorage.setItem("DATA_PRODUCTS", JSON.stringify(data));
+			DATA_PRODUCTS = JSON.parse(localStorage.getItem("DATA_PRODUCTS"));
 			updateCart();
+
 		})
 		.catch(function (error) {
 			console.error("Error al realizar la petición:", error);
@@ -357,17 +424,27 @@ function getProducts() {
 function updateCart() {
 	$containerProducts.innerHTML = "";
 	updateNavCart();
-
+	
 	DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
-	console.log(DATA_CART);
-	updateDataCart();
+
+	if (DATA_CART == null) {
+		DATA_CART = [];
+	}
+
+	// console.clear(); //LIMPIAR CONSOLA
+	console.log("%c INFORMACION CARRITO LOCALSTORAGE", "color:yellow; background-color:blue");
+	console.log(JSON.stringify(DATA_CART, null, 4)); //PRESENTACION
+
+	// updateDataCart();
 
 	if (DATA_CART == null || DATA_CART.length == 0) {
 		$containerMessage.style.visibility = "visible";
 		$containerBottom.style.visibility = "hidden";
+		$btnVaciar.style.display = "none";
 	} else {
 		$containerMessage.style.visibility = "hidden";
 		$containerBottom.style.visibility = "visible";
+		$btnVaciar.style.display = "block";
 	}
 
 	// $containerPay.style.visibility = "hidden";
@@ -377,6 +454,10 @@ function updateCart() {
 
 	for (let i = 0; i < DATA_CART.length; i++) {
 		let PRODUCT = DATA_PRODUCTS.find((product) => product.id == DATA_CART[i].id);
+		//Si el producto no llegara a aparecer por cambios de administrador
+		if (PRODUCT == null || PRODUCT == undefined) {
+			continue;
+		}
 
 		const subtotal = PRODUCT.precio * DATA_CART[i].count;
 		const grind = arrGrind[DATA_CART[i].grind];
@@ -462,7 +543,7 @@ function updateModal(i) {
 	tostadoModal = DATA_CART[i].roast;
 	molidoModal = DATA_CART[i].grind;
 
-	console.log(tostadoModal);
+	// console.log(tostadoModal);
 
 	// Desmarcar todos los botones de tostado
 	$btnTostadoNo.checked = false;

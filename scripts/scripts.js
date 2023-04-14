@@ -107,10 +107,10 @@ darkMode.onclick = function () {
 updateNavUser();
 function updateNavUser() {
 	DATA_USER = JSON.parse(localStorage.getItem("DATA_USER"));
-	console.log(DATA_USER);
+	// console.log(DATA_USER);
 
 
-	if (DATA_USER != null && DATA_USER.nombre != undefined) {
+	if (DATA_USER != null && DATA_USER.id != undefined && DATA_USER.id != null) {
 		document.querySelector("#nav-user").innerHTML = DATA_USER.nombre;
 		document.querySelector("#nav-user").href = "account.html";
 	} else {
@@ -133,7 +133,7 @@ function updateNavCart() {
 
 	if (DATA_CART != null) {
 		for (item of DATA_CART) {
-			count += item.count;
+			count += parseInt(item.count);
 		}
 	}
 

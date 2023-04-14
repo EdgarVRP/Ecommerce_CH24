@@ -8,14 +8,13 @@ let DATA_PRODUCTS = [];
 let DATA_CART = [];
 
 getProducts();
-
 function getProducts() {
 	let url = SERVER_URL + `productos`;
 	fetch(url, { method: "GET", headers: { "Content-Type": "application/json" } })
 		.then((response) => response.json())
 		.then((data) => {
-			DATA_PRODUCTS = data;
-			localStorage.setItem("DATA_PRODUCTS", JSON.stringify(DATA_PRODUCTS));
+			localStorage.setItem("DATA_PRODUCTS", JSON.stringify(data));
+            DATA_PRODUCTS = JSON.parse(localStorage.getItem("DATA_PRODUCTS"));
 			showProducts();
 		})
 		.catch(function (error) {
@@ -43,9 +42,15 @@ function addProduct(id) {
 
 	// Guardar informacion en localStorage
 	localStorage.setItem("DATA_CART", JSON.stringify(DATA_CART));
+    DATA_CART = JSON.parse(localStorage.getItem("DATA_CART"));
+
 
 	// Actualizar el contador del carrito
 	updateNavCart();
+
+    // console.clear(); //LIMPIAR CONSOLA
+    console.log("%c INFORMACION CARRITO", "color:yellow; background-color:blue");
+    console.log(JSON.stringify(DATA_CART, null, 4)); //PRESENTACION
 }
 
 function showProducts() {

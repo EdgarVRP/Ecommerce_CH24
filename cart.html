@@ -52,6 +52,8 @@
       <h2>Carrito vacio</h2>
     </div>
 
+    <button type="button" id="btn-vaciar" class="btn button" style="display: none;">Vaciar</button>
+
     <hr>
 
     <!-- Contenedor de informacion, forma de pago y pagar -->
@@ -59,8 +61,6 @@
 
       <!-- Formulario boton editar save -->
       <div id="container-shipping" class="col-12 col-md-6">
-
-        
 
         <form>
           <div class="row">
@@ -105,7 +105,7 @@
             </div>
 
             <div class="col-4 form-row">
-              <label class="form-label">CP</label>
+              <label class="form-label">Codigo postal</label>
               <input class="form-input form-control" type="text" id="codigo-postal-input">
               <p class="warning" id="warning-codigo-postal">Falta algo</p>
             </div>
@@ -192,7 +192,12 @@
           </div>-->
         <div class="container-buttons">
           <button id="btn-pay" class="btn button">Pagar</button>
+
         </div>
+        <div id="alert-pago" class="alert alert-danger" style="visibility: hidden;">
+          <strong>Error al realizar el pago!</strong>
+        </div>
+
       </div>
 
       <br>
@@ -212,7 +217,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="modal-title">Modal title</h1>
+          <h1 class="modal-title fs-5" id="modal-title">Cafe</h1>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -223,7 +228,7 @@
             </div>
             <div class="col-8">
               <!-- <p>Descripcion:</p> -->
-              
+
               <p>Tostado:</p>
               <div id="radio-toast" class="btn-group" role="group" aria-label="Seleccion del tostado del cafe">
                 <input type="radio" class="btn-check" name="roast-radio" id="btn-tostado-no" autocomplete="off">
@@ -274,8 +279,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
-          <button id="btn-update-product" type="button" class="btn button"
-            data-bs-dismiss="modal">Actualizar</button>
+          <button id="btn-update-product" type="button" class="btn button" data-bs-dismiss="modal">Actualizar</button>
 
         </div>
       </div>
