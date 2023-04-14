@@ -53,6 +53,7 @@ input:-webkit-autofill:active{
     background-color: var(--primary2);
     border-color: white;
     color: #fcbf6b;
+    margin-bottom: 50px;
 }
 #button:hover{
     background-color: #efb815;
