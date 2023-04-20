@@ -2,7 +2,7 @@
 
 ## Despliegue en GitHub Pages
 
-https://coffeeindevs.github.io/Ecommerce_CH24
+https://edgarvrp.github.io/Ecommerce_CH24/
 
 ## **Definición del proyecto**
 
