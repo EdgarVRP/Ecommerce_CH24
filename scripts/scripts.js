@@ -1,6 +1,6 @@
 //const SERVER_URL = "http://localhost:8080/";
 //const SERVER_URL = "https://ecommercebackend-production-ff9a.up.railway.app/"; //railway baudelio
-const SERVER_URL = "https://ecommercebackend-production-50a2.up.railway.app/"; //railway edgar
+const SERVER_URL = "http://140.84.160.208:8082/"; //railway edgar
 // cambiar un variable de color global
 
 // document.documentElement.style.setProperty('--primary', '#ff0000');
